@@ -150,6 +150,28 @@
   .stadium.active path { fill: var(--team-c); stroke: #fff; stroke-width: 1.6; }
   .stadium.active text { fill: var(--ink); }
   .scale line { stroke: var(--muted); } .scale text { fill: var(--muted); }
+  .pin, .stadium { -webkit-tap-highlight-color: transparent; outline: none; }
+  .pin:focus-visible circle, .stadium:focus-visible path { stroke: var(--ink); stroke-width: 2.5; }
+  .pin-pop {
+    position: absolute; z-index: 6; width: 250px; max-width: calc(100% - 24px);
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px;
+    box-shadow: var(--shadow); padding: 12px 13px 11px; font-size: 13px; line-height: 1.4;
+    transform: translate(-50%, calc(-100% - 13px));
+  }
+  .pin-pop.below { transform: translate(-50%, 13px); }
+  .pin-pop h4 { font-family: "Space Grotesk", "DM Sans", sans-serif; font-weight: 700; font-size: 16px; line-height: 1.15; margin: 0 24px 3px 0; }
+  .pin-pop .where { color: var(--muted); font-size: 12px; }
+  .pin-pop .pop-close { position: absolute; top: 7px; right: 7px; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font-size: 15px; line-height: 1; display: grid; place-items: center; padding: 0; }
+  .pin-pop .pop-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; margin: 9px 0 9px; }
+  .pin-pop .pop-facts > div { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 5px 6px; min-width: 0; }
+  .pin-pop .pop-facts .v { font-weight: 700; font-size: 13px; line-height: 1.15; overflow-wrap: anywhere; }
+  .pin-pop .pop-facts .v.on { color: var(--accent); } .pin-pop .pop-facts .v.off { color: var(--off); }
+  .pin-pop .pop-facts .k { font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-top: 2px; }
+  .pin-pop .tags { margin-bottom: 9px; }
+  .pin-pop .pop-acts { display: flex; gap: 6px; }
+  .pin-pop .pop-acts .btn { padding: 6px 10px; font-size: 12.5px; }
+  .pin-pop::after { content: ""; position: absolute; left: var(--ax, 50%); bottom: -6px; width: 11px; height: 11px; background: var(--surface); border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); transform: translateX(-50%) rotate(45deg); }
+  .pin-pop.below::after { bottom: auto; top: -6px; border: 0; border-left: 1px solid var(--line-strong); border-top: 1px solid var(--line-strong); }
   .pin { cursor: pointer; }
   .pin.dim circle { fill: var(--off); opacity: .28; }
   .pin.hit circle { fill: var(--accent); stroke: var(--surface); }
@@ -721,14 +743,15 @@
     lastHits = hits; const k = view.w / BASE.w;
     map.setAttribute("viewBox", `${fx(view.x)} ${fx(view.y)} ${fx(view.w)} ${fx(view.h)}`); map.replaceChildren();
     // OpenStreetMap layers: parks, water, roads (all pre-projected into this frame)
-    if (LONDON.parks) map.append(svgEl("path", { class: "park", d: LONDON.parks, "stroke-width": fx(0.4 * k) }));
-    if (LONDON.water) map.append(svgEl("path", { class: "water", d: LONDON.water, "stroke-width": fx(0.5 * k) }));
-    if (LONDON.rivers) map.append(svgEl("path", { class: "river", d: LONDON.rivers, "stroke-width": fx(0.5 + 0.8 * k) }));
-    if (LONDON.canals) map.append(svgEl("path", { class: "canal", d: LONDON.canals, "stroke-width": fx(0.3 + 0.5 * k) }));
+    const kw = Math.pow(k, 0.65);   // line weights grow a little as you zoom in, not a lot
+    if (LONDON.parks) map.append(svgEl("path", { class: "park", d: LONDON.parks, "stroke-width": fx(0.5 * kw) }));
+    if (LONDON.water) map.append(svgEl("path", { class: "water", d: LONDON.water, "stroke-width": fx(0.6 * kw) }));
+    if (LONDON.rivers) map.append(svgEl("path", { class: "river", d: LONDON.rivers, "stroke-width": fx(1.6 * kw) }));
+    if (LONDON.canals) map.append(svgEl("path", { class: "canal", d: LONDON.canals, "stroke-width": fx(1.1 * kw) }));
     if (LONDON.roads) {
-      map.append(svgEl("path", { class: "road road-p", d: LONDON.roads.primary, "stroke-width": fx(0.3 + 0.5 * k) }));
-      map.append(svgEl("path", { class: "road road-t", d: LONDON.roads.trunk, "stroke-width": fx(0.6 + 0.9 * k) }));
-      map.append(svgEl("path", { class: "road road-m", d: LONDON.roads.motorway, "stroke-width": fx(0.9 + 1.2 * k) }));
+      map.append(svgEl("path", { class: "road road-p", d: LONDON.roads.primary, "stroke-width": fx(1.0 * kw) }));
+      map.append(svgEl("path", { class: "road road-t", d: LONDON.roads.trunk, "stroke-width": fx(1.8 * kw) }));
+      map.append(svgEl("path", { class: "road road-m", d: LONDON.roads.motorway, "stroke-width": fx(2.6 * kw) }));
     }
     for (const [name, x, y, a] of LONDON.parkLabels || []) {
       if (!(a >= 220 || (a >= 90 && k < 0.85) || (a >= 45 && k < 0.55) || k < 0.3)) continue;
@@ -742,10 +765,9 @@
     const team = S.mode === "match" ? S.m.team : "";
     for (const [code, name, lng, lat] of STADIUMS) {
       const [x, y] = proj(lng, lat), active = team === code;
-      const g = svgEl("g", { class: "stadium" + (active ? " active" : ""), transform: `translate(${fx(x)} ${fx(y)}) scale(${fx(k)})`, tabindex: "0", role: "button", style: `--team-c:${teamMarker(code)}` });
+      const g = svgEl("g", { class: "stadium" + (active ? " active" : ""), transform: `translate(${fx(x)} ${fx(y)}) scale(${fx(k)})`, tabindex: "0", role: "button", "data-club": code, style: `--team-c:${teamMarker(code)}` });
       g.append(svgEl("path", { d: "M0,-6.5 L6,-2.2 L3.8,5 L-3.8,5 L-6,-2.2 Z" })); const t = svgEl("text", { y: "13.5", "font-size": "7" }); t.textContent = code; g.append(t);
-      const pick = () => { if (dragged) return; if (S.mode !== "match") { setMode("match"); } S.m.team = active ? "" : code; store.set("team", S.m.team); renderFilters(); render(); syncControls(); };
-      g.addEventListener("click", pick); g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pickClub(code); } });
       g.addEventListener("pointerenter", () => showTip(g, `<b>${name}</b>${TEAM_NAME[code]} \u00B7 ${active ? "tap to clear" : "tap to filter"}`)); g.addEventListener("pointerleave", hideTip);
       map.append(g);
     }
@@ -756,13 +778,12 @@
     const order = [...dims, ...drawn].sort((a, b) => (hitIds.has(a.id) - hitIds.has(b.id)) || (isTeamPub(a) - isTeamPub(b)));
     for (const p of order) {
       const [x, y] = proj(p.lng, p.lat), hit = hitIds.has(p.id), mine = hit && isTeamPub(p);
-      const g = svgEl("g", { class: "pin " + (hit ? (mine ? "team" : "hit") : "dim") + (S.fav.has(p.id) ? " fav" : ""), tabindex: hit ? "0" : "-1", role: "button", "aria-label": p.name });
+      const g = svgEl("g", { class: "pin " + (hit ? (mine ? "team" : "hit") : "dim") + (S.fav.has(p.id) ? " fav" : ""), tabindex: hit ? "0" : "-1", role: "button", "aria-label": p.name, "data-pub": p.id });
       const c = svgEl("circle", { cx: fx(x), cy: fx(y), r: fx((hit ? (isBase(p) ? 3.2 : 5) : 3) * k), "stroke-width": fx((S.fav.has(p.id) ? 2 : 1.2) * k) });
       if (hit && isBase(p)) c.setAttribute("opacity", "0.75");
       if (mine) c.setAttribute("fill", teamMarker(S.m.team));
       g.append(c);
-      g.addEventListener("click", () => { if (!dragged) openDetail(p); });
-      g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(p); } });
+      g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPop(p); } });
       g.addEventListener("pointerenter", () => showTip(g, `<b>${p.name}</b>${p.area}${isBase(p) ? " \u00B7 map listing" : p.fb ? ` \u00B7 ${p.fb.screens} screens \u00B7 sound ${SOUND[p.fb.sound].toLowerCase()}` : " \u00B7 no screens"}`)); g.addEventListener("pointerleave", hideTip);
       map.append(g);
     }
@@ -772,27 +793,114 @@
       g.append(svgEl("circle", { class: "pulse", cx: fx(ox), cy: fx(oy), r: fx(11 * k), "stroke-width": fx(1.5 * k) }), svgEl("circle", { class: "dot", cx: fx(ox), cy: fx(oy), r: fx(5.5 * k), "stroke-width": fx(2 * k) }));
       map.append(g);
     }
-    const len = (5 / (111.32 * Math.cos(51.5 * Math.PI / 180))) * pxPerLng, sx = view.x + 14 * k, sy = view.y + view.h - 14 * k, sc = svgEl("g", { class: "scale" });
+    const kmToU = km => (km / (111.32 * Math.cos(51.5 * Math.PI / 180))) * pxPerLng;
+    const barKm = [5, 2, 1, 0.5, 0.2, 0.1].find(d => kmToU(d) <= view.w * 0.32) || 0.1;
+    const len = kmToU(barKm), sx = view.x + 14 * k, sy = view.y + view.h - 14 * k, sc = svgEl("g", { class: "scale" });
     sc.append(svgEl("line", { x1: fx(sx), y1: fx(sy), x2: fx(sx + len), y2: fx(sy), "stroke-width": fx(1.5 * k) }), svgEl("line", { x1: fx(sx), y1: fx(sy - 3 * k), x2: fx(sx), y2: fx(sy + 3 * k), "stroke-width": fx(1.5 * k) }), svgEl("line", { x1: fx(sx + len), y1: fx(sy - 3 * k), x2: fx(sx + len), y2: fx(sy + 3 * k), "stroke-width": fx(1.5 * k) }));
-    const st = svgEl("text", { x: fx(sx + len / 2), y: fx(sy - 5 * k), "text-anchor": "middle", "font-size": fx(8.5 * k) }); st.textContent = "5 km"; sc.append(st); map.append(sc);
+    const st = svgEl("text", { x: fx(sx + len / 2), y: fx(sy - 5 * k), "text-anchor": "middle", "font-size": fx(8.5 * k) }); st.textContent = barKm >= 1 ? barKm + " km" : (barKm * 1000) + " m"; sc.append(st); map.append(sc);
     map.classList.toggle("picking", S.picking); document.getElementById("pick-hint").hidden = !S.picking;
     document.getElementById("legend-team").style.background = team ? teamMarker(team) : "var(--brass)";
+    if (popPub) openPop(popPub);
   }
-  function showTip(node, html) { const r = node.getBoundingClientRect(), sr = stage.getBoundingClientRect(); tip.innerHTML = html; tip.style.left = (r.left + r.width / 2 - sr.left) + "px"; tip.style.top = (r.top - sr.top) + "px"; tip.hidden = false; }
+
+  // ---------- Pin popover ----------
+  let popPub = null;
+  function closePop() { const e = document.getElementById("pin-pop"); if (e) e.remove(); popPub = null; }
+  function openPop(p) {
+    const old = document.getElementById("pin-pop"); if (old) old.remove();
+    const node = map.querySelector(`[data-pub="${p.id}"]`);
+    if (!node) { popPub = null; return; }
+    popPub = p; hideTip();
+    const f = p.fb, fd = p.food, base = isBase(p);
+    const fact = (v, k, cls) => el("div", {}, el("div", { class: "v " + (cls || "") }, v), el("div", { class: "k" }, k));
+    const facts = base
+      ? [fact(p.osm && p.osm.real_ale === "yes" ? "Real ale" : "Map listing", "source"), fact(fd.rating ? (fd.cuisine[0] || "Yes") : "Not known", "food"), fact(p.out.kind === "none" ? "Not known" : OUTKIND[p.out.kind], "outside")]
+      : f
+        ? [fact(String(f.screens), "screens", "num"), fact(bigLabel(f), "biggest", "num"), fact(SOUND[f.sound], "sound", soundClass(f.sound))]
+        : [fact("None", "screens", "off"), fact(FOODQ[fd.rating], "food", fd.rating >= 2 ? "on" : ""), fact(p.out.kind === "none" ? "None" : OUTKIND[p.out.kind], "outside", p.out.kind === "none" ? "off" : "on")];
+    const pop = el("div", { class: "pin-pop", id: "pin-pop", role: "dialog", "aria-label": p.name },
+      el("button", { class: "pop-close", "aria-label": "Close", onclick: closePop }, "\u00D7"),
+      el("h4", {}, p.name),
+      el("div", { class: "where" }, `${p.area} \u00B7 ${p.station} ${p.walk} min`, S.origin ? el("span", { class: "dist" }, ` \u00B7 ${fmtDist(pubDist(p))} away`) : null, " \u00B7 ", chkBadge(p)),
+      el("div", { class: "pop-facts" }, facts),
+      !base && (p.tip || p.occ.length) ? tags(p) : null,
+      el("div", { class: "pop-acts" },
+        el("button", { class: "btn primary", onclick: () => { closePop(); openDetail(p); } }, "Full details"),
+        el("button", { class: "btn", onclick: e => { toggleFav(p.id); e.currentTarget.textContent = S.fav.has(p.id) ? "Saved" : "Save"; } }, S.fav.has(p.id) ? "Saved" : "Save")));
+    stage.append(pop);
+    const r = node.getBoundingClientRect(), sr = stage.getBoundingClientRect(), pw = pop.offsetWidth, ph = pop.offsetHeight;
+    const cx = r.left + r.width / 2 - sr.left, half = pw / 2;
+    const left = Math.min(Math.max(cx, half + 6), Math.max(half + 6, sr.width - half - 6));
+    pop.style.left = left + "px";
+    pop.style.setProperty("--ax", Math.min(Math.max(cx - (left - half), 14), pw - 14) + "px");
+    const above = r.top - sr.top;
+    if (above < ph + 18) { pop.classList.add("below"); pop.style.top = (r.bottom - sr.top) + "px"; }
+    else pop.style.top = above + "px";
+  }
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && popPub) closePop(); });
+  function showTip(node, html) { if (popPub) return; const r = node.getBoundingClientRect(), sr = stage.getBoundingClientRect(); tip.innerHTML = html; tip.style.left = (r.left + r.width / 2 - sr.left) + "px"; tip.style.top = (r.top - sr.top) + "px"; tip.hidden = false; }
   const hideTip = () => { tip.hidden = true; };
-  function clampView() { view.w = Math.min(Math.max(view.w, BASE.w / 8), BASE.w * 1.6); view.h = view.w * BASE.h / BASE.w; const s = 0.35; view.x = Math.min(Math.max(view.x, -view.w * s), BASE.w - view.w * (1 - s)); view.y = Math.min(Math.max(view.y, -view.h * s), BASE.h - view.h * (1 - s)); }
-  function zoomAt(factor, cx, cy) { const r = map.getBoundingClientRect(); const ux = view.x + ((cx - r.left) / r.width) * view.w, uy = view.y + ((cy - r.top) / r.height) * view.h; const nw = view.w * factor; view.x = ux - (ux - view.x) * (nw / view.w); view.y = uy - (uy - view.y) * (nw / view.w); view.w = nw; clampView(); hideTip(); renderMap(lastHits); }
+  const MINW = BASE.w / 18, MAXW = BASE.w * 1.6;   // 18x zoom gets you to street level
+  function clampView() { view.w = Math.min(Math.max(view.w, MINW), MAXW); view.h = view.w * BASE.h / BASE.w; const s = 0.35; view.x = Math.min(Math.max(view.x, -view.w * s), BASE.w - view.w * (1 - s)); view.y = Math.min(Math.max(view.y, -view.h * s), BASE.h - view.h * (1 - s)); }
+  function zoomAt(factor, cx, cy) {
+    const nw = Math.min(Math.max(view.w * factor, MINW), MAXW);
+    if (Math.abs(nw - view.w) < 0.01) return;   // already at the limit: don't drift the view
+    const r = map.getBoundingClientRect();
+    const ux = view.x + ((cx - r.left) / r.width) * view.w, uy = view.y + ((cy - r.top) / r.height) * view.h;
+    const k = nw / view.w;
+    view.x = ux - (ux - view.x) * k; view.y = uy - (uy - view.y) * k; view.w = nw;
+    clampView(); hideTip(); closePop(); renderMap(lastHits);
+  }
   map.addEventListener("wheel", e => { e.preventDefault(); zoomAt(e.deltaY > 0 ? 1.18 : 0.85, e.clientX, e.clientY); }, { passive: false });
   const zoomCentre = f => { const r = map.getBoundingClientRect(); zoomAt(f, r.left + r.width / 2, r.top + r.height / 2); };
   document.getElementById("zin").addEventListener("click", () => zoomCentre(0.7));
   document.getElementById("zout").addEventListener("click", () => zoomCentre(1.4));
-  document.getElementById("zreset").addEventListener("click", () => { Object.assign(view, BASE); renderMap(lastHits); });
+  document.getElementById("zreset").addEventListener("click", () => { Object.assign(view, BASE); closePop(); renderMap(lastHits); });
   let drag = null;
-  map.addEventListener("pointerdown", e => { if (e.button !== 0) return; drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y }; dragged = false; map.setPointerCapture(e.pointerId); });
-  map.addEventListener("pointermove", e => { if (!drag) return; const r = map.getBoundingClientRect(), dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (!dragged && Math.hypot(dx, dy) < 4) return; dragged = true; map.classList.add("dragging"); hideTip(); view.x = drag.vx - dx * (view.w / r.width); view.y = drag.vy - dy * (view.h / r.height); clampView(); map.setAttribute("viewBox", `${fx(view.x)} ${fx(view.y)} ${fx(view.w)} ${fx(view.h)}`); });
-  const endDrag = () => { if (!drag) return; drag = null; map.classList.remove("dragging"); if (dragged) { renderMap(lastHits); setTimeout(() => { dragged = false; }, 0); } };
+  // Capture the pointer only once a real drag begins: capturing on pointerdown would
+  // retarget the following click to the <svg>, so pin clicks would never fire.
+  map.addEventListener("pointerdown", e => { if (e.button !== 0) return; drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, id: e.pointerId, cap: false }; dragged = false; });
+  map.addEventListener("pointermove", e => {
+    if (!drag) return;
+    const r = map.getBoundingClientRect(), dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!dragged && Math.hypot(dx, dy) < 6) return;
+    if (!drag.cap) { try { map.setPointerCapture(drag.id); } catch {} drag.cap = true; closePop(); }
+    dragged = true; map.classList.add("dragging"); hideTip();
+    view.x = drag.vx - dx * (view.w / r.width); view.y = drag.vy - dy * (view.h / r.height);
+    clampView(); map.setAttribute("viewBox", `${fx(view.x)} ${fx(view.y)} ${fx(view.w)} ${fx(view.h)}`);
+  });
+  function pickClub(code) {
+    closePop();
+    const active = S.mode === "match" && S.m.team === code;
+    if (S.mode !== "match") setMode("match");
+    S.m.team = active ? "" : code; store.set("team", S.m.team);
+    renderFilters(); render(); syncControls();
+  }
+  function pickSpot(x, y) {
+    const r = map.getBoundingClientRect();
+    const ux = view.x + ((x - r.left) / r.width) * view.w, uy = view.y + ((y - r.top) / r.height) * view.h;
+    const lng = BBOX.w + ((ux - 10) / 440) * (BBOX.e - BBOX.w), lat = BBOX.n - ((uy - 10) / 420) * (BBOX.n - BBOX.s);
+    setOrigin({ lat, lng, label: "Your chosen spot" }); S.picking = false; render(); syncControls();
+  }
+  function hitTest(x, y) {
+    if (S.picking) return pickSpot(x, y);
+    const el = document.elementFromPoint(x, y);
+    const g = el && el.closest ? el.closest(".pin, .stadium") : null;
+    if (!g) return closePop();
+    const id = g.getAttribute("data-pub");
+    if (id) { const pub = PUBS.find(q => q.id === id); return pub ? openPop(pub) : closePop(); }
+    const code = g.getAttribute("data-club");
+    if (code) pickClub(code);
+  }
+  const endDrag = e => {
+    if (!drag) return;
+    const wasDrag = dragged;
+    if (drag.cap) { try { map.releasePointerCapture(drag.id); } catch {} }
+    drag = null; map.classList.remove("dragging");
+    if (wasDrag) { renderMap(lastHits); setTimeout(() => { dragged = false; }, 0); return; }
+    if (e && e.clientX != null) hitTest(e.clientX, e.clientY);
+  };
   map.addEventListener("pointerup", endDrag); map.addEventListener("pointercancel", endDrag);
-  map.addEventListener("click", e => { if (!S.picking || dragged) return; e.stopPropagation(); const r = map.getBoundingClientRect(); const ux = view.x + ((e.clientX - r.left) / r.width) * view.w, uy = view.y + ((e.clientY - r.top) / r.height) * view.h; const lng = BBOX.w + ((ux - 10) / 440) * (BBOX.e - BBOX.w), lat = BBOX.n - ((uy - 10) / 420) * (BBOX.n - BBOX.s); setOrigin({ lat, lng, label: "Your chosen spot" }); S.picking = false; render(); syncControls(); }, true);
   let pinch = null;
   map.addEventListener("touchstart", e => { if (e.touches.length === 2) pinch = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); }, { passive: true });
   map.addEventListener("touchmove", e => { if (e.touches.length !== 2 || !pinch) return; const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); zoomAt(pinch / d, (e.touches[0].clientX + e.touches[1].clientX) / 2, (e.touches[0].clientY + e.touches[1].clientY) / 2); pinch = d; }, { passive: true });
