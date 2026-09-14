@@ -2743,5 +2743,1091 @@
    ],
    "rep": 3
   }
+ },
+ "eight-bells-fulham": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/eight-bells-fulham-129053",
+  "notes": "89 Fulham High St, licensed 1629 as the Blue Anchor and the Eight Bells by 1754, the oldest surviving tavern in Fulham. Fulham FC used it as a changing room 1886-88. Five changing ales plus St Peter's Organic Best, home-cooked food and well-reviewed roasts. Reserved for AWAY fans on Fulham match days.",
+  "patch": {
+   "fb.atmos": "away",
+   "fb.teams": [
+    "FUL"
+   ],
+   "fb.crowd": "lively",
+   "food": {
+    "cuisine": [
+     "British"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": true,
+    "note": "Home-cooked food with a well-reviewed Sunday roast"
+   },
+   "feat": [
+    "ale",
+    "heritage"
+   ],
+   "rep": 3,
+   "occ": [
+    "quiet",
+    "roast"
+   ],
+   "tip": "The oldest pub in Fulham, licensed in 1629, where Fulham FC once changed before matches. Five cask ales and a proper roast. Note: away fans only on match days."
+  }
+ },
+ "durell-arms": {
+  "status": "verified",
+  "source": "https://www.durellarmsfulham.com/",
+  "notes": "704 Fulham Rd. Six HD screens and two large projectors with Sky, TNT and terrestrial sport; booths with their own screens. Quiz Tuesdays 8pm, live music some nights, garden, child and dog friendly.",
+  "patch": {
+   "fb.screens": 8,
+   "fb.big": 100,
+   "fb.proj": true,
+   "fb.pos": [
+    "bar",
+    "all",
+    "proj"
+   ],
+   "fb.sound": "always",
+   "fb.all": true,
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "quiz",
+    "music",
+    "dogs",
+    "family",
+    "hire"
+   ],
+   "occ+": [
+    "outdoor"
+   ],
+   "tip": "Eight screens including two projectors, and booths with a screen of their own. Quiz on Tuesdays, garden out back."
+  }
+ },
+ "white-horse-parsons-green": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_White_Horse,_Fulham",
+  "notes": "The Sloaney Pony. Coaching inn on the site since at least 1688, mentioned in The Spectator in 1712. Renowned beer list, terrace overlooking Parsons Green packed on sunny days, quizzes, DJ sets and live sport screenings. Fully refurbished recently.",
+  "patch": {
+   "feat": [
+    "ale",
+    "craft",
+    "heritage",
+    "hire",
+    "quiz",
+    "dj"
+   ]
+  }
+ },
+ "duke-on-the-green": {
+  "status": "verified",
+  "source": "https://www.dukeonthegreen.co.uk/",
+  "notes": "235 New Kings Rd overlooking Parsons Green. Seasonal British pub food, roast with double-egg Yorkshires, cocktails, outdoor seating on the green, very dog friendly. No live sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "outdoor",
+    "date",
+    "group",
+    "roast"
+   ],
+   "feat": [
+    "dogs",
+    "family",
+    "cocktails"
+   ],
+   "tip": "Handsome pub looking straight onto Parsons Green, with tables out front and a roast worth the walk. Dogs get treats, nobody gets a screen."
+  }
+ },
+ "broadway-bar-fulham": {
+  "status": "partial",
+  "source": "https://camra.org.uk/pubs/broadway-bar-grill-fulham-129031",
+  "notes": "Official Chelsea FC fans pub on Fulham Rd, reopened December 2024 with five big screens and game-day burger menus; a rooftop and live music are also listed. CAMRA's entry still carries a 'closed, future uncertain' flag, so check before travelling.",
+  "patch": {
+   "fb.screens": 6,
+   "fb.big": 100,
+   "feat": [
+    "dj",
+    "rooftop",
+    "music"
+   ],
+   "tip": "The official Chelsea fans' pub on the Broadway, reopened in December 2024 with big screens and game-day burgers. Worth ringing ahead: its status has wobbled."
+  }
+ },
+ "rutland-arms": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/rutland-arms-hammersmith-128819",
+  "notes": "15 Lower Mall by Hammersmith Bridge, opened c.1849 and rebuilt in the 1870s; lost its top floor in the Blitz. Greene King Abbot and IPA, lounge bar with rowing sculls on the ceiling, rear dining area, first-floor balcony bar for functions, bench seats at the front facing the river. Midnight Fri and Sat. No sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "outdoor",
+    "quiet",
+    "group"
+   ],
+   "late": "00:00",
+   "feat": [
+    "riverside",
+    "heritage",
+    "hire"
+   ],
+   "tip": "Riverside pub by Hammersmith Bridge with sculls hanging from the ceiling and benches out front facing the water. A balcony bar upstairs for parties."
+  }
+ },
+ "old-ship-hammersmith": {
+  "status": "verified",
+  "source": "https://www.oldshiphammersmith.co.uk/",
+  "notes": "25 Upper Mall, serving the riverside since 1722. Enormous two-tier terrace over the Thames plus a veranda and railed patio; first-floor balcony is a Boat Race spot. Sport on the screens inside. Renovated 2018 and 2024.",
+  "patch": {
+   "fb.screens": 5,
+   "fb.pos": [
+    "bar",
+    "all"
+   ],
+   "fb.sound": "big",
+   "feat": [
+    "riverside",
+    "heritage",
+    "family",
+    "hire"
+   ],
+   "tip": "Two tiers of terrace over the Thames and one of the best Boat Race balconies in London. Screens inside for everything else."
+  }
+ },
+ "lamb-chiswick": {
+  "status": "verified",
+  "source": "https://www.thelambchiswick.co.uk/",
+  "notes": "9 Barley Mow Passage, on the site of the Battle of Turnham Green. Traditional interiors, exposed brick, open fire, beer garden, real ale, traditional Sunday roast, board games, BBQ, bookable space, dog and child friendly. No live sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "quiet",
+    "outdoor",
+    "roast",
+    "group"
+   ],
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "food": {
+    "cuisine": [
+     "British",
+     "Pub classics"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Classic British menu with a traditional Sunday roast, and a BBQ in the garden in summer"
+   },
+   "feat": [
+    "ale",
+    "fire",
+    "dogs",
+    "family",
+    "games",
+    "hire",
+    "heritage"
+   ],
+   "tip": "Tucked off the High Road on the site of the Battle of Turnham Green: open fire, board games and a garden for the summer BBQ."
+  }
+ },
+ "sindercombe-social": {
+  "status": "verified",
+  "source": "https://www.thesindercombesocial.co.uk/",
+  "notes": "2 Goldhawk Rd on the corner of Shepherds Bush Green, renamed 2014. Large screens throughout plus a projector and commentary for major events. Live music Monday, Thursday, Friday and Saturday; cocktails, craft beer, sourdough pizza and burgers.",
+  "patch": {
+   "fb.screens": 8,
+   "fb.proj": true,
+   "fb.big": 110,
+   "fb.pos": [
+    "bar",
+    "all",
+    "proj"
+   ],
+   "fb.sound": "always",
+   "fb.all": true,
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "Burgers"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": false,
+    "note": "Sourdough pizzas, burgers and pub favourites, plus sandwiches in the afternoon"
+   },
+   "feat": [
+    "music",
+    "dj",
+    "cocktails",
+    "craft"
+   ],
+   "tip": "Big screens the length of the room plus a projector with commentary, then a band four nights a week."
+  }
+ },
+ "queen-adelaide-bush": {
+  "status": "closed",
+  "source": "https://camra.org.uk/pubs/queen-adelaide-shepherds-bush-128929",
+  "notes": "Closed end of June 2025; the Grade II building is being reopened as the Talli Queen, an Indian pub and dining room, so its QPR match-day role is gone. Removed.",
+  "patch": {}
+ },
+ "brewery-tap-brentford": {
+  "status": "verified",
+  "source": "https://www.brewery-tap.co.uk/",
+  "notes": "47 Catherine Wheel Rd. Family-run riverside pub with a sunny beer garden, Santa Maria pizza, live music five nights a week with free entry and a resident pianist, Monday quiz, pool table, Saturday BBQ and Sunday roast. Dog friendly.",
+  "patch": {
+   "fb.screens": 2,
+   "fb.sound": "request",
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "British"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Santa Maria pizza, a Saturday BBQ in the garden and a Sunday roast"
+   },
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": true,
+    "big": false
+   },
+   "feat": [
+    "music",
+    "quiz",
+    "games",
+    "dogs",
+    "riverside",
+    "ale"
+   ],
+   "occ": [
+    "outdoor",
+    "session",
+    "roast"
+   ],
+   "tip": "Family-run riverside pub with pizza, a garden and free live music five nights a week. The Bees drink here, but it's a music pub first."
+  }
+ },
+ "magpie-and-crown": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/magpie-crown-brentford-121711",
+  "notes": "128 High St, original pub 1614, rebuilt in the 1920s-30s as mock Tudor. On CAMRA's local inventory; reckons 2,163 different real ales sold since 1996, six on at a time. Lanna Thai Kitchen seven days, pool table, front tables, rear covered patio, live music three or four nights a week.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "Thai"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": false,
+    "note": "Lanna Thai Kitchen, open seven days"
+   },
+   "out": {
+    "kind": "terrace",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "ale",
+    "music",
+    "games",
+    "heritage"
+   ],
+   "rep": 3,
+   "tip": "Mock-Tudor free house that has poured over two thousand different cask ales since 1996, with a Thai kitchen and live music most weeks."
+  }
+ },
+ "express-tavern": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/express-tavern-brentford-121706",
+  "notes": "56 Kew Bridge Rd, a landmark for 200 years, building from the 1860s, an old London-to-Bath coaching stop. Now run by Big Smoke Brew Co: ten ale handpumps in the small bar and up to five ciders in the saloon, largely original interior, spacious beer garden. Minutes from the Gtech.",
+  "patch": {
+   "fb.screens": 2,
+   "fb.sound": "request",
+   "feat": [
+    "ale",
+    "craft",
+    "heritage",
+    "fire",
+    "dogs"
+   ],
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": true
+   },
+   "rep": 3,
+   "tip": "Ten handpumps and five ciders in a largely untouched Victorian interior, with a big garden. The civilised stop before the Gtech."
+  }
+ },
+ "one-over-the-ait": {
+  "status": "verified",
+  "source": "https://www.oneovertheait.co.uk/",
+  "notes": "Fuller's pub on the Thames by Kew Bridge. Numerous screens showing up to three games at once, TNT Sports, and a Players' Lounge upstairs with interactive games, a private bar and more screens. Minutes from the Gtech.",
+  "patch": {
+   "fb.screens": 12,
+   "fb.big": 100,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room",
+    "garden"
+   ],
+   "fb.sound": "always",
+   "fb.all": true,
+   "feat": [
+    "riverside",
+    "hire",
+    "family",
+    "games"
+   ],
+   "tip": "Fuller's riverside pub by Kew Bridge that shows three games at once, with a Players' Lounge upstairs. Walking distance from the Gtech."
+  }
+ },
+ "black-dog-brentford": {
+  "status": "verified",
+  "source": "https://www.blackdogbeerhouse.co.uk/",
+  "notes": "17 Albany Rd, building from at least 1861 rebuilt 1901, reopened October 2018 as a free house after a rough history. Fourteen craft keg lines, four cask ales from independents and three ciders, natural and organic wines, log fires, beer garden, vegan Sunday roasts. Closed Tuesdays.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "British"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": true,
+    "note": "Pub kitchen with a Sunday roast, vegan roast included"
+   },
+   "feat": [
+    "craft",
+    "ale",
+    "fire",
+    "dogs",
+    "heritage"
+   ],
+   "occ+": [
+    "roast"
+   ],
+   "tip": "Backstreet beer house with fourteen keg lines, four casks and log fires. Closed Tuesdays, so check before you walk over."
+  }
+ },
+ "north-star-ealing": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/MDX/12200/north-star-ealing",
+  "notes": "43 The Broadway, built early 1800s and locally listed for its unusual design; three rooms each divided by a fireplace, refurbished 2014. Fuller's London Pride, garden patio alongside the pub, partially covered and heated. Child and dog friendly.",
+  "patch": {
+   "fb.screens": 3,
+   "fb.sound": "big",
+   "fb.all": false,
+   "out": {
+    "kind": "terrace",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "ale",
+    "fire",
+    "heritage",
+    "dogs",
+    "family",
+    "quiz"
+   ],
+   "tip": "Early-1800s pub on the Broadway with three fire-divided rooms and a heated side garden. Pride on the pumps."
+  }
+ },
+ "grove-ealing": {
+  "status": "verified",
+  "source": "https://www.thegrovew5.co.uk/live-sport",
+  "notes": "Opposite Ealing Green and the old Ealing Studios. Six screens with Sky, TNT and terrestrial and two Sky boxes so different games run at once. Large heated wraparound front and side garden with covered seating looking onto the green and Pitzhanger Manor. Real ale; was in the Michelin Guide 2015.",
+  "patch": {
+   "fb.screens": 6,
+   "fb.pos": [
+    "bar",
+    "all"
+   ],
+   "fb.sound": "always",
+   "fb.all": true,
+   "feat": [
+    "ale",
+    "dogs",
+    "family",
+    "hire"
+   ],
+   "tip": "Six screens and two Sky boxes, so several games at once, and a big heated garden facing Ealing Green."
+  }
+ },
+ "drayton-court": {
+  "status": "verified",
+  "source": "https://www.draytoncourtlondon.co.uk/",
+  "notes": "Neo-gothic Fuller's pub-hotel opened 1894 with one of London's largest beer gardens, extended in 2016 with a summer bar. Fringe theatre inside and Shakespeare in the Garden productions. Award-winning handmade pies and Fuller's cask ales.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "Pies",
+     "British"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Award-winning handmade pies and a Sunday roast"
+   },
+   "feat": [
+    "heritage",
+    "theatre",
+    "comedy",
+    "hire",
+    "family",
+    "ale"
+   ],
+   "tip": "Neo-gothic Fuller's hotel-pub from 1894 with one of the largest beer gardens in London, a fringe theatre inside and Shakespeare out in the garden in summer."
+  }
+ },
+ "elgin-ladbroke-grove": {
+  "status": "verified",
+  "source": "https://www.theelginnottinghill.co.uk/",
+  "notes": "96 Ladbroke Grove, Grade II with what CAMRA calls the crown jewel of Victorian glazed screens. Five or more TV screens for the Premier League, FA Cup, Champions League, Europa League and Six Nations. Weekly quiz, private rooms, dogs welcome throughout.",
+  "patch": {
+   "fb.screens": 5,
+   "fb.all": true,
+   "feat": [
+    "heritage",
+    "quiz",
+    "dogs",
+    "hire",
+    "games"
+   ],
+   "tip": "Grade II gin palace with the most spectacular Victorian glazed screens in London, and five modern ones showing the football."
+  }
+ },
+ "metropolitan-w2": {
+  "status": "verified",
+  "source": "https://www.timeout.com/london/bars-pubs/metropolitan-bar",
+  "notes": "60 Great Western Rd, right beside Westbourne Park station. Victorian pub with a large beer garden and roof terrace, pool table, jukebox, craft beer list, weekly comedy and acoustic nights and a Sunday movie matinee. No live sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "outdoor",
+    "session",
+    "group"
+   ],
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": true
+   },
+   "feat": [
+    "craft",
+    "games",
+    "comedy",
+    "music",
+    "theatre",
+    "rooftop",
+    "heritage"
+   ],
+   "tip": "Victorian corner pub by the station with a big garden, a roof terrace, a jukebox and a Sunday movie matinee. Portobello is minutes away."
+  }
+ },
+ "sports-bar-marylebone": {
+  "status": "verified",
+  "source": "https://makeitmarylebone.co.uk/brand/sports-bar-grill-marylebone/",
+  "notes": "At Marylebone station with entrances from the concourse and the street. Twenty 52-inch HD screens with full Sky and TNT coverage of football, rugby, tennis, snooker and NFL. New booths; private Scarlet Bar for 50 and a basement restaurant and bar for 150.",
+  "patch": {
+   "fb.screens": 20,
+   "fb.big": 85,
+   "fb.proj": false,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room"
+   ],
+   "feat": [
+    "hire"
+   ],
+   "tip": "Twenty HD screens either side of the Marylebone concourse, with booths and a basement room for big groups."
+  }
+ },
+ "porterhouse-covent-garden": {
+  "status": "verified",
+  "source": "https://porterhouse.london/",
+  "notes": "21-22 Maiden Lane, open since 2000, one of central London's largest bars over three floors with three bars. Porters, stouts and ales brewed at its own Dublin brewery. Eighteen screens; thinks of itself as a rugby pub. Live music in the basement Thursday to Saturday, large terrace.",
+  "patch": {
+   "fb.screens": 18,
+   "fb.pos": [
+    "bar",
+    "all"
+   ],
+   "fb.teams": [
+    "IRL"
+   ],
+   "out": {
+    "kind": "terrace",
+    "benches": true,
+    "river": false,
+    "big": true
+   },
+   "feat": [
+    "music",
+    "craft",
+    "hire"
+   ],
+   "occ+": [
+    "outdoor"
+   ],
+   "tip": "Three floors, eighteen screens and beer brewed at its own Dublin brewery. A rugby pub at heart, with one of the West End's biggest terraces."
+  }
+ },
+ "de-hems": {
+  "status": "verified",
+  "source": "https://www.dehemspub.co.uk/",
+  "notes": "Macclesfield St off Shaftesbury Ave. Dutch cafe bar since 1959, named for a retired Dutch seaman who ran it as an oyster bar; a Dutch resistance meeting point in the war. Six HD screens plus one huge screen in the upstairs bar, Sky and TNT, specialising in Eredivisie, Premier League, Champions League and internationals. Dutch and Belgian beers.",
+  "patch": {
+   "fb.screens": 7,
+   "fb.big": 100,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room"
+   ],
+   "fb.all": true,
+   "feat": [
+    "craft",
+    "heritage",
+    "hire"
+   ],
+   "tip": "London's Dutch pub since 1959, and a resistance meeting point before that. Seven screens including a big one upstairs, Eredivisie included."
+  }
+ },
+ "waxy-oconnors": {
+  "status": "verified",
+  "source": "https://waxyoconnorslondon.co.uk/",
+  "notes": "14-16 Rupert St. Four bars over six levels linked by staircases and passages. Nine screens including three large projector screens, with fanzone areas for GAA, rugby, football, racing, tennis and golf. Live music seven nights a week, Irish trad on Sundays. Over-18s only.",
+  "patch": {
+   "fb.screens": 9,
+   "fb.big": 120,
+   "fb.proj": true,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "feat": [
+    "music",
+    "hire",
+    "heritage"
+   ],
+   "tip": "Four bars over six levels, nine screens including three projectors, and a fanzone for everything from GAA to golf. Live music every night."
+  }
+ },
+ "oneills-wardour": {
+  "status": "verified",
+  "source": "https://www.oneills.co.uk/national-search/london/oneillswardourstreet",
+  "notes": "33-37 Wardour St, three floors, 900 capacity, on the old site of the Flamingo Jazz Club and the WAG Club. Ten HD TVs and two projector screens, hireable areas with their own screens, booths with a screen each. Live music every night, DJs.",
+  "patch": {
+   "fb.screens": 12,
+   "fb.big": 110,
+   "fb.proj": true,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "feat": [
+    "music",
+    "dj",
+    "hire",
+    "comedy",
+    "quiz"
+   ],
+   "tip": "Three floors on the site of the old Flamingo Jazz Club: ten HD screens, two projectors, booths with their own telly, and a band every night."
+  }
+ },
+ "counting-house": {
+  "status": "verified",
+  "source": "https://www.the-counting-house.com/",
+  "notes": "Grade II Victorian banking hall built 1893 as Prescott's Bank, Fuller's since 1997; domed skylight over the old counting chamber. Award-winning handmade pies, fish and chips, Sunday roast, and 15 boutique hotel rooms above. No live sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "group",
+    "quiet",
+    "roast",
+    "date"
+   ],
+   "food": {
+    "cuisine": [
+     "Pies",
+     "British"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Award-winning handmade pies, fish and chips and a Sunday roast under the dome"
+   },
+   "feat": [
+    "heritage",
+    "hire",
+    "ale"
+   ],
+   "rep": 3,
+   "tip": "Fuller's in an 1893 banking hall, with a domed skylight over the old counting chamber and a pie menu worth the trip. Hotel rooms upstairs."
+  }
+ },
+ "sports-bar-farringdon": {
+  "status": "verified",
+  "source": "https://www.sportsbarandgrill.co.uk/farringdon/sport",
+  "notes": "19-25 Cowcross St, trading as The Boundary. Twenty 52 and 60 inch plasma screens plus a video screen wall, live sport and news feeds, booths upstairs and along the room.",
+  "patch": {
+   "fb.screens": 20,
+   "fb.big": 100,
+   "fb.proj": false,
+   "fb.pos": [
+    "bar",
+    "all",
+    "room"
+   ],
+   "name": "The Boundary (Sports Bar & Grill)",
+   "feat": [
+    "hire"
+   ],
+   "tip": "Twenty plasmas and a video screen wall a minute from Farringdon station, with booths if you want to claim a corner."
+  }
+ },
+ "wellington-waterloo": {
+  "status": "verified",
+  "source": "https://www.nicholsonspubs.co.uk/restaurants/london/thewellingtonstrandlondon/sports",
+  "notes": "Nicholson's pub round the corner from Waterloo, with Sky Sports and TNT on several screens.",
+  "patch": {
+   "fb.screens": 6,
+   "fb.sound": "big",
+   "feat": [
+    "heritage"
+   ]
+  }
+ },
+ "hole-in-the-wall": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/hole-in-the-wall-london-158449",
+  "notes": "Inside a railway arch opposite Waterloo's Victory Arch; trains rumble overhead. Six cask ales and 25+ taps, four handpumps in the front bar and six in the back, mostly London and southern independents. Unchanged dive-bar decor, folk music on Sunday evenings. Cited in the 1975 CAMRA Good Beer Guide.",
+  "patch": {
+   "fb.screens": 3,
+   "fb.sound": "big",
+   "fb.all": false,
+   "feat": [
+    "ale",
+    "craft",
+    "music",
+    "heritage"
+   ],
+   "rep": 3,
+   "occ": [
+    "session",
+    "quiet"
+   ],
+   "tip": "Literally inside a railway arch opposite Waterloo, with trains overhead, six casks and twenty-five taps. Folk music on Sunday nights."
+  }
+ },
+ "hanover-arms": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/SEL/10620/hanover-arms-kennington",
+  "notes": "326 Kennington Park Rd, 100m from Oval station. Narrow Victorian interior with moulded cornice, ceiling roses and shamrock bunting; resolutely Irish, mixed-age crowd. Two big screens with all live Sky Sports, pavement seating.",
+  "patch": {
+   "fb.screens": 2,
+   "fb.big": 85,
+   "fb.pos": [
+    "bar"
+   ],
+   "fb.tnt": false,
+   "fb.all": false,
+   "out": {
+    "kind": "pavement",
+    "benches": false,
+    "river": false,
+    "big": false
+   },
+   "occ": [
+    "session",
+    "quiet"
+   ],
+   "feat": [
+    "heritage",
+    "music"
+   ],
+   "tip": "Narrow Irish local a hundred metres from Oval station, shamrock bunting and all. Two big screens with Sky on for everything."
+  }
+ },
+ "east-dulwich-tavern": {
+  "status": "verified",
+  "source": "https://eastdulwichtavern.com/",
+  "notes": "1 Lordship Lane on the corner of Goose Green, open since 1999, reopened after a 1m refurbishment. Screens for the big games with Sky and TNT, plus an upstairs space for tournament viewing. Weekly quiz and a packed events calendar.",
+  "patch": {
+   "fb.pos": [
+    "bar",
+    "all",
+    "room"
+   ],
+   "feat": [
+    "quiz",
+    "dj",
+    "hire",
+    "music"
+   ],
+   "tip": "Corner pub on Goose Green with Sky and TNT downstairs and an upstairs room that fills for tournaments. Weekly quiz."
+  }
+ },
+ "bishop-east-dulwich": {
+  "status": "verified",
+  "source": "https://www.thebishopeastdulwich.com/",
+  "notes": "25 Lordship Lane, formerly the Foresters Arms. Seasonal British pub food, local and British cask plus continental beers, cosy corners and a spacious outdoor area, live music Fridays 7-10, open until 2am Friday and Saturday. No sport advertised.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "outdoor",
+    "session",
+    "late",
+    "group",
+    "roast"
+   ],
+   "out": {
+    "kind": "terrace",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "late": "02:00",
+   "food": {
+    "cuisine": [
+     "British",
+     "Gastropub"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Seasonal British home-cooked pub food and a Sunday roast"
+   },
+   "feat": [
+    "ale",
+    "craft",
+    "music",
+    "dogs"
+   ],
+   "tip": "Lordship Lane local with seasonal cooking, a big outdoor area and live music on Fridays. Open till 2am at weekends, and no screens."
+  }
+ },
+ "actress-dulwich": {
+  "status": "verified",
+  "source": "https://www.theactresseastdulwich.com/live-sport",
+  "notes": "90 Crystal Palace Rd, just off Lordship Lane. Wood Stone oven pizzas, pub classics and Sunday roasts; big screens for live sport, sun-trap garden, quiz nights, family friendly. Voted best pub in Dulwich by Time Out and the Londonist.",
+  "patch": {
+   "fb.screens": 4,
+   "fb.big": 85,
+   "fb.sound": "big",
+   "fb.all": true,
+   "fb.book": true,
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "Pub classics"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Stone-baked pizzas from a Wood Stone oven, pub classics and a Sunday roast"
+   },
+   "feat": [
+    "family",
+    "dogs",
+    "quiz",
+    "hire"
+   ],
+   "rep": 3,
+   "tip": "Wood-fired pizzas, a sun-trap garden and big screens for the football. Voted best pub in Dulwich by Time Out."
+  }
+ },
+ "blythe-hill-tavern": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/blythe-hill-tavern-forest-hill-158704",
+  "notes": "Victorian corner pub, Grade II listed in 2022 for a nationally important three-room interior with 1920s panelling. Three regular and one changing beer, celebrated cider list (CAMRA National Cider Pub finalist 2018, branch Pub of the Year 2015 and 2018). Traditional Irish music Tuesdays, live sport, poetry nights, Van Dough pizzas.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "Pizza"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": false,
+    "note": "Van Dough pizzas in the bar"
+   },
+   "feat": [
+    "ale",
+    "craft",
+    "music",
+    "heritage",
+    "games",
+    "dogs"
+   ],
+   "tip": "Grade II Victorian three-room local with a nationally important interior, a famous cider list and Irish music on Tuesdays."
+  }
+ },
+ "white-hart-crystal-palace": {
+  "status": "verified",
+  "source": "https://www.thewhitehartse19.co.uk/",
+  "notes": "96 Church Rd at the southern apex of the Triangle, back to its original name after a spell as an imitation Irish bar. 250k refurbishment gave the garden four heated ski-lodge huts, new lighting and a mural. Three handpumps (Doom Bar, Tribute), open kitchen, open mic Thursdays, DJs Friday and Saturday, quiz Mondays.",
+  "patch": {
+   "fb.screens": 3,
+   "fb.sound": "big",
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": true
+   },
+   "food": {
+    "cuisine": [
+     "Pub classics"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Traditional pub food from an open kitchen, plus a Sunday roast"
+   },
+   "feat": [
+    "ale",
+    "music",
+    "dj",
+    "quiz",
+    "dogs"
+   ],
+   "tip": "Garden full of heated ski-lodge huts at the southern tip of the Triangle. Open mic Thursdays, DJs at weekends."
+  }
+ },
+ "railway-telegraph": {
+  "status": "verified",
+  "source": "https://www.railwaytelegraphthorntonheath.co.uk/",
+  "notes": "19 Brigstock Rd, built 1876, Young's freehold from 1901, now Ram Pub Company. Two distinct bars, patio garden and smoking area, two regular cask ales, evening meals. Shows all major sport and explicitly welcomes football supporters heading to Selhurst Park.",
+  "patch": {
+   "fb.atmos": "neutral",
+   "fb.crowd": "lively",
+   "fb.screens": 4,
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "food": {
+    "cuisine": [
+     "Pub classics"
+    ],
+    "sitDown": true,
+    "where": "bar",
+    "rating": 2,
+    "roast": false,
+    "note": "Evening meals from the pub kitchen"
+   },
+   "feat": [
+    "ale",
+    "heritage",
+    "family",
+    "karaoke"
+   ],
+   "occ+": [
+    "outdoor"
+   ],
+   "tip": "1876 pub near Thornton Heath station with a patio garden, real ale and a welcome for both sets of fans walking up to Selhurst."
+  }
+ },
+ "dolphin-sydenham": {
+  "status": "verified",
+  "source": "https://thedolphinsydenham.com/",
+  "notes": "121 Sydenham Rd, a pub on the site for 200 years, rebuilt by Courage in the 1930s in Brewers' Tudor. Large landscaped garden with fountains, sculpture and gravel paths. Four cask ales plus craft keg, wood-fired pizzas and some of the best Sunday roasts in south London. No sport found.",
+  "patch": {
+   "fb": null,
+   "occ": [
+    "outdoor",
+    "group",
+    "roast",
+    "date"
+   ],
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "British"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 3,
+    "roast": true,
+    "note": "Wood-fired pizzas, pub classics and a Sunday roast with a reputation across south London"
+   },
+   "feat": [
+    "ale",
+    "craft",
+    "heritage",
+    "dogs",
+    "family"
+   ],
+   "rep": 3,
+   "tip": "Brewers' Tudor pub with a landscaped garden of fountains and sculpture, wood-fired pizza and one of the best roasts in south London."
+  }
+ },
+ "commercial-herne-hill": {
+  "status": "verified",
+  "source": "https://www.thecommercialhernehill.co.uk/sport",
+  "notes": "210-212 Railton Rd. On CAMRA's regional inventory as one of 133 London pubs with an interior of special historic interest: 1930s counters, bar-back, fireplaces and fielded panelling. Live Sky and TNT, order-at-table service on match days, roaring open fire, beer garden, close to Brockwell Park.",
+  "patch": {
+   "fb.all": true,
+   "fb.sound": "big",
+   "fb.book": true,
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "heritage",
+    "fire",
+    "craft",
+    "dogs"
+   ],
+   "occ+": [
+    "outdoor"
+   ],
+   "tip": "A 1930s interior on CAMRA's historic register, an open fire, a garden, and Sky and TNT with order-at-table on match days."
+  }
+ },
+ "northcote-battersea": {
+  "status": "verified",
+  "source": "https://www.thenorthcote.co.uk/live-sports",
+  "notes": "Corner of Battersea Rise and Northcote Rd, five minutes from Clapham Junction. Young's-managed since 2023, Geronimo before that. Six screens with Sky and TNT for the Premier League, Champions League, Six Nations and finals; bookable tables in the main bar and the Common Room.",
+  "patch": {
+   "fb.screens": 6,
+   "fb.book": true,
+   "fb.all": true,
+   "feat": [
+    "hire",
+    "heritage"
+   ],
+   "tip": "Six screens with Sky and TNT five minutes from Clapham Junction, and you can book a table in the Common Room for the big ones."
+  }
+ },
+ "eagle-ale-house": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/eagle-ale-house-battersea-140223",
+  "notes": "104 Chatham Rd, just off Northcote Rd. Many-time CAMRA award winner: micro-brewery cask and keykeg, a handpump kept for cider, Lambics in the coolers. Leather sofas, old bottles and books; large beer garden with a heated shelter and marquee. Several screens come alive for major events, mainly rugby. Opens 3pm on weekdays.",
+  "patch": {
+   "fb.screens": 3,
+   "fb.sound": "request",
+   "fb.all": false,
+   "feat": [
+    "ale",
+    "craft",
+    "dogs",
+    "fire"
+   ],
+   "rep": 3,
+   "tip": "CAMRA-garlanded ale house off Northcote Road with sofas, Lambics and a heated marquee in the garden. Screens wake up for the rugby."
+  }
+ },
+ "sultan-colliers-wood": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/SWL/2952/sultan-south-wimbledon",
+  "notes": "78 Norman Rd, the only Hop Back Brewery pub in London, rescued from closure by Hop Back in 1994. 1930s roadhouse with a regionally important historic interior on CAMRA's inventory; two drinking areas, outside seating, about six handpumps plus keg and bottles. Darts, board and card games, open mic, acoustic and English folk sessions, cabaret. Ten minutes from Colliers Wood and South Wimbledon.",
+  "patch": {
+   "fb.screens": 2,
+   "fb.sound": "request",
+   "fb.all": false,
+   "feat": [
+    "ale",
+    "heritage",
+    "games",
+    "music",
+    "dogs"
+   ],
+   "rep": 3,
+   "occ": [
+    "quiet",
+    "outdoor",
+    "session"
+   ],
+   "tip": "London's only Hop Back pub, a 1930s roadhouse with a listed-quality interior, saved by the brewery in 1994. Folk sessions and darts, not a screen pub."
+  }
+ },
+ "drayton-park-arms": {
+  "status": "verified",
+  "source": "https://draytonpark.co.uk/about/",
+  "notes": "66 Drayton Park N5 1ND, opposite the stadium approach and by Drayton Park station; Arsenal tube is the nearest walk past the club shop. Fully renovated and reopened in 2024 with stained glass and solid wood. Quizzes and music nights. Open 2pm weekdays, noon at weekends.",
+  "patch": {
+   "fb.screens": 5,
+   "fb.sound": "always",
+   "fb.all": true,
+   "feat": [
+    "quiz",
+    "music",
+    "games"
+   ],
+   "tip": "Renovated in 2024 and a short walk from the Emirates past the club shop. Arsenal to the core on match days, quizzes and music the rest of the week."
+  }
+ },
+ "duke-of-wellington-haggerston": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/duke-of-wellington-hackney-156117",
+  "notes": "260 Haggerston Rd, an attractive three-storey Italianate pub looking over Stonebridge Common, named when Wellington became Prime Minister. Has a big screen for football, a pool table and a dartboard, plus a smoking area. Opens 4pm on weekdays, 2pm Fri and Sat.",
+  "patch": {
+   "fb": {
+    "screens": 3,
+    "big": 85,
+    "proj": false,
+    "pos": [
+     "bar"
+    ],
+    "sound": "big",
+    "sky": true,
+    "tnt": false,
+    "all": false,
+    "book": false,
+    "teams": [],
+    "atmos": "neutral",
+    "crowd": "relaxed"
+   },
+   "occ": [
+    "quiet",
+    "session"
+   ],
+   "feat": [
+    "heritage",
+    "games",
+    "dogs"
+   ],
+   "tip": "Handsome three-storey Italianate pub looking over Stonebridge Common, named when Wellington took office. Pool, darts and a big screen for the football."
+  }
  }
 }
