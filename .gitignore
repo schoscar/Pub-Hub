@@ -4,3 +4,4 @@ data/osm_roads.json
 data/osm_parks.json
 data/osm_water.json
 .DS_Store
+.claude/
