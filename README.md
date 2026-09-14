@@ -7,7 +7,7 @@ A single static web app. No build step, no server: open `index.html` or host the
 ## Files
 
 - `index.html` — the app (HTML, CSS and JavaScript in one file).
-- `pubs.js` — the pub dataset: 361 written-up pubs plus 3,283 OpenStreetMap listings.
+- `pubs.js` — the pub dataset: 359 written-up pubs, all checked against a source, plus 3,283 OpenStreetMap listings.
 - `london.js` — map layers (roads, parks, water) derived from OpenStreetMap and simplified.
 - `manifest.webmanifest`, `sw.js`, `icon*` — lets phones add it to the home screen and open it offline.
 - `data/` — source data and the Python scripts that build `pubs.js` and `london.js`.
@@ -18,7 +18,7 @@ A single static web app. No build step, no server: open `index.html` or host the
     python3 data/merge.py        # merges curated pubs + verification notes -> data/pubs_all.json
     python3 data/osm_import.py   # matches OpenStreetMap pubs and adds map listings -> data/pubs_plus.json
 
-Then regenerate `pubs.js` from `data/pubs_plus.json` (see the tail of `data/osm_import.py` for the format).
+    python3 data/build_js.py     # regenerates pubs.js from data/pubs_plus.json
 The raw OpenStreetMap downloads are not committed; fetch them again with the Overpass queries noted in the scripts.
 
 ## Hosting

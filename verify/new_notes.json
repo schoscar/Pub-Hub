@@ -3829,5 +3829,1304 @@
    ],
    "tip": "Handsome three-storey Italianate pub looking over Stonebridge Common, named when Wellington took office. Pool, darts and a big screen for the football."
   }
+ },
+ "bull-highgate": {
+  "status": "verified",
+  "source": "https://www.thebullhighgate.com/",
+  "notes": "North Hill (not North Road), Grade II. Brewpub with the London Brewing Company kit in the rear garden. Seasonal British food and Sunday roasts, dining area and garden, disabled access. Acquired by Metropolitan Pub Co (Greene King) in March 2022.",
+  "patch": {
+   "station": "Highgate",
+   "tip": "Highgate brewpub with the London Brewing Company kit out in the garden, and a seasonal kitchen to go with it."
+  }
+ },
+ "pig-and-butcher": {
+  "status": "verified",
+  "source": "https://www.top50gastropubs.com/Pubs/UK/Greater-London/the-pig-and-butcher.html",
+  "notes": "80 Liverpool Rd, opened 2012 in a mid-1800s building on the old livestock route to Smithfield. Whole animals butchered on site in a basement butchery; native and rare-breed meat direct from farmers, daily-changing menu. Michelin Guide and Top 50 Gastropubs listed.",
+  "patch": {}
+ },
+ "island-queen": {
+  "status": "verified",
+  "source": "https://pubheritage.camra.org.uk/pubs/2030",
+  "notes": "87 Noel Rd, Grade II, built 1851 and altered 1889 and 1897. A three-star pub on CAMRA's National Inventory: an interior of outstanding national importance with etched and cut glass by R Morris & Son, glazed screenwork, a high Lincrusta ceiling and mosaic entrance floors. Near the canal.",
+  "patch": {
+   "rep": 3,
+   "tip": "An 1851 gin palace by the canal with glazed screens, cut glass and a Lincrusta ceiling. One of only a handful of London interiors CAMRA rates nationally outstanding."
+  }
+ },
+ "earl-of-essex": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/earl-of-essex-london-124764",
+  "notes": "25 Danbury St, a former Watney pub reopened as a beer house in 2012. Nearly 20 taps and pumps including up to 14 keg lines, some from the owners' Saint Monday brewery, plus cans and bottles. Small beer garden at the back and a seasonal menu of pub classics.",
+  "patch": {
+   "rep": 3
+  }
+ },
+ "lansdowne": {
+  "status": "verified",
+  "source": "https://thelansdownepub.co.uk/",
+  "notes": "90 Gloucester Ave, in Primrose Hill since 1992. Mediterranean and British cooking, hand-stretched thin-crust pizzas often called among London's best, Sunday roast. Private dining plus the Vinyl Room, a private karaoke space.",
+  "patch": {
+   "feat": [
+    "dogs",
+    "hire",
+    "karaoke"
+   ],
+   "food.note": "Hand-stretched thin-crust pizzas, Mediterranean plates and a Sunday roast, in the bar or the dining room"
+  }
+ },
+ "hawley-arms": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Hawley_Arms,_Camden",
+  "notes": "2 Castlehaven Rd. Fairy lights, leather booths and a walled garden downstairs; first-floor bar with a roof terrace, log fires and a jukebox. Amy Winehouse's local until 2011, along with Noel Fielding, Pete Doherty and Kate Moss; a mural of her covers the back wall.",
+  "patch": {
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "music",
+    "dj",
+    "rooftop",
+    "fire",
+    "heritage"
+   ],
+   "tip": "Amy Winehouse's local: fairy lights and booths downstairs, a roof terrace and log fires up top, and a mural of her across the back wall."
+  }
+ },
+ "lock-tavern": {
+  "status": "verified",
+  "source": "https://lockinncamden.com/",
+  "notes": "35 Chalk Farm Rd opposite Camden Market, a McMullen's pub since 2024. Two floors with a rear ground-floor patio and a roof terrace over Camden Market; resident DJs Friday and Saturday in the cocktail lounge, live music weekly, Sunday roast.",
+  "patch": {
+   "feat": [
+    "dj",
+    "rooftop",
+    "music",
+    "cocktails"
+   ],
+   "food.note": "Pub kitchen and a Sunday roast"
+  }
+ },
+ "dublin-castle": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Dublin_Castle,_Camden",
+  "notes": "94 Parkway. Built for Irish navvies, made its name in the late 1970s when Madness built a following here; hosted Coldplay's first gig under that name in 1998 and was one of Amy Winehouse's haunts. Pub at the front, 200-capacity music room at the back with a door charge in the evening.",
+  "patch": {
+   "group": 20,
+   "feat": [
+    "music",
+    "heritage"
+   ],
+   "tip": "Madness made their name here and Coldplay played their first gig under that name in 1998. Pub at the front, 200-capacity gig room at the back."
+  }
+ },
+ "tapping-the-admiral": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/tapping-the-admiral-london-125233",
+  "notes": "77 Castle Rd near Kentish Town West. Eight changing cask beers with a promise of at least two brewed within 30 miles. Four-time CAMRA North London Pub of the Year (2013, 2015, 2018, 2023). Reopened 2011 after four years derelict; named for the sailors who drank the brandy preserving Nelson's body.",
+  "patch": {
+   "rep": 3,
+   "tip": "Eight changing casks and four CAMRA Pub of the Year titles. Named for the sailors who tapped the brandy barrel carrying Nelson home."
+  }
+ },
+ "high-cross": {
+  "status": "verified",
+  "source": "https://www.beerguideldn.com/pubs.php?IDKEY=322",
+  "notes": "350 High Rd, a converted 1920s toilet block at the Monument Way junction, with the lit ladies' and gents' signs and original tiling kept. Ten rotating keg lines of craft beer plus local Bohem and Redemption, cocktails and a short menu.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "Pub classics"
+    ],
+    "sitDown": false,
+    "where": "bar",
+    "rating": 1,
+    "roast": false,
+    "note": "A short menu of classics alongside the beer"
+   },
+   "feat": [
+    "craft",
+    "heritage",
+    "cocktails"
+   ],
+   "rep": 3,
+   "tip": "A 1920s public convenience turned beer bar, original tiling and all, with ten rotating keg lines."
+  }
+ },
+ "hand-in-hand-wimbledon": {
+  "status": "verified",
+  "source": "https://www.thehandinhandwimbledon.co.uk/",
+  "notes": "6 Crooked Billet on the edge of the Common, dating to 1831 and originally a bakery, with the oven nook still there to sit in. A family beer house for 100 years before Young's bought it in 1974; sold on in 2006. Good Beer Guide regular for over two decades, CAMRA SW London Pub of the Year 2013. Young's Bitter plus Hogsback, Adnams and Wimbledon Brewery. Dog friendly with free biscuits and a Dog of the Day award.",
+  "patch": {
+   "rep": 3,
+   "tip": "An 1831 bakery turned ale house on the edge of the Common: sit in the old oven nook, and the dogs get biscuits and a Dog of the Day prize."
+  }
+ },
+ "crooked-billet-wimbledon": {
+  "status": "verified",
+  "source": "https://www.thecrookedbilletwimbledon.com/",
+  "notes": "14-15 Crooked Billet facing the Common. Building from the early 18th century, the Crooked Billet from the 1750s; Young's leased it in 1888 and bought the freehold in 1928. Wood-panelled interior, restaurant and garden, Young's London Original plus a changing beer, British pub food.",
+  "patch": {}
+ },
+ "cats-back": {
+  "status": "verified",
+  "source": "https://www.harveys.org.uk/pub/cats-back",
+  "notes": "86-88 Point Pleasant, Wandsworth, bought by Harvey's in 2012. Small Victorian pub with a bohemian front bar, upstairs function room, decked beer garden, five minutes from the Thames. Full range of Harvey's plus guests, cocktails, music, film and art nights. Joint first in CAMRA's Joe Goodwin award for best corner street local.",
+  "patch": {
+   "area": "Wandsworth",
+   "station": "Wandsworth Town",
+   "walk": 8,
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": false
+   },
+   "feat": [
+    "ale",
+    "heritage",
+    "fire",
+    "music",
+    "hire",
+    "games"
+   ],
+   "occ+": [
+    "outdoor"
+   ],
+   "tip": "Small Victorian corner local bought by Harvey's, with the full range on, a decked garden and film and art nights upstairs."
+  }
+ },
+ "spencer-putney": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/spencer-arms-putney-140415",
+  "notes": "237 Lower Richmond Rd, back to the name Spencer Arms after Market Taverns took over in summer 2023. Victorian tavern overlooking Putney Lower Common: large sunlit dining room, fireside area with leather banquettes, dog-friendly patio, and licensed seating out on the common in summer.",
+  "patch": {
+   "name": "The Spencer Arms",
+   "feat": [
+    "dogs",
+    "family",
+    "fire",
+    "heritage"
+   ],
+   "tip": "Victorian tavern facing Putney Lower Common, with a sunlit dining room, a fireside lounge and tables out on the grass in summer."
+  }
+ },
+ "bricklayers-arms-putney": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/SWL/2713/bricklayers-arms-putney",
+  "notes": "32 Waterman St, built 1826 on a coaching house and forge site as the Waterman's Arms, renamed late 19th century. Family-owned free house reopened 2005; for a time the only London pub serving the full Timothy Taylor range, with Boltmaker and Landlord regular plus local guests. CAMRA Greater London Pub of the Year 2007 and 2009, SW London 2006, 2008 and 2010.",
+  "patch": {
+   "rep": 3,
+   "tip": "An 1826 free house that was once the only pub in London pouring the full Timothy Taylor range. Twice CAMRA's Greater London Pub of the Year."
+  }
+ },
+ "woodman-battersea": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/woodman-battersea-140457",
+  "notes": "60 Battersea High St behind Battersea Square. Hall & Woodhouse pub with three regular ales; quirky courtyard garden with oak barrel tables, stacked logs, candlelit corners and a pizza oven. Country-style interior, substantial food trade, family friendly.",
+  "patch": {
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "British"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Hearty British cooking plus pizzas from the oven in the courtyard garden"
+   },
+   "feat": [
+    "ale",
+    "dogs",
+    "fire",
+    "family"
+   ],
+   "tip": "Hidden behind Battersea Square: a candlelit courtyard of barrel tables and stacked logs, with a pizza oven in the corner."
+  }
+ },
+ "prince-albert-battersea": {
+  "status": "verified",
+  "source": "https://www.theprincealbertbattersea.co.uk/",
+  "notes": "85 Albert Bridge Rd, serving since 1866, opposite the Albert Gate into Battersea Park. Victorian corner pub with an impressive island bar, popular summer garden, real ale, British classics and Sunday roasts, dog and family friendly. Bridge Room for private hire plus semi-private Hunter's Corner and Royal Garden.",
+  "patch": {
+   "feat": [
+    "ale",
+    "dogs",
+    "family",
+    "hire",
+    "heritage"
+   ],
+   "tip": "Victorian corner pub facing the Albert Gate into Battersea Park, with an island bar and a garden that fills the moment the sun comes out."
+  }
+ },
+ "florence-herne-hill": {
+  "status": "verified",
+  "source": "https://www.florencehernehill.com/",
+  "notes": "Opposite Brockwell Park near Herne Hill station. One of the first modern brewpubs in 2007, but the Florence Brewery kit was removed in a spring 2023 refurbishment to expand the dining room. Central island bar, rear dining room open to the kitchen, garden and a well-equipped children's playroom; modern British food, one regular and one changing beer.",
+  "patch": {
+   "feat": [
+    "family",
+    "dogs",
+    "hire"
+   ],
+   "food.note": "Modern British cooking from an open kitchen, with a Sunday lunch built for groups",
+   "tip": "Opposite Brockwell Park, with a garden and a proper children's playroom. It brewed its own until 2023; now the kitchen is the draw."
+  }
+ },
+ "crown-and-greyhound": {
+  "status": "verified",
+  "source": "https://www.thecrownandgreyhound.co.uk/",
+  "notes": "73 Dulwich Village, Grade II, known locally as the Dog. Built as a pub-hotel around 1900 from two premises, one for gentry and one for labourers; internal screens, etched glazing and a fine bar-back. Large paved front area and landscaped rear garden, 20 boutique bedrooms some with 1900s fireplaces. Reopened 2017 and refreshed March 2026. Two to four changing real ales.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "family",
+    "dogs",
+    "hire",
+    "ale"
+   ],
+   "tip": "Known as the Dog: a 1900 pub-hotel built as two pubs in one, with etched glass, a landscaped garden and twenty rooms upstairs."
+  }
+ },
+ "palmerston": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/palmerston-east-dulwich-158688",
+  "notes": "91 Lordship Lane, built in the 1860s with two rooms and Victorian fittings including the bar-back and mosaic floor; the Lord Palmerston bar signage was added in the 1960s. Refurbished and reopened early 2026. Premium but relaxed gastropub with a long international wine list.",
+  "patch": {
+   "feat": [
+    "fire",
+    "heritage"
+   ]
+  }
+ },
+ "sylvan-post": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/SEL/10818/sylvan-post-forest-hill",
+  "notes": "24-28 Dartmouth Rd in a former 1960s post office; ex-Antic, taken over by Portobello Brewery in late 2020. Two original safe vaults with full-height doors converted into snugs, the strong room another, walls of postal memorabilia and old post office equipment. Good food with Sunday lunch a speciality.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hire"
+   ],
+   "tip": "A 1960s post office turned pub, where the old safe vaults are now snugs you can sit inside and the walls are hung with telegrams."
+  }
+ },
+ "dartmouth-arms": {
+  "status": "closed",
+  "source": "https://camra.org.uk/pubs/dartmouth-arms-forest-hill-158710",
+  "notes": "Closed 30 March 2026 when MEATliquor shut a number of venues; long-term closed, future uncertain. Removed.",
+  "patch": {}
+ },
+ "sparrowhawk": {
+  "status": "verified",
+  "source": "https://www.sparrowhawkcp.com/",
+  "notes": "2 Westow Hill on the corner of Westow Street at the top of the Triangle, under new ownership since summer 2024. Modern open layout with a long bar, beer garden, live music and a room for hire. Nine TVs showing live sport. Brunch, sharing plates, proper Sunday roasts and a serious wine list.",
+  "patch": {
+   "fb": {
+    "screens": 9,
+    "big": 85,
+    "proj": false,
+    "pos": [
+     "bar",
+     "all"
+    ],
+    "sound": "big",
+    "sky": true,
+    "tnt": true,
+    "all": true,
+    "book": true,
+    "teams": [],
+    "atmos": "neutral",
+    "crowd": "lively"
+   },
+   "occ+": [
+    "session"
+   ],
+   "feat": [
+    "music",
+    "hire",
+    "craft",
+    "dogs"
+   ],
+   "tip": "Nine screens at the top of the Triangle, a garden out back and a wine list that takes itself seriously."
+  }
+ },
+ "oval-tavern": {
+  "status": "verified",
+  "source": "http://theovaltavern.co.uk/",
+  "notes": "131 Oval Rd, down a residential street near East Croydon. Six handpumps with up to four cask ales, in every Good Beer Guide since 2015. Live music mainly jazz, blues and folk, plus sessions, klezmer and morris dancing; garden on the lower level with hops and barbecue grills.",
+  "patch": {
+   "feat": [
+    "ale",
+    "music",
+    "dogs",
+    "hire"
+   ],
+   "rep": 3,
+   "tip": "Croydon's music pub: jazz, blues and folk most weeks, six handpumps, and a garden with hops growing up it."
+  }
+ },
+ "dog-and-bull-croydon": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Dog_%26_Bull",
+  "notes": "24-25 Surrey St, Grade II 18th-century building with a 19th-century frontage on the site of a 12th or 13th century inn, the Bell; understood to be Croydon's oldest pub. Young's from the 1830s until 2025, now a Laine pub under Punch and rebranded The Dog. The old yard, once an animal pound on Butcher's Row, is the beer garden.",
+  "patch": {
+   "name": "The Dog (ex Dog & Bull)",
+   "tip": "Croydon's oldest pub, Grade II and on the site of a medieval inn. Young's for nearly two centuries until 2025, now rebranded The Dog."
+  }
+ },
+ "catford-bridge-tavern": {
+  "status": "verified",
+  "source": "https://catfordtavern.com/",
+  "notes": "Mock Tudor pub saved from closure by a local campaign in 2012 and CAMRA South East London Pub of the Year 2013 under Antic. Gutted by fire in March 2016 (eight engines, 58 firefighters), reopened end of March 2017. Acquired by Portobello Brewery in June 2023, which reinstalled three handpumps.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "fire",
+    "ale"
+   ],
+   "tip": "Saved by its neighbours, then gutted by fire in 2016 and rebuilt. Portobello took it on in 2023 and put the handpumps back."
+  }
+ },
+ "fox-and-firkin": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/fox-firkin-lewisham-158550",
+  "notes": "316 Lewisham High St. Live music or DJs almost every night: jazz jams, folk, reggae, indie, punk, sound system parties. Sprawling garden, said to be south London's biggest pub garden, with a Backstage Bar and a 1950s train carriage for bookings. Own Firkin Brewery house beers; pizzas, toasties and a Sunday dinner menu.",
+  "patch": {
+   "out.big": true,
+   "group": 40,
+   "feat": [
+    "music",
+    "dj",
+    "craft",
+    "hire",
+    "dogs"
+   ],
+   "food": {
+    "cuisine": [
+     "Pizza"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Pizzas and toasties in the evenings plus a Sunday dinner menu"
+   },
+   "rep": 3,
+   "tip": "Live music or DJs almost every night and a garden with its own bar and a 1950s train carriage in it. They brew their own too."
+  }
+ },
+ "kings-arms-roupell": {
+  "status": "verified",
+  "source": "https://thekingsarmslondon.co.uk/",
+  "notes": "25 Roupell St, Grade II early-to-mid 19th century, halfway down a period backstreet used constantly as a film location. Nine real ale pumps with a constantly changing list. Kanchana's Kitchen serves Thai seven days a week, run as a separate business. No reservations for either.",
+  "patch": {
+   "rep": 3,
+   "tip": "Nine handpumps in a Grade II pub on the prettiest backstreet in Waterloo, with Kanchana's Thai kitchen in the conservatory. No bookings."
+  }
+ },
+ "anchor-and-hope-waterloo": {
+  "status": "verified",
+  "source": "https://www.anchorandhopepub.co.uk/",
+  "notes": "36 The Cut, by the Old and Young Vic. Pioneering gastropub: modern European, menu changes with the season, no reservations and shared tables. The Sunday lunch, slow-roast shoulder, whole partridges and bowl-sized Yorkshires, is the most recommended roast south of the river. Pre-theatre sitting.",
+  "patch": {
+   "feat": [
+    "theatre"
+   ],
+   "tip": "The pioneering gastropub on The Cut: no bookings, shared tables, and a Sunday roast that people cross the river for."
+  }
+ },
+ "prince-of-wales-cleaver": {
+  "status": "verified",
+  "source": "https://www.princeofwaleskennington.co.uk/",
+  "notes": "48 Cleaver Square, an independent pub on a preserved Georgian square with a tree-lined boules and petanque pitch. Drinks served in plastic to take onto the square and they lend you a boules set. Food Wednesday to Sunday including a well-regarded roast. Once a Richardson gang haunt.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "games",
+    "fire",
+    "dogs"
+   ],
+   "tip": "They will lend you a boules set and serve your pint in a plastic so you can play on the Georgian square outside. Roast on Sundays."
+  }
+ },
+ "fentiman-arms": {
+  "status": "verified",
+  "source": "https://www.thefentimanarms.co.uk/",
+  "notes": "Quiet residential street between Oval, Vauxhall and Kennington, close enough to the Oval to hear the cricket. Geronimo Inns design; handsome garden lit with festoon lights, private room upstairs, real fire, dog friendly, quality British food.",
+  "patch": {
+   "feat": [
+    "dogs",
+    "fire",
+    "hire",
+    "family"
+   ]
+  }
+ },
+ "royal-vauxhall-tavern": {
+  "status": "verified",
+  "source": "https://historicengland.org.uk/whats-new/news/royal-vauxhall-tavern-listed/",
+  "notes": "Built 1860-62 on land that was part of the Vauxhall Pleasure Gardens. Listed Grade II on 8 September 2015, the first building in the UK listed in recognition of its importance to LGBTQ history. A drag and cabaret venue since the later 19th century and known for ground-breaking alternative cabaret.",
+  "patch": {
+   "tip": "Built on the old Vauxhall Pleasure Gardens and the first building in Britain listed for its LGBTQ+ history. Cabaret here since the 1800s."
+  }
+ },
+ "windmill-brixton": {
+  "status": "verified",
+  "source": "https://www.windmillbrixton.co.uk/visitor-info",
+  "notes": "22 Blenheim Gardens, capacity 150, ten minutes from Brixton tube. Opened 1971 as a local, became an Irish music hub under Seamus McCausland from 1992, then a cutting-edge booking policy from 2002 under Tim Perry. Emerging indie, alternative and experimental acts seven nights a week; surprise shows from Calexico, Stereolab and Scritti Politti. Entry usually 4 to 5 pounds. Third best music venue in London in a Time Out poll.",
+  "patch": {
+   "rep": 3,
+   "tip": "A 150-capacity room that punches far above it: seven nights of new bands, surprise shows and entry for a fiver."
+  }
+ },
+ "harwood-arms": {
+  "status": "verified",
+  "source": "https://harwoodarms.com/",
+  "notes": "London's only Michelin-starred pub, holding the star since soon after it opened in 2009. Game and wild food led, with specialist venison, Jersey beef and Iberian pork; the venison Scotch egg is the dish that made Scotch eggs fashionable again. Head chef Josh Cutress; Brett Graham of the three-star Ledbury a director since 2009.",
+  "patch": {
+   "tip": "London's only Michelin-starred pub, and the place that made the Scotch egg fashionable again with its venison one. Book weeks out."
+  }
+ },
+ "fox-and-pheasant": {
+  "status": "verified",
+  "source": "https://www.thefoxandpheasant.com/press",
+  "notes": "1 Billing Rd, built c.1846-8 as the Bedford Arms, then the Prince of Wales, renamed the Fox & Pheasant in 1965. Sold by Greene King in 2017 to James Blunt and his wife Sofia, restored and reopened 27 June 2018. On CAMRA's National Inventory of Historic Pub Interiors; cosy bar and a conservatory, near Stamford Bridge. Top 50 Gastropubs.",
+  "patch": {
+   "rep": 3
+  }
+ },
+ "phene-chelsea": {
+  "status": "verified",
+  "source": "https://www.thephene.com/",
+  "notes": "9 Phene St, pronounced Feeny, built 1853 by Dr John Samuel Phene, the man credited with the idea of planting street trees. Saloon bar with red banquettes, conservatory restaurant and a first-floor lounge; extensive heated side terrace with sofas, outdoor fireplaces and hanging basket chairs. A Made in Chelsea fixture.",
+  "patch": {
+   "out": {
+    "kind": "terrace",
+    "benches": false,
+    "river": false,
+    "big": true
+   },
+   "feat": [
+    "dogs",
+    "fire",
+    "hire",
+    "heritage"
+   ],
+   "tip": "A heated terrace of sofas, outdoor fireplaces and hanging chairs, built in 1853 by the man who invented the street tree."
+  }
+ },
+ "cross-keys-chelsea": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Cross_Keys,_Chelsea",
+  "notes": "1 Lawrence St, built 1708 and the oldest pub in Chelsea; its name has never changed. Regulars have included Turner, Whistler and Sargent, Agatha Christie and Dylan Thomas, Bob Marley and the Rolling Stones. Closed in 2012 for a mansion conversion, saved by a local campaign in 2013 and reopened. Now run by Butcombe.",
+  "patch": {
+   "rep": 3,
+   "tip": "Chelsea's oldest pub, built in 1708 and never renamed. Turner, Whistler, Dylan Thomas and Bob Marley all drank here; locals saved it from becoming a house in 2013."
+  }
+ },
+ "surprise-chelsea": {
+  "status": "verified",
+  "source": "https://www.thesurprise-chelsea.co.uk/",
+  "notes": "6 Christchurch Terrace, a local landmark since 1853, named after HMS Surprise, a captured French warship. Relaunched under hotelier Jack Greenall: bar plus a 28-cover restaurant and the Hamilton private dining room. British-inspired cooking, under ten minutes from Sloane Square.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hire",
+    "fire"
+   ]
+  }
+ },
+ "blue-anchor-hammersmith": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/blue-anchor-hammersmith-129299",
+  "notes": "13 Lower Mall, first licensed 9 June 1722 to John Savery as the Blew Anchor and Washhouses; Grade II, present building around the 1890s. A whole sheep was roasted outside in January 1789. Sombre collection of First World War artefacts. Riverside benches on the Mall.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "riverside",
+    "fire"
+   ],
+   "rep": 3
+  }
+ },
+ "black-lion-hammersmith": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/black-lion-hammersmith-129310",
+  "notes": "2 South Black Lion Lane, Grade II, close to the river. Beer garden seating 200 around a 400-year-old chestnut tree with Sunday lunchtime barbecues and a vintage skittle alley. Three cask pumps, pub classics, kids' menu and pizzas Friday and Saturday. A painting of A P Herbert presides over his corner table. A Boat Race spot.",
+  "patch": {
+   "group": 40,
+   "food": {
+    "cuisine": [
+     "Pizza",
+     "Pub classics"
+    ],
+    "sitDown": true,
+    "where": "both",
+    "rating": 2,
+    "roast": true,
+    "note": "Pub classics and a Sunday roast, pizzas on Friday and Saturday, barbecues in the garden on Sunday lunchtimes"
+   },
+   "feat": [
+    "heritage",
+    "dogs",
+    "family",
+    "games",
+    "ale",
+    "fire"
+   ],
+   "tip": "A garden for 200 under a 400-year-old chestnut tree, with a vintage skittle alley and A P Herbert watching from his corner."
+  }
+ },
+ "andover-arms": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/andover-arms-hammersmith-128647",
+  "notes": "57 Aldensley Rd, an 1853 backstreet local at the centre of Brackenbury Village, bought by Fuller's from Watney's in 1991. Wood-panelled bar with an elaborate back bar, eclectic seating with dining tables, open-plan kitchen, piano and fireplace. Frequent Good Beer Guide entry; strong reputation for food and Sunday roasts.",
+  "patch": {
+   "feat": [
+    "ale",
+    "heritage",
+    "dogs",
+    "fire",
+    "music"
+   ]
+  }
+ },
+ "bell-and-crown": {
+  "status": "verified",
+  "source": "https://www.bell-and-crown.co.uk/",
+  "notes": "Strand on the Green, first licensed as the Bell in 1751, bought by Fuller's in 1814 and rebuilt 1907; conservatory extension 1984. Rear patio and conservatory over the Thames, open river terrace that catches the sun, real log fire opposite the bar. London Pride plus a changing cask, refined pub classics and famous Sunday roasts. Refreshed January 2026.",
+  "patch": {}
+ },
+ "city-barge": {
+  "status": "verified",
+  "source": "https://www.citybargechiswick.com/",
+  "notes": "27 Strand-on-the-Green, built 1484 as the Navigators Arms and renamed in the 19th century when the Lord Mayor moored his barge outside. The Beatles were filmed being chased into it by bagpipers for Help! on 24 April 1965, though the interiors were shot at Twickenham. Extensively refurbished in 2014.",
+  "patch": {
+   "tip": "Built in 1484 and renamed when the Lord Mayor moored his barge outside. The Beatles were chased into it by bagpipers in Help!"
+  }
+ },
+ "tabard-chiswick": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/tabard-chiswick-122072",
+  "notes": "Bath Rd by Turnham Green, designed by Norman Shaw in 1880 for the Bedford Park garden suburb. Grade II*, with tiling by William de Morgan and Walter Crane and Arts and Crafts mirrors. The 88-seat Tabard Theatre sits above the pub, licensed since 1985; briefly the Chiswick Playhouse from 2019, closed March 2022, back as the Tabard in September 2022. Original William Morris tiles were found behind the theatre wallpaper.",
+  "patch": {
+   "rep": 3,
+   "tip": "Norman Shaw designed it in 1880 for Bedford Park, with de Morgan and Walter Crane tiles and an 88-seat theatre above the bar."
+  }
+ },
+ "princess-victoria": {
+  "status": "verified",
+  "source": "https://princessvictoria.co.uk/",
+  "notes": "Uxbridge Rd, dating from 1829 and one of London's earliest gin palaces, once a tram-commuter stop for a quick gin and water. Briefly Richard Branson's music venue in the 1980s, where Phil Collins filmed Sussudio and One More Night. Closed June 2017 when its operator went insolvent; reopened that November under Three Cheers. Horseshoe bar with 40 beers and reputedly over 100 gins, plus five bedrooms named after gin cocktails.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hire",
+    "cocktails",
+    "ale"
+   ],
+   "tip": "An 1829 gin palace with a horseshoe bar, over a hundred gins and five bedrooms named after cocktails. Phil Collins filmed two videos here."
+  }
+ },
+ "red-lion-ealing": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/MDX/12202/red-lion-ealing",
+  "notes": "13 St Mary's Rd opposite Ealing Studios, known as Stage Six and the local of Alec Guinness and Sid James during the Ealing Comedy era; walls hung with film stills. Walled garden heated with braziers in winter and good for large parties. Three regular Fuller's ales. Reopened with new tenants, the team behind the Andover Arms.",
+  "patch": {
+   "feat": [
+    "ale",
+    "heritage",
+    "dogs",
+    "hire",
+    "fire"
+   ],
+   "tip": "Known as Stage Six: the Ealing Studios local where Alec Guinness drank, with a walled garden warmed by braziers in winter."
+  }
+ },
+ "aeronaut": {
+  "status": "verified",
+  "source": "https://www.aeronaut.pub/",
+  "notes": "264 Acton High St, owned by Laine (not Antic). Part pub, part brewery, part circus: a full circus big top, a carnival-themed beer garden with coconut shy, hook-a-duck and strongman booths, a hot air balloon basket and a dodgems sign. Live circus nights with acrobats, silks, hula and fire, drag shows and bottomless brunches.",
+  "patch": {
+   "feat": [
+    "dj",
+    "music",
+    "comedy",
+    "hire",
+    "craft",
+    "family",
+    "games"
+   ],
+   "tip": "Part pub, part brewery, part actual circus: a big top inside, a coconut shy in the garden, and acrobats on a Saturday night."
+  }
+ },
+ "duke-of-sussex": {
+  "status": "verified",
+  "source": "https://www.thedukeofsussex.co.uk/",
+  "notes": "Acton Green, Grade II, built 1897 by the Cannon Brewery and opened 1898, elaborately decorated, facing the common. Named for Prince Augustus Frederick, son of George III. Rear dining room leading to a large garden with hidden corners; seasonal British and Spanish tapas cooked on site.",
+  "patch": {}
+ },
+ "paradise-kensal": {
+  "status": "verified",
+  "source": "https://www.designmynight.com/london/pubs/queens-park/paradise-by-way-of-kensal-green",
+  "notes": "West London bar, restaurant and music venue with bohemian decor and an eclectic events programme. Four private rooms taking 16 to 60 seated or up to 100 standing: a light Victorian dining room for 82 with direct garden access, a first-floor private room, the Reading Room and the Conservatory. Home-cooked British and modern European food.",
+  "patch": {
+   "out": {
+    "kind": "garden",
+    "benches": true,
+    "river": false,
+    "big": true
+   },
+   "occ+": [
+    "outdoor"
+   ]
+  }
+ },
+ "cow-notting-hill": {
+  "status": "verified",
+  "source": "https://thecowlondon.com/",
+  "notes": "Westbourne Park Rd, opened by Tom Conran in 1995. Guinness and oysters is the pairing; oysters on ice above the bar. Downstairs a saloon bar of hand-painted signs, old Guinness ads and battered stools; upstairs a small dining room with pressed cloths and a chandelier made from a ship's figurehead, menu leaning northern European.",
+  "patch": {}
+ },
+ "windsor-castle-kensington": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/WLD/16652/windsor-castle-kensington",
+  "notes": "114 Campden Hill Rd on the corner of Peel St, Grade II, built about 1826 for the Chiswick brewers Douglas and Henry Thompson. On CAMRA's National Inventory: the 1933 refurbishment left three small rooms behind screens, the Sherry Bar, the Private Bar and the Campden Bar, with the famously low doors between them. Garden with a giant canopy, cushioned booths and its own outside bar.",
+  "patch": {
+   "rep": 3,
+   "tip": "Three tiny screened bars you duck between, unchanged since 1933, and a canopied garden with a bar of its own."
+  }
+ },
+ "churchill-arms": {
+  "status": "verified",
+  "source": "https://www.churchillarmskensington.co.uk/",
+  "notes": "119 Kensington Church St, built 1750 and frequented by Winston Churchill's grandparents; hung with Churchill memorabilia. Fuller's managed. Over 100 flower pots, 48 window boxes and 42 hanging baskets, reportedly about 25,000 pounds a year on the display, and a Chelsea Flower Show winner. Thai food in the conservatory since the early 1990s.",
+  "patch": {
+   "rep": 3
+  }
+ },
+ "earl-of-lonsdale": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/WLD/16398/earl-of-lonsdale-notting-hill",
+  "notes": "Corner of Westbourne Grove and Portobello Rd, a Sam Smith's pub restored as a Victorian temple of dark wood and etched glass. Divided by wood and glass screens into five small drinking areas with duck-unders, a further rear room and a patio garden. Named after the fifth Earl, the Yellow Earl, first President of the AA. Sam Smith's house rules: no swearing, no phones or laptops.",
+  "patch": {
+   "tip": "Five little screened drinking areas you duck between, and a busy garden. Sam Smith's rules apply: no phones, no laptops, no swearing."
+  }
+ },
+ "victoria-paddington": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/WLD/15917/victoria-paddington",
+  "notes": "10a Strathearn Place, built 1837, the year Victoria came to the throne. Grade II and a three-star pub on CAMRA's National Inventory with an interior of outstanding national importance; the bar-back clock is dated 1864. Upstairs by spiral staircase is a library and theatre bar fitted out with pieces from the Gaiety Theatre in the 1950s. David Bowie played a record launch here in 1966. Fuller's Pub of the Year 2007 and 2009.",
+  "patch": {
+   "rep": 3,
+   "tip": "An 1837 Fuller's gem with a nationally important interior, and a theatre bar upstairs fitted with salvage from the Gaiety. Bowie launched a record here in 1966."
+  }
+ },
+ "barley-mow-marylebone": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/barley-mow-london-129395",
+  "notes": "8 Dorset St, Grade II, built 1791 and said to be the oldest standing building in Marylebone. On CAMRA's National Inventory: original matchboard panelling, a rear snug with a book exchange, and a pair of late 19th-century panelled drinking booths fronting the bar, an exceptionally rare survival said to have given farmers privacy while bartering.",
+  "patch": {
+   "rep": 3,
+   "tip": "Built in 1791 and probably Marylebone's oldest building, with a rare pair of panelled drinking booths at the bar where farmers once haggled in private."
+  }
+ },
+ "lamb-and-flag": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/lamb-flag-london-128715",
+  "notes": "33 Rose St, reached down Lazenby Court, reputedly first licensed in 1623 and the oldest premises in Covent Garden; one of very few timber-framed buildings left in central London, early 18th century or possibly 1688. Once known as the Bucket of Blood for the bare-knuckle fights held here. Leased by Fuller's from 2011 and owned since 2013. Low ceilings, uneven floors and the Dryden Room upstairs.",
+  "patch": {
+   "rep": 3,
+   "tip": "First licensed in 1623, timber-framed, and once called the Bucket of Blood for the bare-knuckle fights upstairs. Down an alley off Floral Street."
+  }
+ },
+ "cross-keys-covent-garden": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Cross_Keys,_Covent_Garden",
+  "notes": "31 Endell St, Grade II, built 1848-49. Grand facade with marble columns, decorated arches and two cherubs holding the keys of St Peter. Ceiling hung with enough brass instruments to equip an orchestra, plus a diver's helmet, kettles and frying pans; walls of prints including Beatles memorabilia and a napkin signed by Elvis, most likely bought at auction by a former landlord.",
+  "patch": {
+   "tip": "A ceiling of brass instruments, a diver's helmet and a napkin signed by Elvis, under a facade of marble columns and cherubs."
+  }
+ },
+ "salisbury-st-martins": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/salisbury-london-128829",
+  "notes": "91-93 St Martin's Lane, Grade II, built about 1899 on the site of an earlier pub, the Coach and Horses and Ben Caunt's Head. On CAMRA's National Inventory as a historic interior of national importance: long curved mahogany bar, etched and polished glass, carved woodwork, a separate snug and Art Nouveau candelabra.",
+  "patch": {
+   "tip": "A glittering 1899 interior of etched glass, carved mahogany and Art Nouveau candelabra, on CAMRA's national list."
+  }
+ },
+ "ship-and-shovell": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/ship-shovell-london-128681",
+  "notes": "Craven Passage behind Charing Cross, dating from the 1730s and believed to be the only pub in the UK split across two buildings either side of a street, joined underground by a shared cellar since 1998. Named after Admiral Sir Cloudesley Shovell. Northern half panelled and mirrored, southern half has snug booths. Hall & Woodhouse.",
+  "patch": {
+   "tip": "The only pub in Britain split across two buildings either side of a lane, joined by a tunnel under the passage."
+  }
+ },
+ "coal-hole": {
+  "status": "verified",
+  "source": "https://www.nicholsonspubs.co.uk/restaurants/london/thecoalholestrandlondon",
+  "notes": "91-92 Strand, Grade II, part of Savoy Court and the Savoy Hotel complex, built 1903-04 by T E Collcutt. Named either for its role as the Savoy's coal cellar or for the coal heavers from the quays below. Original friezes above the bar and original windows; Gilbert and Sullivan performed here in the Edwardian era. Nicholson's.",
+  "patch": {
+   "feat": [
+    "heritage"
+   ]
+  }
+ },
+ "chandos": {
+  "status": "verified",
+  "source": "https://pubsandbeer.co.uk/index.php?ID=P&pub=3074",
+  "notes": "29 St Martin's Lane by Trafalgar Square, a Sam Smith's pub over two floors. Started as the Bulls Head, the Chandos by 1891. Wooden-floored downstairs bar with wall booths; upstairs the carpeted Opera Bar with leather sofas and its own servery, named for the nearby ENO. Cheap by West End standards.",
+  "patch": {}
+ },
+ "french-house": {
+  "status": "verified",
+  "source": "https://www.frenchhousesoho.com/",
+  "notes": "49 Dean St, formerly the York Minster, renamed the French house in the war when it became the unofficial London base of de Gaulle's Free French; his 'A tous les Francais' speech is said to have been written here. Serves beer only in halves, a rule from landlord Victor after French sailors broke pint glasses over each other, lifted for charity every 1 April. Sells more Ricard than anywhere in Britain.",
+  "patch": {
+   "rep": 3,
+   "tip": "Halves only, by a house rule dating from the war, except on 1 April. De Gaulle's Free French made it their London base, and it still sells more Ricard than anywhere in Britain."
+  }
+ },
+ "coach-and-horses-soho": {
+  "status": "verified",
+  "source": "https://www.coachandhorsessoho.pub/",
+  "notes": "29 Greek St on the corner of Romilly St, Grade II. Home of Jeffrey Bernard's Low Life column until his death in 1997, the Private Eye staff, Francis Bacon, Lucian Freud, Peter O'Toole and John Hurt. Run by Norman Balon, self-declared rudest landlord in London, from 1943 to 2006. The interior was recreated on stage for Jeffrey Bernard Is Unwell, later staged in the pub itself.",
+  "patch": {
+   "rep": 3,
+   "tip": "Jeffrey Bernard's Low Life was written from this bar, under the rudest landlord in London. The play about him has since been staged in the room itself."
+  }
+ },
+ "dog-and-duck": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/dog-duck-london-128663",
+  "notes": "18 Bateman St, Grade II, built 1897 by Francis Chambers on a site with a Dog and Duck since at least 1734. One of London's most exquisite interiors of the period: thousands of highly glazed tiles, decorative ceramic wall tiles and a worn dog-and-duck mosaic in the doorway. Orwell was a regular in the 1940s and celebrated Animal Farm's Book of the Month here; the upstairs dining room is named after him.",
+  "patch": {
+   "rep": 3,
+   "tip": "Thousands of glazed tiles, a worn dog-and-duck mosaic in the doorway, and the room upstairs where Orwell toasted Animal Farm."
+  }
+ },
+ "crown-and-two-chairmen": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/crown-two-chairmen-london-128930",
+  "notes": "32 Dean St, the Crown until 1736 and renamed after two sedan chairmen who stopped in after carrying Queen Anne to Sir James Thornhill's studio opposite. Rebuilt 1929. Karl Marx lived next door during his exile. Three changing ales plus Doom Bar, bar food all day, Sunday roasts, lunchtime table service upstairs, and the 100-capacity Chairmen's Lounge for hire. Resident bearded collie, Maxwell.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hire",
+    "dogs",
+    "ale"
+   ],
+   "food.roast": true,
+   "tip": "Named after the two sedan chairmen who dropped Queen Anne at the studio opposite. Karl Marx lived next door."
+  }
+ },
+ "lyric-soho": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/lyric-london-129178",
+  "notes": "37 Great Windmill St, originally two taverns, the Windmill and the Ham, merged in the mid-18th century; the name dates from 1892. Reinvented as a real ale specialist with up to ten cask ales, open fires, food and a cosy room. Referenced in a Taylor Swift song.",
+  "patch": {
+   "feat": [
+    "ale",
+    "craft",
+    "fire",
+    "heritage"
+   ],
+   "rep": 3,
+   "tip": "Up to ten cask ales in a Victorian room with open fires. Two 18th-century taverns knocked into one, and name-checked by Taylor Swift."
+  }
+ },
+ "john-snow": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/WLD/16229/john-snow-london",
+  "notes": "Corner of Broadwick St and Lexington St, built in the 1870s as the Newcastle-upon-Tyne and renamed in 1955 for the centenary of John Snow's work. Snow traced the 1854 cholera outbreak, which killed 500 in ten days, to the water pump that stood outside, and had the handle removed. Sam Smith's, with the usual woody feel and etched glass.",
+  "patch": {
+   "tip": "Named for the doctor who traced the 1854 cholera outbreak to the pump outside and had its handle taken off. Sam Smith's prices inside."
+  }
+ },
+ "clachan": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/WLD/16026/clachan-london",
+  "notes": "34 Kingly St behind Liberty, Grade II, first licensed 1750, called the Bricklayers Arms until 1887, rebuilt 1898 and once owned by Liberty, who planned to use it as a storehouse. Retains engraved glass, mirrors, mahogany servery and Lincrusta ceiling panels. Split-level ground floor with the Liberty Dining Room and its fireplace upstairs. Nicholson's.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale",
+    "hire",
+    "fire"
+   ]
+  }
+ },
+ "fitzroy-tavern": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Fitzroy_Tavern",
+  "notes": "16 Charlotte St, owned by Samuel Smith. Fitzrovia is named after it. From the 1920s to the mid-1950s the meeting place of London's artists and bohemians: Dylan Thomas, Augustus John, George Orwell, Michael Bentine. Photographs of Thomas and Bentine drinking here hang on the walls and there is a dedicated Dylan Thomas library room upstairs, plus a small restaurant.",
+  "patch": {
+   "rep": 3,
+   "tip": "The pub that gave Fitzrovia its name, and Dylan Thomas's favourite. There's a library room upstairs dedicated to him."
+  }
+ },
+ "newman-arms": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Newman_Arms",
+  "notes": "23 Rathbone St, dating to 1730 and once a brothel. The model for the Proles' pub in Nineteen Eighty-Four, and it appears in Keep the Aspidistra Flying and Michael Powell's Peeping Tom. Orwell and Dylan Thomas were both regulars. Now as well known for the candlelit upstairs Pie Room, with pies made in house daily, and downstairs snugs.",
+  "patch": {
+   "rep": 3,
+   "tip": "Orwell's model for the Proles' pub in Nineteen Eighty-Four, and it turns up in Peeping Tom. The candlelit Pie Room upstairs is the draw now."
+  }
+ },
+ "lamb-lambs-conduit": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/lamb-london-125487",
+  "notes": "94 Lamb's Conduit St, Grade II, built in the 1720s and named with the street after William Lamb, who repaired the Holborn conduit. Young's since 1956. Famous for a double range of snob screens on both sides of the counter, still in their original 170-year-old glass, plus a working polyphon playable for charity and sepia music-hall prints. Refurbished May to June 2026 with a refreshed garden and expanded first floor.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "ale",
+    "heritage",
+    "hire",
+    "fire"
+   ],
+   "tip": "The finest snob screens in London, still swivelling on their original glass, and a working polyphon you can play for charity."
+  }
+ },
+ "euston-tap": {
+  "status": "verified",
+  "source": "https://eustontap.com/",
+  "notes": "The two Victorian lodges at the entrance to Euston station; the cellar is said to be an old underground rifle range. West Lodge has 28 draught lines, East Lodge another 20, plus cask and cider. Tiny inside with more seating up a spiral staircase, and a much-expanded beer garden opened in early 2021 seating more than 100.",
+  "patch": {
+   "rep": 3,
+   "tip": "Two Victorian station lodges with nearly fifty draught lines between them, and a beer garden for a hundred in the middle of Euston."
+  }
+ },
+ "museum-tavern": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Museum_Tavern",
+  "notes": "49 Great Russell St, opposite the British Museum. Grade II, origins back to 1723 when it was the Dog and Duck, rebuilt around 1855 to 1864 by Finch Hill and Paraire. Karl Marx's local while he wrote Das Kapital in the Reading Room; Conan Doyle and J B Priestley also drank here. Greene King, cask ales, food all day.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale"
+   ],
+   "tip": "Karl Marx's local while he was writing Das Kapital across the road in the British Museum Reading Room."
+  }
+ },
+ "princess-louise": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Princess_Louise,_Holborn",
+  "notes": "208 High Holborn, Grade II*, built 1872 with a lavish 1891 interior: tiled panels, gilded mirrors, etched glass, stained glass and a mahogany island bar. Seven snugs behind mahogany and etched-glass partitions off a corridor, restored by Sam Smith's in 2008 when they put the lost partitions back. Sam Smith's prices and their own beer only.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage"
+   ],
+   "tip": "Seven Victorian snugs behind etched glass, restored to the 1891 plan. Sam Smith's own beer only, at Sam Smith's prices."
+  }
+ },
+ "cittie-of-yorke": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Cittie_of_Yorke",
+  "notes": "22 High Holborn, Grade II and on CAMRA's National Inventory. A pub has stood here since 1430; the present hall is a 1920s rebuild, renamed by Sam Smith's in the early 1980s after a long-gone pub over the road. Claims London's longest bar, with 1,100-gallon vats down one wall and a row of seven wood cubicles down the other where barristers from the Inns of Court can talk privately, plus three more at the far end.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "fire"
+   ],
+   "tip": "A great hall with giant beer vats down one side and private wooden cubicles down the other, built for lawyers' confidences."
+  }
+ },
+ "ye-olde-mitre": {
+  "status": "verified",
+  "source": "https://whatpub.com/pubs/ELC/14669/olde-mitre-hatton-garden",
+  "notes": "Hidden in Ely Court, the alley between Hatton Garden and Ely Place. First built 1546 for the Bishops of Ely's servants; the present building dates from 1773, a year after Ely Palace came down. The trunk of the cherry tree that marked the boundary of the bishop's garden and Christopher Hatton's lease stands behind glass by the door; Elizabeth I is said to have danced round it. CAMRA nationally important interior, tiny panelled rooms, no music, Fuller's.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale",
+    "hidden"
+   ],
+   "tip": "Down an unmarked alley off Hatton Garden, with the old cherry tree Elizabeth I supposedly danced around still standing by the door."
+  }
+ },
+ "craft-beer-co-clerkenwell": {
+  "status": "verified",
+  "source": "https://www.thecraftbeerco.com/clerkenwell",
+  "notes": "80 to 82 Leather Lane. The first Craft Beer Co, opened July 2011, and until May 2014 the most beer taps in the UK: 21 keg and 16 cask lines plus a long bottle list. The mirrored ceiling with its clock face is left over from the Clock House that stood here, along with a chandelier.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "craft",
+    "ale"
+   ],
+   "tip": "Thirty-seven taps under a mirrored ceiling with a clock face left from the pub that stood here before."
+  }
+ },
+ "jerusalem-tavern": {
+  "status": "verified",
+  "source": "https://www.explorelondon.co.uk/pubs/the-jerusalem-tavern.php",
+  "notes": "55 Britton St. The name goes back to the 14th century but it has been on this site since 1720; the building has been a merchant's house and a clock workshop, and the Georgian shopfront was added in 1810. Tied to St Peter's Brewery in Suffolk and sells only their beer, six casks at a time. One small candlelit room with bare boards, panelling and a couple of tiny galleries. Gets packed after work.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale",
+    "fire"
+   ],
+   "tip": "One tiny candlelit Georgian room pouring nothing but St Peter's. Get there early or you'll be on the pavement."
+  }
+ },
+ "eagle-farringdon": {
+  "status": "verified",
+  "source": "https://theeaglefarringdon.co.uk/history",
+  "notes": "159 Farringdon Rd. Opened 14 January 1991 by Michael Belben and David Eyre and credited as Britain's first gastropub, the pub that got the word coined. Still no frills: open kitchen behind the bar, menu chalked on a blackboard and rewritten daily, Iberian and Mediterranean leaning, the Bife Ana steak sandwich a fixture. No bookings, shared tables.",
+  "patch": {
+   "rep": 3,
+   "food.quality": 3,
+   "food.style": "gastro",
+   "tip": "Britain's first gastropub, open since 1991. Blackboard menu, open kitchen, no bookings."
+  }
+ },
+ "three-kings-clerkenwell": {
+  "status": "verified",
+  "source": "https://londonist.com/pubs/pubs/pubs/the-three-kings",
+  "notes": "7 Clerkenwell Close, beside St James's church. Stripped wood and brass rails with a papier-mache rhino head on the wall, disco balls and collaged walls; an excellent vinyl jukebox and separate rooms upstairs. Cash-free, no big screens, good beer, resolutely its own thing.",
+  "patch": {
+   "feat": [
+    "quirky",
+    "jukebox"
+   ],
+   "tip": "A papier-mache rhino on the wall and a vinyl jukebox upstairs. Nothing else in Clerkenwell is like it."
+  }
+ },
+ "betsey-trotwood": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/betsey-trotwood-london-156366",
+  "notes": "56 Farringdon Rd, a small Victorian corner pub named after the Dickens character and sitting above London's first Tube line. Shepherd Neame ales in a plain street-level bar, a cellar room downstairs for gigs and an acoustic room and bar upstairs. Folk, Americana and indie most nights, plus poetry and drama; pies are the food.",
+  "patch": {
+   "feat": [
+    "livemusic",
+    "ale"
+   ],
+   "tip": "Two small music rooms, one in the cellar and one upstairs, running folk and Americana most nights."
+  }
+ },
+ "fox-and-anchor": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Fox_and_Anchor",
+  "notes": "115 Charterhouse St on the edge of Smithfield, Grade II, built 1898 by Latham Withall with an Art Nouveau tiled front and pewter-topped bar. The last of the Smithfield pubs still using the old market licence to open at 7am on weekdays, and the City Breakfast with a pint of Guinness is the thing to order. Snugs at the back, six bedrooms above.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "early",
+    "hire"
+   ],
+   "food.quality": 3,
+   "tip": "Opens at 7am on the old Smithfield market licence. The City Breakfast comes with a pint of Guinness."
+  }
+ },
+ "blackfriar": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Black_Friar,_Blackfriars",
+  "notes": "174 Queen Victoria St, Grade II*, built about 1875 on the site of a Dominican friary and remodelled around 1905 by Herbert Fuller-Clark, with carving and mosaics by Frederick Callcott and Henry Poole. London's only Art Nouveau pub: jolly friars in bronze and marble everywhere and a barrel-vaulted mosaic grotto at the back. Saved from 1960s demolition by a campaign led by John Betjeman. Nicholson's, cask ales, big forecourt.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale",
+    "outdoor"
+   ],
+   "tip": "London's only Art Nouveau pub, covered in bronze friars, with a mosaic grotto at the back. Betjeman saved it from the bulldozers."
+  }
+ },
+ "ye-olde-cheshire-cheese": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/olde-cheshire-cheese-london-156637",
+  "notes": "Wine Office Court off Fleet St. A pub here since 1538, rebuilt in 1667 after the Great Fire, on 13th-century Carmelite monastery foundations. Warren of dark rooms on three levels including vaulted cellars, with a coal fire in the front bar in winter and Dr Johnson's chair still in place. Dickens and Oliver Goldsmith drank here too. Sam Smith's since the early 1990s, so their beer only and no music or phones.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "fire",
+    "hidden"
+   ],
+   "tip": "Down an alley off Fleet Street, rebuilt the year after the Great Fire. Dark warren of rooms, coal fire, Dr Johnson's chair."
+  }
+ },
+ "old-bell-tavern": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Old_Bell,_Fleet_Street",
+  "notes": "95 Fleet St, built in the 1670s by Christopher Wren for the masons rebuilding St Bride's after the Great Fire, and licensed ever since. Originally reached only by the alley, with a long association with Fleet Street printing; one of the first presses in the country worked on this site around 1500. Stained glass, low ceilings, cask ales, Nicholson's.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale"
+   ],
+   "tip": "Wren put it up for the masons rebuilding St Bride's next door, and it has been a tavern ever since."
+  }
+ },
+ "lamb-tavern-leadenhall": {
+  "status": "verified",
+  "source": "https://leadenhallmarket.co.uk/stores/the-lamb-tavern/",
+  "notes": "Under the glass roof of Leadenhall Market, feeding the City since 1780; the red front, bay windows and Corinthian columns date from Horace Jones's 1880 to 1881 rebuild of the market and share its Grade II listing. Three floors: island bar downstairs that spills out onto the cobbles, dining room above, Dickens Bar in the cellar. Rammed with City drinkers from about five.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "outdoor",
+    "hire"
+   ],
+   "tip": "Drink on the cobbles under Leadenhall's glass roof. It empties out of the pub and fills the arcade by six."
+  }
+ },
+ "jamaica-wine-house": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Jamaica_Wine_House",
+  "notes": "St Michael's Alley off Cornhill, down a knot of medieval alleys. The site of London's first coffee house, opened by Pasqua Rosee in 1652 and visited by Pepys; 'The Jamaica, London' was address enough for merchants' post. The present red sandstone building is 1869, Grade II, with dark wood booths and the old coffee-roasting cooker still there. Known as the Jampot. Wine and beer upstairs, Todd's wine bar in the cellar.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hidden"
+   ],
+   "tip": "Stands on the site of London's first coffee house, from 1652. Everyone in the City calls it the Jampot."
+  }
+ },
+ "hoop-and-grapes": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Hoop_and_Grapes,_Aldgate_High_Street",
+  "notes": "47 Aldgate High St, Grade II*, the only 17th-century timber-framed building left in the City. The Great Fire stopped about fifty yards short of it. Leans visibly, low beams, tiny rooms, a cellar said to have a smugglers' tunnel. Listed in 1991 after being lined up for demolition. Nicholson's, cask ales, City crowd.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale"
+   ],
+   "tip": "The Great Fire stopped fifty yards down the road, so this is the last timber-framed building in the City. It leans."
+  }
+ },
+ "ship-tavern-holborn": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Ship_Tavern,_Holborn",
+  "notes": "12 Gate St, on the corner by Little Turnstile at the western edge of Lincoln's Inn Fields. Established 1549, when it sheltered Catholic priests and held illegal Mass from a disguised pulpit in the bar, with lookouts outside and priest holes in the walls and cellar; a tunnel is still down there. Dark panelled bar, Grade II, cask ales, dining room upstairs, barristers and Holborn office crowd.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale"
+   ],
+   "tip": "Priests said illegal Mass here in 1549 and hid in holes in the walls when the officials came. The cellar tunnel is still there."
+  }
+ },
+ "seven-stars": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Seven_Stars,_Holborn",
+  "notes": "53 to 54 Carey St, right behind the Royal Courts of Justice, Grade II. The front says 1602 though the building is probably 1680s; it survived the Great Fire either way. Run for years by Roxy Beaujolais, formerly of Ronnie Scott's, who cooks and whose name is over the door. Two tiny rooms crammed with legal junk and taxidermy, a lethal staircase to the loo, and barristers three deep from six. There is always a pub cat.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "quirky"
+   ],
+   "food.quality": 2,
+   "tip": "Two tiny rooms behind the Law Courts, full of barristers and legal bric-a-brac, with a proper pub cat and a lethal staircase."
+  }
+ },
+ "speaker-westminster": {
+  "status": "verified",
+  "source": "https://www.pubsmiths.co.uk/speaker-victoria",
+  "notes": "46 Great Peter St, between Westminster and Victoria. A pub here since the 1720s as the Castle, then the Elephant and Castle from about 1800, renamed the Speaker in 1999; the present building is early Victorian. One small room, no music, well-kept changing cask ales, and a division bell on the wall from the days when hundreds of them called MPs back to vote. Civil servants and political staff.",
+  "patch": {
+   "feat": [
+    "ale",
+    "heritage",
+    "quiet"
+   ],
+   "tip": "A division bell still on the wall, from when hundreds of them across Westminster called MPs back to vote."
+  }
+ },
+ "red-lion-whitehall": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Red_Lion,_Westminster",
+  "notes": "48 Parliament St, a minute from the Commons and the closest thing it has to a staff bar. A pub on the site since at least 1434, the present Grade II building about 1890. Has a division bell, unused now that MPs get a phone alert. Known briefly as the Treasury Annexe for off-record briefings during Gordon Brown's years next door. Narrow, three floors, packed with MPs, journalists and researchers when the House is sitting.",
+  "patch": {
+   "feat": [
+    "heritage"
+   ],
+   "tip": "The Commons' unofficial staff bar, with a division bell on the wall and MPs and lobby journalists on every floor."
+  }
+ },
+ "cask-pimlico": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/cask-pub-kitchen-london-128694",
+  "notes": "6 Charlwood St on the corner of Tachbrook St, the only independent pub in Pimlico and Victoria. Opened summer 2009 as London's first craft-beer-led pub: 10 handpumps, about 20 kegs, 300-plus bottles, plus a vintage cellar of over 2,000 beers going back to the 1950s, said to be the largest for sale in the UK. Burgers, scotch eggs and pork pies, Sunday roasts. CAMRA branch Pub of the Year in 2019 and 2025.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "craft",
+    "ale"
+   ],
+   "food.roast": true,
+   "tip": "London's first craft-beer pub, with thirty taps and a vintage cellar of beers going back to the 1950s."
+  }
+ },
+ "buckingham-arms": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/buckingham-arms-london-128644",
+  "notes": "62 Petty France. Licensed from around 1780 as the Black Horse, rebuilt 1898 and renamed in 1901. Young's, with etched mirrors behind a long curving bar and stained glass screens; the narrow alley bar down the side was once where servants drank out of sight. One of only five pubs in every edition of CAMRA's Good Beer Guide since 1974. Music kept low and the TV silent unless you ask. Civil servants, MPs and military musicians.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "ale",
+    "heritage",
+    "quiet"
+   ],
+   "tip": "One of only five pubs to appear in every CAMRA Good Beer Guide since 1974. The telly stays silent unless you ask."
+  }
+ },
+ "marquis-of-westminster": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/marquis-of-westminster-london-128908",
+  "notes": "50 Warwick Way, a corner house from 1839 and Pimlico's village local. Lively ground-floor bar with about five cask ales and a rotating list of house-infused gins, a first-floor dining room, and a basement bar you can hire. Modern pub food, weekend brunch and Sunday roasts. Warwick Way has three decent pubs within a couple of minutes of each other.",
+  "patch": {
+   "feat": [
+    "ale",
+    "hire"
+   ],
+   "food.roast": true,
+   "food.quality": 2
+  }
+ },
+ "guinea-grill": {
+  "status": "verified",
+  "source": "https://www.theguinea.co.uk/",
+  "notes": "30 Bruton Place, down a Mayfair mews. An inn on the site since 1423; the Grill opened in 1952. Small Young's bar at the front with cask ales, and the grill room behind serving dry-aged grass-fed Scotch beef from an open grill, supplied by Godfrey's butchers for nearly sixty years. The award-winning steak and kidney pies are served in the bar from noon to nine. Private dining room for 28. Sunday roasts.",
+  "patch": {
+   "rep": 3,
+   "food.quality": 3,
+   "food.roast": true,
+   "feat": [
+    "ale",
+    "hire",
+    "hidden"
+   ],
+   "tip": "The steak and kidney pie is an institution, and you can eat it standing in the bar rather than booking the grill room."
+  }
+ },
+ "punch-bowl-mayfair": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Punch_Bowl,_Mayfair",
+  "notes": "41 Farm St. Built 1729, licensed 1786 and rebuilt in 1792 after a fire; Grade II. Used as a magistrates' court early on and later the last public bar in Mayfair, where the servants of the Grosvenor Square houses drank. Bought by Guy Ritchie and Madonna in 2008 and kept by Ritchie in the divorce; now run by Butcombe. Georgian and Victorian features survive a smart refurbishment, and it does proper British food.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "fire"
+   ],
+   "food.quality": 3,
+   "food.roast": true,
+   "tip": "Georgian pub on a quiet Mayfair street that Guy Ritchie and Madonna once owned between them."
+  }
+ },
+ "red-lion-duke-of-york": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/Red_Lion,_Duke_of_York_Street",
+  "notes": "2 Duke of York St, Grade II and on CAMRA's National Inventory. An 1821 building given a new pub front in 1871: moulded doorcases, fluted pilasters, brass lanterns and an iron balcony. Inside, two walls of late Victorian etched and diamond-cut mirrors in mahogany frames, thought to be by Walter Gibbs and Sons of Blackfriars, and described as a perfect small Victorian gin palace. Tiny, so drinkers spill onto the pavement.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale"
+   ],
+   "tip": "A perfect little Victorian gin palace, walled in diamond-cut mirrors. Room for about thirty, so expect the pavement."
+  }
+ },
+ "nags-head-belgravia": {
+  "status": "verified",
+  "source": "https://londonpubsgroup.camra.org.uk/nags-head-belgravia",
+  "notes": "53 Kinnerton St, down a Belgravia mews. Unusually low bar with small stools to match, split-level Dickensian rooms crammed with portraits, pewter, military bits and old penny-arcade machines including a What the Butler Saw, plus a 19th-century beer engine. Famously strict landlord: no mobile phones at all, and he will move you off a table too big for your group.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "quirky",
+    "quiet",
+    "hidden"
+   ],
+   "tip": "No phones, at all. The landlord will also move you if your table is bigger than your group."
+  }
+ },
+ "grenadier": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Grenadier",
+  "notes": "18 Wilton Row, up a cobbled Belgravia mews behind a sentry box. Built 1720 as the officers' mess of the 1st Regiment of Foot Guards, opened to the public in 1818 as the Guardsman and renamed for the Grenadier Guards after Waterloo. The ceiling is papered in banknotes from all over the world, pinned there to pay off the debt of Cedric, a subaltern beaten to death for cheating at cards and said to haunt the place each September. The Bloody Marys are the other reason people come.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "quirky",
+    "hidden"
+   ],
+   "food.quality": 2,
+   "tip": "Banknotes pinned all over the ceiling to pay off the gambling debt of a soldier said to haunt the cellar."
+  }
+ },
+ "star-tavern": {
+  "status": "verified",
+  "source": "https://www.star-tavern-belgravia.co.uk/history",
+  "notes": "6 Belgrave Mews West, Grade II, built in the early 19th century for the servants of Belgravia and dating as a pub to 1848. Under landlord Paddy Kennedy in the fifties and sixties it mixed Princess Margaret, Peter O'Toole and Diana Dors with the London underworld, and the Great Train Robbery was planned in the upstairs room. Fuller's, and in every edition of CAMRA's Good Beer Guide since it began. Two floors, open fires, no music.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale",
+    "fire",
+    "hidden"
+   ],
+   "tip": "The Great Train Robbery was planned in the room upstairs. In every Good Beer Guide ever printed."
+  }
+ },
+ "antelope-belgravia": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/antelope-london-128649",
+  "notes": "22 to 24 Eaton Terrace, built 1827 for the servants of the Belgravia gentry. Etched glass, a fine island bar and separate panelled rooms up and down. Old rugby and football photographs on the walls and one wall given over to the pub cricket team, the Antelopians; the television is normally kept silent. Fuller's, dog and family friendly, function rooms upstairs, seasonal pub cooking.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "ale",
+    "dogs",
+    "hire",
+    "quiet"
+   ],
+   "food.quality": 2
+  }
+ },
+ "albert-victoria": {
+  "status": "verified",
+  "source": "https://en.wikipedia.org/wiki/The_Albert",
+  "notes": "52 Victoria St, Grade II, built 1862 by the Artillery Brewery on the site of the Blue Coat Boy and named for the Prince Consort. The facade and the Victorian interior came through the Blitz undamaged while everything around it was rebuilt. Keeps a working House of Commons division bell in the first-floor dining room, rung to send MPs back to vote, and one of Queen Victoria's napkins. Greene King, carvery upstairs.",
+  "patch": {
+   "feat": [
+    "heritage",
+    "hire"
+   ],
+   "food.roast": true,
+   "tip": "A Victorian survivor marooned among the office blocks, with a working Commons division bell in the dining room."
+  }
+ },
+ "golden-eagle-marylebone": {
+  "status": "verified",
+  "source": "https://camra.org.uk/pubs/golden-eagle-london-128945",
+  "notes": "59 Marylebone Lane, a tiny corner local rebuilt in 1890 with a spectacular Victorian bar-back, etched mirror and red banquettes. Up to four cask ales. Tony Fingers Pearson has played the piano here since 1988 and leads a singalong every Tuesday, Thursday and Friday from 8.30 to 11pm. Landlady Gina Vernon and family passed thirty years behind the bar in 2021.",
+  "patch": {
+   "rep": 3,
+   "feat": [
+    "heritage",
+    "ale",
+    "livemusic"
+   ],
+   "tip": "Piano singalong Tuesday, Thursday and Friday nights, led by the same pianist since 1988."
+  }
  }
 }
