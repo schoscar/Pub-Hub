@@ -1,0 +1,2739 @@
+[
+ {
+  "id": "lamb-and-flag",
+  "name": "The Lamb & Flag",
+  "area": "Covent Garden",
+  "region": "C",
+  "station": "Covent Garden",
+  "walk": 4,
+  "lat": 51.5115,
+  "lng": -0.1245,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Fuller's kitchen upstairs, roast on Sundays"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Covent Garden's oldest pub down an alley, 1772. Spills into Rose Street every evening.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "cross-keys-covent-garden",
+  "name": "The Cross Keys",
+  "area": "Covent Garden",
+  "region": "C",
+  "station": "Covent Garden",
+  "walk": 3,
+  "lat": 51.5135,
+  "lng": -0.1245,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Snacks"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Brass, foliage and Elvis memorabilia on Endell Street.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "salisbury-st-martins",
+  "name": "The Salisbury",
+  "area": "Covent Garden",
+  "region": "C",
+  "station": "Leicester Square",
+  "walk": 3,
+  "lat": 51.5105,
+  "lng": -0.1275,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and roast"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Art nouveau lamps and etched glass on St Martin's Lane. Grade II and gorgeous.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ship-and-shovell",
+  "name": "The Ship & Shovell",
+  "area": "Charing Cross",
+  "region": "C",
+  "station": "Charing Cross",
+  "walk": 2,
+  "lat": 51.5075,
+  "lng": -0.1235,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub classics"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Two halves of a pub facing each other across Craven Passage. Hall & Woodhouse beers.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "coal-hole",
+  "name": "The Coal Hole",
+  "area": "Strand",
+  "region": "C",
+  "station": "Charing Cross",
+  "walk": 4,
+  "lat": 51.5105,
+  "lng": -0.1205,
+  "fb": null,
+  "occ": [
+   "session",
+   "quiet"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Baronial hall of a pub on the Strand, beneath the Savoy.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "porterhouse-covent-garden",
+  "name": "The Porterhouse",
+  "area": "Covent Garden",
+  "region": "C",
+  "station": "Covent Garden",
+  "walk": 3,
+  "lat": 51.512,
+  "lng": -0.1225,
+  "fb": {
+   "screens": 10,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "IRL"
+   ],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 60,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Irish",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Irish pub kitchen"
+  },
+  "feat": [
+   "music",
+   "craft",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Twelve levels of Dublin brewery pub with screens on every one.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "chandos",
+  "name": "The Chandos",
+  "area": "Trafalgar Square",
+  "region": "C",
+  "station": "Charing Cross",
+  "walk": 2,
+  "lat": 51.5095,
+  "lng": -0.1265,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 1,
+   "roast": false,
+   "note": "Sam Smith's menu upstairs"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Sam Smith's snug-lined pub by Trafalgar Square. Cheap for the West End.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "french-house",
+  "name": "The French House",
+  "area": "Soho",
+  "region": "C",
+  "station": "Leicester Square",
+  "walk": 4,
+  "lat": 51.513,
+  "lng": -0.1315,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "French"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": false,
+   "note": "Small dining room upstairs"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Half pints only, no phones, no music. De Gaulle drank here. Soho's soul.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "coach-and-horses-soho",
+  "name": "The Coach & Horses",
+  "area": "Soho",
+  "region": "C",
+  "station": "Leicester Square",
+  "walk": 4,
+  "lat": 51.513,
+  "lng": -0.132,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pies"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pies"
+  },
+  "feat": [
+   "heritage",
+   "music"
+  ],
+  "rep": 2,
+  "tip": "Jeffrey Bernard's pub on Greek Street, with piano singalongs.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "dog-and-duck",
+  "name": "The Dog & Duck",
+  "area": "Soho",
+  "region": "C",
+  "station": "Tottenham Court Road",
+  "walk": 4,
+  "lat": 51.5145,
+  "lng": -0.1325,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu upstairs"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Tiny tiled Victorian pub on Bateman Street, Orwell's local.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "crown-and-two-chairmen",
+  "name": "The Crown & Two Chairmen",
+  "area": "Soho",
+  "region": "C",
+  "station": "Tottenham Court Road",
+  "walk": 4,
+  "lat": 51.5145,
+  "lng": -0.133,
+  "fb": null,
+  "occ": [
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Dean Street corner pub, always full, always fine.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "lyric-soho",
+  "name": "The Lyric",
+  "area": "Soho",
+  "region": "C",
+  "station": "Piccadilly Circus",
+  "walk": 3,
+  "lat": 51.5115,
+  "lng": -0.1345,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pies"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pies"
+  },
+  "feat": [
+   "ale",
+   "craft"
+  ],
+  "rep": 2,
+  "tip": "Great Windmill Street ale pub, small and serious about beer.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "toucan-soho",
+  "name": "The Toucan",
+  "area": "Soho",
+  "region": "C",
+  "station": "Tottenham Court Road",
+  "walk": 3,
+  "lat": 51.516,
+  "lng": -0.131,
+  "fb": {
+   "screens": 2,
+   "big": 55,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "IRL"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Irish"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Irish stew and toasties"
+  },
+  "feat": [
+   "music"
+  ],
+  "rep": 2,
+  "tip": "Tiny Guinness bar on Carlisle Street. Irish games with the sound up.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "john-snow",
+  "name": "The John Snow",
+  "area": "Soho",
+  "region": "C",
+  "station": "Oxford Circus",
+  "walk": 5,
+  "lat": 51.5135,
+  "lng": -0.137,
+  "fb": null,
+  "occ": [
+   "session",
+   "quiet"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Sam Smith's on Broadwick Street, cheap and packed after work.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "de-hems",
+  "name": "De Hems",
+  "area": "Chinatown",
+  "region": "C",
+  "station": "Leicester Square",
+  "walk": 2,
+  "lat": 51.5115,
+  "lng": -0.1305,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Dutch",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Bitterballen and Dutch bar food"
+  },
+  "feat": [
+   "music"
+  ],
+  "rep": 2,
+  "tip": "Dutch pub in Chinatown: Dutch games, orange shirts, and every big match.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "waxy-oconnors",
+  "name": "Waxy O'Connor's",
+  "area": "Leicester Square",
+  "region": "C",
+  "station": "Piccadilly Circus",
+  "walk": 3,
+  "lat": 51.5105,
+  "lng": -0.133,
+  "fb": {
+   "screens": 15,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "IRL",
+    "CEL"
+   ],
+   "atmos": "away",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 60,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Irish"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Irish pub kitchen"
+  },
+  "feat": [
+   "music",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Labyrinthine Irish theme pub over six levels with screens everywhere.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "oneills-wardour",
+  "name": "O'Neill's Wardour Street",
+  "area": "Soho",
+  "region": "C",
+  "station": "Leicester Square",
+  "walk": 3,
+  "lat": 51.512,
+  "lng": -0.1325,
+  "fb": {
+   "screens": 10,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "IRL"
+   ],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Irish",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub"
+  },
+  "feat": [
+   "music",
+   "dj"
+  ],
+  "rep": 2,
+  "tip": "Big chain Irish sports bar in the middle of Soho. Every game, sound on, late.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "clachan",
+  "name": "The Clachan",
+  "area": "Soho",
+  "region": "C",
+  "station": "Oxford Circus",
+  "walk": 3,
+  "lat": 51.5145,
+  "lng": -0.14,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Behind Liberty, a beautiful old pub the shoppers walk past.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "fitzroy-tavern",
+  "name": "The Fitzroy Tavern",
+  "area": "Fitzrovia",
+  "region": "C",
+  "station": "Goodge Street",
+  "walk": 3,
+  "lat": 51.5195,
+  "lng": -0.1355,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Sam Smith's restored Fitzrovia landmark, Dylan Thomas's old haunt.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "newman-arms",
+  "name": "The Newman Arms",
+  "area": "Fitzrovia",
+  "region": "C",
+  "station": "Goodge Street",
+  "walk": 3,
+  "lat": 51.5185,
+  "lng": -0.135,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pies"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": false,
+   "note": "Pie room upstairs"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Tiny pub with a famous pie room upstairs, Orwell again.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "lamb-lambs-conduit",
+  "name": "The Lamb",
+  "area": "Bloomsbury",
+  "region": "C",
+  "station": "Russell Square",
+  "walk": 5,
+  "lat": 51.5225,
+  "lng": -0.119,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Young's kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Snob screens still swivel on the bar. Young's Bloomsbury classic.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "euston-tap",
+  "name": "The Euston Tap",
+  "area": "Euston",
+  "region": "C",
+  "station": "Euston",
+  "walk": 1,
+  "lat": 51.5275,
+  "lng": -0.133,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "craft",
+   "ale",
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Craft beer in the old Euston lodges. Twenty-odd taps, trains in view.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "museum-tavern",
+  "name": "The Museum Tavern",
+  "area": "Bloomsbury",
+  "region": "C",
+  "station": "Tottenham Court Road",
+  "walk": 5,
+  "lat": 51.5185,
+  "lng": -0.1265,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub classics"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Opposite the British Museum, gilded and Victorian, Marx's local.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "princess-louise",
+  "name": "The Princess Louise",
+  "area": "Holborn",
+  "region": "C",
+  "station": "Holborn",
+  "walk": 1,
+  "lat": 51.5175,
+  "lng": -0.1195,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 1,
+   "roast": false,
+   "note": "Sam Smith's menu upstairs"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "The most spectacular Victorian pub interior in London: tiles, mirrors, snugs, Grade II* loos.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "cittie-of-yorke",
+  "name": "Cittie of Yorke",
+  "area": "Holborn",
+  "region": "C",
+  "station": "Chancery Lane",
+  "walk": 2,
+  "lat": 51.5185,
+  "lng": -0.113,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "group"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Sam Smith's menu"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Cathedral-sized back hall with cubicles and giant vats. Sam Smith's.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ye-olde-mitre",
+  "name": "Ye Olde Mitre",
+  "area": "Holborn",
+  "region": "C",
+  "station": "Chancery Lane",
+  "walk": 4,
+  "lat": 51.5185,
+  "lng": -0.108,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Toasties and scotch eggs"
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Hidden down an alley off Hatton Garden since 1546. Technically in Cambridgeshire, apparently.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "craft-beer-co-clerkenwell",
+  "name": "The Craft Beer Co.",
+  "area": "Clerkenwell",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 4,
+  "lat": 51.5215,
+  "lng": -0.1085,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "craft",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "The original Craft Beer Co: dozens of taps and a mirrored ceiling.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "jerusalem-tavern",
+  "name": "The Jerusalem Tavern",
+  "area": "Clerkenwell",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 4,
+  "lat": 51.5215,
+  "lng": -0.1035,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Snacks"
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "St Peter's Brewery's candlelit 1720 shopfront pub. Tiny, perfect.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "eagle-farringdon",
+  "name": "The Eagle",
+  "area": "Farringdon",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 5,
+  "lat": 51.5235,
+  "lng": -0.1085,
+  "fb": null,
+  "occ": [
+   "date"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "Mediterranean"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 3,
+   "roast": false,
+   "note": "The original gastropub kitchen, cooked in the bar; the steak sandwich is famous"
+  },
+  "feat": [],
+  "rep": 3,
+  "tip": "Where the gastropub was invented in 1991. Still cooking in the bar, still brilliant.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "three-kings-clerkenwell",
+  "name": "The Three Kings",
+  "area": "Clerkenwell",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 5,
+  "lat": 51.5225,
+  "lng": -0.1055,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Small kitchen"
+  },
+  "feat": [
+   "heritage",
+   "music"
+  ],
+  "rep": 2,
+  "tip": "Papier-mache rhino and a good jukebox on Clerkenwell Close.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "betsey-trotwood",
+  "name": "The Betsey Trotwood",
+  "area": "Farringdon",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 5,
+  "lat": 51.524,
+  "lng": -0.109,
+  "fb": null,
+  "occ": [
+   "session",
+   "quiet"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "music",
+   "comedy",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Shepherd Neame music pub with gigs in the cellar.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "fox-and-anchor",
+  "name": "The Fox & Anchor",
+  "area": "Smithfield",
+  "region": "C",
+  "station": "Barbican",
+  "walk": 4,
+  "lat": 51.5195,
+  "lng": -0.1005,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "City breakfasts, pies and a roast in the snugs"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Art nouveau facade, pewter tankards, breakfast from 7am for Smithfield.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "blackfriar",
+  "name": "The Blackfriar",
+  "area": "Blackfriars",
+  "region": "C",
+  "station": "Blackfriars",
+  "walk": 1,
+  "lat": 51.512,
+  "lng": -0.1035,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "group"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "terrace",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Art nouveau monks and marble. The most beautiful pub in the City.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ye-olde-cheshire-cheese",
+  "name": "Ye Olde Cheshire Cheese",
+  "area": "Fleet Street",
+  "region": "C",
+  "station": "Blackfriars",
+  "walk": 4,
+  "lat": 51.5145,
+  "lng": -0.1075,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "group"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 1,
+   "roast": false,
+   "note": "Sam Smith's menu in the cellars"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Rebuilt 1667, sawdust floors and cellar rooms. Johnson, Dickens, tourists, you.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "old-bell-tavern",
+  "name": "The Old Bell Tavern",
+  "area": "Fleet Street",
+  "region": "C",
+  "station": "Blackfriars",
+  "walk": 4,
+  "lat": 51.514,
+  "lng": -0.1065,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Wren-built pub for the masons of St Bride's.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "counting-house",
+  "name": "The Counting House",
+  "area": "Bank",
+  "region": "C",
+  "station": "Bank",
+  "walk": 2,
+  "lat": 51.513,
+  "lng": -0.0875,
+  "fb": {
+   "screens": 2,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "request",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "quiet"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Fuller's kitchen and pies"
+  },
+  "feat": [
+   "heritage",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Fuller's in a domed Victorian banking hall. Grand, and packed after work.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "lamb-tavern-leadenhall",
+  "name": "The Lamb Tavern",
+  "area": "Leadenhall Market",
+  "region": "C",
+  "station": "Monument",
+  "walk": 3,
+  "lat": 51.5125,
+  "lng": -0.0835,
+  "fb": null,
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Young's menu"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Young's pub under the Leadenhall Market roof, Thursday-night City chaos.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "jamaica-wine-house",
+  "name": "The Jamaica Wine House",
+  "area": "Bank",
+  "region": "C",
+  "station": "Bank",
+  "walk": 3,
+  "lat": 51.513,
+  "lng": -0.0865,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 1,
+   "roast": false,
+   "note": "Shepherd Neame menu downstairs"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Site of London's first coffee house, hidden in an alley off Cornhill.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "hoop-and-grapes",
+  "name": "The Hoop & Grapes",
+  "area": "Aldgate",
+  "region": "C",
+  "station": "Aldgate",
+  "walk": 2,
+  "lat": 51.514,
+  "lng": -0.0745,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Timber-framed survivor of the Great Fire on Aldgate High Street.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ship-tavern-holborn",
+  "name": "The Ship Tavern",
+  "area": "Holborn",
+  "region": "C",
+  "station": "Holborn",
+  "walk": 2,
+  "lat": 51.517,
+  "lng": -0.1165,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Dining room upstairs and roast"
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "1549 pub off Lincoln's Inn Fields with an oak dining room upstairs.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "seven-stars",
+  "name": "The Seven Stars",
+  "area": "Holborn",
+  "region": "C",
+  "station": "Chancery Lane",
+  "walk": 5,
+  "lat": 51.515,
+  "lng": -0.113,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 6,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Short, good menu from a tiny kitchen"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "1602 pub behind the Royal Courts of Justice, run by Roxy Beaujolais, with a cat in a ruff.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "sports-bar-farringdon",
+  "name": "Sports Bar & Grill Farringdon",
+  "area": "Farringdon",
+  "region": "C",
+  "station": "Farringdon",
+  "walk": 1,
+  "lat": 51.5205,
+  "lng": -0.105,
+  "fb": {
+   "screens": 20,
+   "big": 120,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "American",
+    "Grill"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "American grill"
+  },
+  "feat": [
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Farringdon's screen-wall sports bar by the station.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "speaker-westminster",
+  "name": "The Speaker",
+  "area": "Westminster",
+  "region": "C",
+  "station": "St James's Park",
+  "walk": 4,
+  "lat": 51.4975,
+  "lng": -0.133,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Sandwiches"
+  },
+  "feat": [
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "No music, no phones, no screens: a single-room ale pub for Whitehall's civil servants.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "red-lion-whitehall",
+  "name": "The Red Lion",
+  "area": "Whitehall",
+  "region": "C",
+  "station": "Westminster",
+  "walk": 3,
+  "lat": 51.504,
+  "lng": -0.1265,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": false,
+   "note": "Fuller's dining room upstairs"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "The MPs' pub, with a division bell.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "cask-pimlico",
+  "name": "The Cask",
+  "area": "Pimlico",
+  "region": "C",
+  "station": "Pimlico",
+  "walk": 4,
+  "lat": 51.489,
+  "lng": -0.1375,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Burgers"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Burgers"
+  },
+  "feat": [
+   "craft",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Pimlico's craft beer temple, hundreds of bottles.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "marquis-of-westminster",
+  "name": "The Marquis of Westminster",
+  "area": "Pimlico",
+  "region": "C",
+  "station": "Victoria",
+  "walk": 8,
+  "lat": 51.4925,
+  "lng": -0.143,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Handsome Pimlico corner pub with a decent kitchen.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "clarence-whitehall",
+  "name": "The Clarence",
+  "area": "Whitehall",
+  "region": "C",
+  "station": "Charing Cross",
+  "walk": 3,
+  "lat": 51.5065,
+  "lng": -0.1265,
+  "fb": {
+   "screens": 4,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Geronimo kitchen"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Whitehall pub that shows the football, handy for Trafalgar Square.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "buckingham-arms",
+  "name": "The Buckingham Arms",
+  "area": "Westminster",
+  "region": "C",
+  "station": "St James's Park",
+  "walk": 3,
+  "lat": 51.499,
+  "lng": -0.1365,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Young's menu"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Young's pub in every Good Beer Guide since it began.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "guinea-grill",
+  "name": "The Guinea Grill",
+  "area": "Mayfair",
+  "region": "C",
+  "station": "Green Park",
+  "walk": 5,
+  "lat": 51.5105,
+  "lng": -0.1465,
+  "fb": null,
+  "occ": [
+   "date"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "British",
+    "Grill"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 3,
+   "roast": false,
+   "note": "Steak and pie restaurant behind the bar"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Young's Mayfair pub with a famous steak-and-pie grill room.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "punch-bowl-mayfair",
+  "name": "The Punch Bowl",
+  "area": "Mayfair",
+  "region": "C",
+  "station": "Green Park",
+  "walk": 7,
+  "lat": 51.509,
+  "lng": -0.152,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Gastropub dining and roast"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "1750 pub on Farm Street, once owned by Guy Ritchie.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "red-lion-duke-of-york",
+  "name": "The Red Lion",
+  "area": "St James's",
+  "region": "C",
+  "station": "Piccadilly Circus",
+  "walk": 4,
+  "lat": 51.5075,
+  "lng": -0.136,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Sandwiches"
+  },
+  "feat": [
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Tiny Fuller's pub of cut glass and mahogany on Duke of York Street.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "nags-head-belgravia",
+  "name": "The Nag's Head",
+  "area": "Belgravia",
+  "region": "C",
+  "station": "Hyde Park Corner",
+  "walk": 6,
+  "lat": 51.501,
+  "lng": -0.158,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub food"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "No phones, low bar, Kevin the landlord. Belgravia's eccentric gem.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "grenadier",
+  "name": "The Grenadier",
+  "area": "Belgravia",
+  "region": "C",
+  "station": "Hyde Park Corner",
+  "walk": 5,
+  "lat": 51.5015,
+  "lng": -0.1565,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Dining room and roast"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Wilton Row's haunted officers' mess, ceiling papered with banknotes.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "star-tavern",
+  "name": "The Star Tavern",
+  "area": "Belgravia",
+  "region": "C",
+  "station": "Knightsbridge",
+  "walk": 8,
+  "lat": 51.4985,
+  "lng": -0.156,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Fuller's kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Where the Great Train Robbery was planned. Every Good Beer Guide since 1974.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "antelope-belgravia",
+  "name": "The Antelope",
+  "area": "Belgravia",
+  "region": "C",
+  "station": "Sloane Square",
+  "walk": 5,
+  "lat": 51.4945,
+  "lng": -0.1545,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Fuller's dining room upstairs"
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "Eaton Terrace local with a fire, a dining room and no fuss.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "albert-victoria",
+  "name": "The Albert",
+  "area": "Victoria",
+  "region": "C",
+  "station": "St James's Park",
+  "walk": 3,
+  "lat": 51.4975,
+  "lng": -0.1355,
+  "fb": null,
+  "occ": [
+   "group",
+   "quiet",
+   "roast"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Carvery and dining room upstairs"
+  },
+  "feat": [
+   "heritage",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Victorian survivor among the office blocks on Victoria Street. Division bell, carvery.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "golden-eagle-marylebone",
+  "name": "The Golden Eagle",
+  "area": "Marylebone",
+  "region": "C",
+  "station": "Bond Street",
+  "walk": 6,
+  "lat": 51.517,
+  "lng": -0.152,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "music",
+   "ale",
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Piano singalongs three nights a week on Marylebone Lane.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ }
+]

@@ -1,0 +1,2849 @@
+[
+ {
+  "id": "dove-broadway-market",
+  "name": "The Dove",
+  "area": "Broadway Market",
+  "region": "E",
+  "station": "London Fields",
+  "walk": 5,
+  "lat": 51.5375,
+  "lng": -0.061,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Belgian",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Belgian-leaning menu of stews, frites and roasts in the warren of back rooms"
+  },
+  "feat": [
+   "craft",
+   "ale",
+   "fire",
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "A hundred Belgian beers in a candlelit maze of rooms off Broadway Market.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "cat-and-mutton",
+  "name": "The Cat & Mutton",
+  "area": "Broadway Market",
+  "region": "E",
+  "station": "London Fields",
+  "walk": 4,
+  "lat": 51.538,
+  "lng": -0.061,
+  "fb": {
+   "screens": 2,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "request",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "session",
+   "date",
+   "roast"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Modern pub menu upstairs and down, roast on Sundays"
+  },
+  "feat": [
+   "dj",
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Corner of Broadway Market and London Fields: brunch by day, DJs by night.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "chesham-arms",
+  "name": "The Chesham Arms",
+  "area": "Homerton",
+  "region": "E",
+  "station": "Homerton",
+  "walk": 5,
+  "lat": 51.548,
+  "lng": -0.045,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "outdoor"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Snacks and pop-up food"
+  },
+  "feat": [
+   "ale",
+   "dogs",
+   "fire",
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Saved by its neighbours and now a CAMRA favourite. Fire in winter, garden in summer, no screens.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "adam-and-eve-homerton",
+  "name": "The Adam & Eve",
+  "area": "Homerton",
+  "region": "E",
+  "station": "Homerton",
+  "walk": 4,
+  "lat": 51.5475,
+  "lng": -0.043,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "group",
+   "roast"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast, big garden"
+  },
+  "feat": [
+   "dogs",
+   "family"
+  ],
+  "rep": 2,
+  "tip": "Homerton's big garden pub: benches, roasts and everyone's dog.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "pembury-tavern",
+  "name": "The Pembury Tavern",
+  "area": "Hackney Downs",
+  "region": "E",
+  "station": "Hackney Downs",
+  "walk": 2,
+  "lat": 51.5495,
+  "lng": -0.059,
+  "fb": {
+   "screens": 3,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Wood-fired pizzas from the open kitchen"
+  },
+  "feat": [
+   "craft",
+   "games",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Five Points brewery's big taproom-pub with pizzas, pool and the game on.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "scolt-head",
+  "name": "The Scolt Head",
+  "area": "De Beauvoir",
+  "region": "E",
+  "station": "Haggerston",
+  "walk": 8,
+  "lat": 51.54,
+  "lng": -0.079,
+  "fb": {
+   "screens": 2,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "bar",
+    "proj"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "date",
+   "group",
+   "roast"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Gastropub"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Gastropub menu and a good roast"
+  },
+  "feat": [
+   "dogs",
+   "family"
+  ],
+  "rep": 2,
+  "tip": "De Beauvoir's village pub: big front terrace, good kitchen, projector down for tournaments.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "shacklewell-arms",
+  "name": "The Shacklewell Arms",
+  "area": "Dalston",
+  "region": "E",
+  "station": "Dalston Kingsland",
+  "walk": 6,
+  "lat": 51.549,
+  "lng": -0.074,
+  "fb": null,
+  "occ": [
+   "session",
+   "late"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "garden",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "03:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Burgers"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Burgers at the bar"
+  },
+  "feat": [
+   "music",
+   "dj"
+  ],
+  "rep": 2,
+  "tip": "Gig venue in a tropical-wallpapered pub. Late, loud, Dalston.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "victoria-dalston",
+  "name": "The Victoria",
+  "area": "Dalston",
+  "region": "E",
+  "station": "Dalston Kingsland",
+  "walk": 7,
+  "lat": 51.5525,
+  "lng": -0.07,
+  "fb": null,
+  "occ": [
+   "session",
+   "late"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "02:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pizza"
+  },
+  "feat": [
+   "music",
+   "dj",
+   "quiz"
+  ],
+  "rep": 2,
+  "tip": "Queensbridge Road music pub with a quiz, gigs and a pizza oven.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "duke-of-wellington-dalston",
+  "name": "The Duke of Wellington",
+  "area": "Dalston",
+  "region": "E",
+  "station": "Dalston Junction",
+  "walk": 5,
+  "lat": 51.5455,
+  "lng": -0.0785,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "outdoor"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub"
+  },
+  "feat": [
+   "games"
+  ],
+  "rep": 2,
+  "tip": "Balls Pond Road's proper football pub: every game on, garden out back, no pretension.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "prince-george-dalston",
+  "name": "The Prince George",
+  "area": "Dalston",
+  "region": "E",
+  "station": "Dalston Kingsland",
+  "walk": 6,
+  "lat": 51.549,
+  "lng": -0.0725,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Snacks"
+  },
+  "feat": [
+   "quiz",
+   "heritage",
+   "games"
+  ],
+  "rep": 2,
+  "tip": "Parkholme Road corner pub with a legendary Monday quiz and a jukebox.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "crate-brewery",
+  "name": "Crate Brewery & Pizzeria",
+  "area": "Hackney Wick",
+  "region": "E",
+  "station": "Hackney Wick",
+  "walk": 2,
+  "lat": 51.543,
+  "lng": -0.0245,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "group",
+   "session"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Sourdough pizzas from the brewery kitchen"
+  },
+  "feat": [
+   "craft",
+   "riverside",
+   "dj"
+  ],
+  "rep": 2,
+  "tip": "Canalside brewery taproom with pizzas and long tables by the water.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "howling-hops",
+  "name": "Howling Hops Tank Bar",
+  "area": "Hackney Wick",
+  "region": "E",
+  "station": "Hackney Wick",
+  "walk": 3,
+  "lat": 51.5435,
+  "lng": -0.025,
+  "fb": null,
+  "occ": [
+   "session",
+   "group",
+   "outdoor"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Street-food residents"
+  },
+  "feat": [
+   "craft"
+  ],
+  "rep": 2,
+  "tip": "Beer straight from the tanks in a Hackney Wick warehouse.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "star-hackney-downs",
+  "name": "The Star by Hackney Downs",
+  "area": "Hackney Downs",
+  "region": "E",
+  "station": "Hackney Downs",
+  "walk": 3,
+  "lat": 51.549,
+  "lng": -0.057,
+  "fb": {
+   "screens": 4,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session",
+   "roast"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast, garden tables"
+  },
+  "feat": [
+   "dogs",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Big garden opposite the park, screens in the garden for summer football.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "clapton-hart",
+  "name": "The Clapton Hart",
+  "area": "Clapton",
+  "region": "E",
+  "station": "Clapton",
+  "walk": 3,
+  "lat": 51.5615,
+  "lng": -0.057,
+  "fb": {
+   "screens": 2,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "garden",
+    "proj"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session",
+   "roast"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Antic kitchen, pub classics and roast"
+  },
+  "feat": [
+   "heritage",
+   "dogs",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Vast Antic pub with a huge garden and a projector out there for tournaments.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "crooked-billet-clapton",
+  "name": "The Crooked Billet",
+  "area": "Clapton",
+  "region": "E",
+  "station": "Clapton",
+  "walk": 2,
+  "lat": 51.562,
+  "lng": -0.0575,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "session"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Rotating kitchen residencies"
+  },
+  "feat": [
+   "dj",
+   "dogs"
+  ],
+  "rep": 2,
+  "tip": "Garden pub by Clapton station with street-food residencies and DJs.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "anchor-and-hope-clapton",
+  "name": "The Anchor & Hope",
+  "area": "Clapton",
+  "region": "E",
+  "station": "Clapton",
+  "walk": 12,
+  "lat": 51.564,
+  "lng": -0.045,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "outdoor",
+   "date"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": true,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "ale",
+   "riverside",
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Tiny Fuller's pub on the River Lea towpath. Sunset pints on the wall.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "princess-of-wales-clapton",
+  "name": "The Princess of Wales",
+  "area": "Clapton",
+  "region": "E",
+  "station": "Clapton",
+  "walk": 10,
+  "lat": 51.5625,
+  "lng": -0.0455,
+  "fb": {
+   "screens": 3,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "roast"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Young's kitchen and roast, riverside tables"
+  },
+  "feat": [
+   "riverside",
+   "dogs",
+   "family"
+  ],
+  "rep": 2,
+  "tip": "Young's riverside pub on the Lea with a big waterside terrace.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "marksman",
+  "name": "The Marksman",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Hoxton",
+  "walk": 7,
+  "lat": 51.531,
+  "lng": -0.062,
+  "fb": null,
+  "occ": [
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Michelin Pub of the Year cooking upstairs and in the bar; the beef and barley buns are famous"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Hackney Road corner pub with a Michelin-garlanded kitchen upstairs. Book.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "camel-bethnal-green",
+  "name": "The Camel",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Bethnal Green",
+  "walk": 5,
+  "lat": 51.53,
+  "lng": -0.053,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pies"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Pies and mash, nothing else needed"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Tiny, wallpapered and all about the pies.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "approach-tavern",
+  "name": "The Approach Tavern",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Bethnal Green",
+  "walk": 5,
+  "lat": 51.529,
+  "lng": -0.05,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "quiet",
+   "roast"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and roast"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Handsome Victorian pub with a heated front garden and an art gallery upstairs.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "sun-tavern",
+  "name": "The Sun Tavern",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Bethnal Green",
+  "walk": 2,
+  "lat": 51.5275,
+  "lng": -0.0555,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "late",
+   "date"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "cocktails",
+   "music",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "Poitin, whiskey and candlelight. Late-night drinking done quietly.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "carpenters-arms-cheshire",
+  "name": "The Carpenter's Arms",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Shoreditch High Street",
+  "walk": 8,
+  "lat": 51.524,
+  "lng": -0.064,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Small plates and Sunday roast"
+  },
+  "feat": [
+   "craft",
+   "heritage",
+   "ale"
+  ],
+  "rep": 3,
+  "tip": "Once owned by the Krays, now one of the best small beer pubs in the East End.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "sebright-arms",
+  "name": "The Sebright Arms",
+  "area": "Hackney Road",
+  "region": "E",
+  "station": "Hoxton",
+  "walk": 8,
+  "lat": 51.532,
+  "lng": -0.066,
+  "fb": null,
+  "occ": [
+   "session",
+   "late"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Burgers"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Burgers from the resident kitchen"
+  },
+  "feat": [
+   "music",
+   "dj"
+  ],
+  "rep": 2,
+  "tip": "Gig basement, burgers and late nights down an alley off Hackney Road.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "star-of-bethnal-green",
+  "name": "The Star of Bethnal Green",
+  "area": "Bethnal Green",
+  "region": "E",
+  "station": "Bethnal Green",
+  "walk": 1,
+  "lat": 51.5275,
+  "lng": -0.056,
+  "fb": {
+   "screens": 4,
+   "big": 75,
+   "proj": true,
+   "pos": [
+    "bar",
+    "proj"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "late",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "02:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pizza"
+  },
+  "feat": [
+   "dj",
+   "karaoke",
+   "quiz"
+  ],
+  "rep": 2,
+  "tip": "Party pub by the tube: DJs, karaoke, and the football on the big screen.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ten-bells",
+  "name": "The Ten Bells",
+  "area": "Spitalfields",
+  "region": "E",
+  "station": "Liverpool Street",
+  "walk": 5,
+  "lat": 51.5195,
+  "lng": -0.0745,
+  "fb": null,
+  "occ": [
+   "session",
+   "late"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "The Jack the Ripper pub, tiled and atmospheric, with a busy upstairs room.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "pride-of-spitalfields",
+  "name": "The Pride of Spitalfields",
+  "area": "Spitalfields",
+  "region": "E",
+  "station": "Aldgate East",
+  "walk": 5,
+  "lat": 51.5185,
+  "lng": -0.07,
+  "fb": null,
+  "occ": [
+   "quiet"
+  ],
+  "group": 6,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "ale",
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Tiny, carpeted, brilliant. Real ale, a cat and locals who've been coming for decades.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "golden-heart",
+  "name": "The Golden Heart",
+  "area": "Spitalfields",
+  "region": "E",
+  "station": "Liverpool Street",
+  "walk": 6,
+  "lat": 51.5195,
+  "lng": -0.0745,
+  "fb": null,
+  "occ": [
+   "session",
+   "quiet"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Sandra's pub opposite the market. East End art crowd, late-ish.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "owl-and-pussycat",
+  "name": "The Owl & Pussycat",
+  "area": "Shoreditch",
+  "region": "E",
+  "station": "Shoreditch High Street",
+  "walk": 4,
+  "lat": 51.525,
+  "lng": -0.074,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "quiet",
+   "roast"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast"
+  },
+  "feat": [
+   "dogs"
+  ],
+  "rep": 2,
+  "tip": "Redchurch Street pub with a surprise garden.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "well-and-bucket",
+  "name": "The Well & Bucket",
+  "area": "Bethnal Green Road",
+  "region": "E",
+  "station": "Shoreditch High Street",
+  "walk": 6,
+  "lat": 51.524,
+  "lng": -0.068,
+  "fb": null,
+  "occ": [
+   "date",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Seafood"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Oysters and seafood at the bar"
+  },
+  "feat": [
+   "craft",
+   "cocktails",
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Tiled Victorian pub with oysters, craft beer and a cocktail basement.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "crown-and-shuttle",
+  "name": "The Crown & Shuttle",
+  "area": "Shoreditch",
+  "region": "E",
+  "station": "Shoreditch High Street",
+  "walk": 3,
+  "lat": 51.5235,
+  "lng": -0.076,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "group",
+   "session"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Street-food kitchen"
+  },
+  "feat": [
+   "dj"
+  ],
+  "rep": 2,
+  "tip": "One of Shoreditch's biggest beer gardens, hidden behind a narrow bar on the High Street.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "old-fountain",
+  "name": "The Old Fountain",
+  "area": "Old Street",
+  "region": "E",
+  "station": "Old Street",
+  "walk": 4,
+  "lat": 51.5265,
+  "lng": -0.0905,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "outdoor"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "terrace",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Pub classics"
+  },
+  "feat": [
+   "ale",
+   "craft",
+   "rooftop"
+  ],
+  "rep": 3,
+  "tip": "Family-run ale pub with a roof terrace, minutes from Old Street roundabout.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "grapes-limehouse",
+  "name": "The Grapes",
+  "area": "Limehouse",
+  "region": "E",
+  "station": "Westferry",
+  "walk": 5,
+  "lat": 51.5095,
+  "lng": -0.0355,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "terrace",
+   "benches": false,
+   "river": true,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Seafood",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Fish restaurant upstairs, bar snacks below"
+  },
+  "feat": [
+   "heritage",
+   "riverside",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Narrow 1720 riverside pub part-owned by Ian McKellen. Tiny back deck over the Thames.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "narrow-limehouse",
+  "name": "The Narrow",
+  "area": "Limehouse",
+  "region": "E",
+  "station": "Limehouse",
+  "walk": 5,
+  "lat": 51.509,
+  "lng": -0.032,
+  "fb": null,
+  "occ": [
+   "date",
+   "outdoor",
+   "roast"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "riverside",
+   "benches": false,
+   "river": true,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Gordon Ramsay's riverside gastropub, roast on Sundays"
+  },
+  "feat": [
+   "riverside"
+  ],
+  "rep": 2,
+  "tip": "Gordon Ramsay's pub on the bend of the river at Limehouse. Terrace with a view.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "prospect-of-whitby",
+  "name": "The Prospect of Whitby",
+  "area": "Wapping",
+  "region": "E",
+  "station": "Wapping",
+  "walk": 4,
+  "lat": 51.5065,
+  "lng": -0.0525,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "date",
+   "group",
+   "roast"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Greene King kitchen and roast, riverside terrace"
+  },
+  "feat": [
+   "heritage",
+   "riverside",
+   "family"
+  ],
+  "rep": 3,
+  "tip": "London's oldest riverside pub, 1520, with a pewter bar and a hanging noose outside.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "town-of-ramsgate",
+  "name": "The Town of Ramsgate",
+  "area": "Wapping",
+  "region": "E",
+  "station": "Wapping",
+  "walk": 3,
+  "lat": 51.5045,
+  "lng": -0.058,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "riverside",
+   "benches": false,
+   "river": true,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and roast"
+  },
+  "feat": [
+   "heritage",
+   "riverside"
+  ],
+  "rep": 2,
+  "tip": "Narrow Wapping pub by the old stairs where Judge Jeffreys was caught. Tiny river terrace.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "captain-kidd",
+  "name": "The Captain Kidd",
+  "area": "Wapping",
+  "region": "E",
+  "station": "Wapping",
+  "walk": 2,
+  "lat": 51.5055,
+  "lng": -0.056,
+  "fb": null,
+  "occ": [
+   "outdoor",
+   "group"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 1,
+   "roast": false,
+   "note": "Sam Smith's menu"
+  },
+  "feat": [
+   "riverside",
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Sam Smith's riverside pub with a big terrace and cheap pints.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "cow-westfield",
+  "name": "The Cow",
+  "area": "Stratford",
+  "region": "E",
+  "station": "Stratford",
+  "walk": 4,
+  "lat": 51.5435,
+  "lng": -0.008,
+  "fb": {
+   "screens": 8,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "WHU"
+   ],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session",
+   "roast"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and roast"
+  },
+  "feat": [
+   "hire",
+   "family"
+  ],
+  "rep": 2,
+  "tip": "Westfield's big Geronimo pub: screens everywhere and West Ham on the way through.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "king-edward-vii",
+  "name": "The King Edward VII",
+  "area": "Stratford",
+  "region": "E",
+  "station": "Stratford",
+  "walk": 5,
+  "lat": 51.5425,
+  "lng": -0.002,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and roast in the panelled dining room"
+  },
+  "feat": [
+   "heritage",
+   "fire",
+   "ale"
+  ],
+  "rep": 2,
+  "tip": "Stratford's old-school Victorian pub with a wood-panelled dining room.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "red-lion-leytonstone",
+  "name": "The Red Lion",
+  "area": "Leytonstone",
+  "region": "E",
+  "station": "Leytonstone",
+  "walk": 3,
+  "lat": 51.568,
+  "lng": 0.009,
+  "fb": {
+   "screens": 2,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session",
+   "roast"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Antic kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "dogs",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Antic's Leytonstone flagship with a huge garden and a summer screen.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "heathcote-and-star",
+  "name": "The Heathcote & Star",
+  "area": "Leytonstone",
+  "region": "E",
+  "station": "Leytonstone",
+  "walk": 6,
+  "lat": 51.566,
+  "lng": 0.012,
+  "fb": {
+   "screens": 2,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "garden",
+    "proj"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Pizza from the garden kitchen"
+  },
+  "feat": [
+   "dj",
+   "dogs",
+   "family"
+  ],
+  "rep": 2,
+  "tip": "Enormous garden with pizza and a big screen for tournaments.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "northcote-arms",
+  "name": "The Northcote Arms",
+  "area": "Leytonstone",
+  "region": "E",
+  "station": "Leytonstone",
+  "walk": 5,
+  "lat": 51.5675,
+  "lng": 0.013,
+  "fb": {
+   "screens": 3,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "session"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub"
+  },
+  "feat": [
+   "music",
+   "dogs"
+  ],
+  "rep": 2,
+  "tip": "Corner pub with a garden that does live music and the match.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "leyton-technical",
+  "name": "Leyton Technical",
+  "area": "Leyton",
+  "region": "E",
+  "station": "Leyton",
+  "walk": 2,
+  "lat": 51.5605,
+  "lng": -0.013,
+  "fb": {
+   "screens": 4,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "LEY"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session",
+   "roast"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Antic kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "In the old Leyton Town Hall, minutes from Brisbane Road. Orient fans' pre-match of choice.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "leyton-star",
+  "name": "The Leyton Star",
+  "area": "Leyton",
+  "region": "E",
+  "station": "Leyton",
+  "walk": 3,
+  "lat": 51.5615,
+  "lng": -0.0125,
+  "fb": {
+   "screens": 4,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "LEY"
+   ],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Rotating kitchen"
+  },
+  "feat": [
+   "dj",
+   "dogs"
+  ],
+  "rep": 2,
+  "tip": "Big garden, DJs and screens outside for the summer.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "birkbeck-tavern",
+  "name": "The Birkbeck Tavern",
+  "area": "Leyton",
+  "region": "E",
+  "station": "Leyton",
+  "walk": 6,
+  "lat": 51.5645,
+  "lng": -0.0075,
+  "fb": {
+   "screens": 2,
+   "big": 55,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "LEY"
+   ],
+   "atmos": "home",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "quiet"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "ale",
+   "heritage",
+   "dogs"
+  ],
+  "rep": 2,
+  "tip": "Leyton's proper old local with real ale and a big garden. Orient's away-from-the-ground pub.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "forest-tavern",
+  "name": "The Forest Tavern",
+  "area": "Forest Gate",
+  "region": "E",
+  "station": "Forest Gate",
+  "walk": 1,
+  "lat": 51.549,
+  "lng": 0.024,
+  "fb": {
+   "screens": 3,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "WHU"
+   ],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "session",
+   "outdoor",
+   "roast"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Antic kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "music"
+  ],
+  "rep": 2,
+  "tip": "Antic's Forest Gate pub with a garden and West Ham on the telly.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "coborn",
+  "name": "The Coborn",
+  "area": "Bow",
+  "region": "E",
+  "station": "Mile End",
+  "walk": 5,
+  "lat": 51.5265,
+  "lng": -0.025,
+  "fb": null,
+  "occ": [
+   "date",
+   "quiet",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Gastropub kitchen with a well-loved roast"
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2,
+  "tip": "Bow's gastropub with a good roast and Victorian bones.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "morgan-arms",
+  "name": "The Morgan Arms",
+  "area": "Bow",
+  "region": "E",
+  "station": "Mile End",
+  "walk": 6,
+  "lat": 51.529,
+  "lng": -0.029,
+  "fb": null,
+  "occ": [
+   "date",
+   "outdoor",
+   "roast"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Serious gastropub menu, roast on Sundays"
+  },
+  "feat": [
+   "dogs"
+  ],
+  "rep": 3,
+  "tip": "One of the East End's best kitchens, on a quiet Bow corner.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "lord-tredegar",
+  "name": "The Lord Tredegar",
+  "area": "Bow",
+  "region": "E",
+  "station": "Mile End",
+  "walk": 6,
+  "lat": 51.5295,
+  "lng": -0.03,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "outdoor",
+   "roast"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast"
+  },
+  "feat": [
+   "heritage",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "Quiet Bow local with a garden and a fire.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "palm-tree",
+  "name": "The Palm Tree",
+  "area": "Mile End",
+  "region": "E",
+  "station": "Mile End",
+  "walk": 8,
+  "lat": 51.529,
+  "lng": -0.0355,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "late"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "music",
+   "heritage"
+  ],
+  "rep": 3,
+  "tip": "Cash only, gold wallpaper, jazz on Saturdays, canalside in Mile End Park. Unchanged for decades.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "henry-addington",
+  "name": "The Henry Addington",
+  "area": "Canary Wharf",
+  "region": "E",
+  "station": "Canary Wharf",
+  "walk": 3,
+  "lat": 51.506,
+  "lng": -0.023,
+  "fb": {
+   "screens": 10,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Nicholson's menu"
+  },
+  "feat": [
+   "riverside",
+   "hire"
+  ],
+  "rep": 2,
+  "tip": "Enormous Nicholson's pub on the dock with screens everywhere. Canary Wharf's match-day venue.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "gun-docklands",
+  "name": "The Gun",
+  "area": "Docklands",
+  "region": "E",
+  "station": "Canary Wharf",
+  "walk": 15,
+  "lat": 51.5015,
+  "lng": -0.0065,
+  "fb": null,
+  "occ": [
+   "date",
+   "outdoor",
+   "roast"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "riverside",
+   "benches": false,
+   "river": true,
+   "big": true
+  },
+  "late": "23:00",
+  "price": 3,
+  "food": {
+   "cuisine": [
+    "Gastropub"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Fine-dining pub food and a roast, riverside terrace facing the O2"
+  },
+  "feat": [
+   "riverside",
+   "heritage",
+   "fire"
+  ],
+  "rep": 3,
+  "tip": "Nelson's old haunt on the Isle of Dogs with a terrace facing the O2.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "george-isle-of-dogs",
+  "name": "The George",
+  "area": "Isle of Dogs",
+  "region": "E",
+  "station": "Island Gardens",
+  "walk": 5,
+  "lat": 51.4895,
+  "lng": -0.0105,
+  "fb": {
+   "screens": 4,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "outdoor"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub"
+  },
+  "feat": [
+   "games"
+  ],
+  "rep": 2,
+  "tip": "Big Island pub with a garden and every game on.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "ferry-house",
+  "name": "The Ferry House",
+  "area": "Isle of Dogs",
+  "region": "E",
+  "station": "Island Gardens",
+  "walk": 3,
+  "lat": 51.488,
+  "lng": -0.012,
+  "fb": {
+   "screens": 3,
+   "big": 55,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": false,
+   "teams": [
+    "MIL",
+    "WHU"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "quiet",
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "feat": [
+   "heritage",
+   "games"
+  ],
+  "rep": 2,
+  "tip": "The oldest pub on the Island, tucked by the foot tunnel. Old East End, telly on.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ },
+ {
+  "id": "wenlock-and-essex",
+  "name": "The Wenlock & Essex",
+  "area": "Islington",
+  "region": "N",
+  "station": "Essex Road",
+  "walk": 4,
+  "lat": 51.5385,
+  "lng": -0.098,
+  "fb": {
+   "screens": 2,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "request",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "date",
+   "outdoor",
+   "roast"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "price": 2,
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub kitchen and roast"
+  },
+  "feat": [
+   "dogs",
+   "fire"
+  ],
+  "rep": 2,
+  "tip": "Essex Road corner pub with a terrace and a good roast.",
+  "verify": {
+   "status": "unverified",
+   "checked": null,
+   "source": null,
+   "notes": null
+  }
+ }
+]

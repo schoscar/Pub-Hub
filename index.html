@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<title>Pub Hub</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Every London pub, sorted by what you're after: match day, eating out, a big night, a quiet pint or sitting outside.">
+<meta name="theme-color" content="#1A1A1C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pub Hub">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #1A1A1C; --surface: #232326; --surface-2: #2B2B2F;
+    --ink: #ECECEE; --muted: #9C9CA4; --line: #313136; --line-strong: #44444B;
+    --accent: #5FD186; --accent-ink: #0F1A13; --accent-soft: #24352B;
+    --brass: #DDB04E; --brass-soft: #3A3218; --off: #6F6F77;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .5); --radius: 6px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Mabry Pro", "Mabry", "DM Sans", "Helvetica Neue", Arial, sans-serif; font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .display { font-family: "Space Grotesk", "Mabry Pro", "DM Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 700; letter-spacing: -.01em; text-wrap: balance; margin: 0; }
+  button, select, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 600; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Header ---------- */
+  .top { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+  .top-inner { max-width: 1280px; margin: 0 auto; padding: 10px 20px 0; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .wordmark { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: inherit; }
+  .wordmark h1 { font-size: 22px; line-height: 1; letter-spacing: -.02em; }
+  .wordmark h1 span { color: var(--accent); }
+  .wordmark small { color: var(--muted); font-size: 13px; }
+  .search { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 0 10px; background: var(--surface); min-width: 220px; flex: 0 1 320px; margin-left: auto; }
+  .search input { border: 0; background: transparent; padding: 9px 0; width: 100%; outline: none; }
+  .search svg { color: var(--muted); flex: none; }
+  .modes { max-width: 1280px; margin: 0 auto; padding: 10px 20px 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .modes::-webkit-scrollbar { display: none; }
+  .modes button {
+    flex: none; border: 1px solid transparent; background: transparent; color: var(--muted);
+    padding: 8px 14px 12px; font-weight: 600; font-size: 14px; border-radius: 6px 6px 0 0; position: relative; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .modes button svg { width: 15px; height: 15px; flex: none; }
+  .modes button:hover { color: var(--ink); }
+  .modes button[aria-pressed="true"] { color: var(--ink); }
+  .modes button[aria-pressed="true"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: var(--accent); border-radius: 2px 2px 0 0; }
+  @media (max-width: 1100px) { .wordmark small { display: none; } }
+  @media (max-width: 860px) { .top-inner { gap: 10px; } .search { flex: 1 1 100%; margin-left: 0; } }
+
+  /* ---------- Layout ---------- */
+  .shell { max-width: 1280px; margin: 0 auto; padding: 20px 20px 48px; display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 24px; align-items: start; }
+  @media (max-width: 860px) { .shell { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* ---------- Filters ---------- */
+  .filters { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); position: sticky; top: 110px; max-height: calc(100vh - 126px); overflow: auto; }
+  .filters summary { display: none; }
+  @media (max-width: 860px) {
+    .filters { position: static; max-height: none; }
+    .filters summary { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; cursor: pointer; list-style: none; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 16px; }
+    .filters summary::-webkit-details-marker { display: none; }
+    .filters:not([open]) .fbody, .filters:not([open]) .fhead { display: none; }
+  }
+  .fhead { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 0; }
+  .fhead h2 { font-size: 16px; }
+  .fhead .count { color: var(--muted); font-size: 13px; }
+  .fbody { padding: 6px 16px 16px; display: flex; flex-direction: column; gap: 18px; }
+  .fgroup { display: flex; flex-direction: column; gap: 8px; }
+  .fgroup .label { display: flex; justify-content: space-between; align-items: baseline; }
+  .fgroup .label small { font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 12px; }
+  .team-select, .fgroup select { width: 100%; padding: 9px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface-2); }
+  .team-select { font-weight: 600; border-color: var(--brass); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 5px 11px; font-size: 13.5px; line-height: 1.2; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 500; }
+  .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
+  .seg button { border: 0; background: var(--surface); padding: 7px 3px; font-size: 12.5px; border-left: 1px solid var(--line); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .seg button:first-child { border-left: 0; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 500; }
+  .toggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 0; font-size: 14px; }
+  .toggle input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+  .reset { align-self: flex-start; border: 0; background: transparent; color: var(--muted); text-decoration: underline; padding: 0; font-size: 13px; }
+  .fdivider { border: 0; border-top: 1px solid var(--line); margin: 0; }
+  .fintro { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* ---------- Results ---------- */
+  .main { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .toolbar h2 { font-size: 22px; line-height: 1.15; }
+  .toolbar h2 em { font-style: normal; color: var(--accent); }
+  .toolbar .right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .toolbar select { padding: 7px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); }
+  .ghost { border: 1px solid var(--line-strong); background: var(--surface); border-radius: var(--radius); padding: 7px 12px; font-size: 14px; }
+  .ghost[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+  .ghost.near { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+  .ghost.near[aria-pressed="true"] { color: var(--accent); }
+  .ghost.near.busy { opacity: .6; pointer-events: none; }
+  .near-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 8px 12px; font-size: 13.5px; }
+  .near-bar .seg { flex: none; } .near-bar .seg button { padding: 5px 10px; }
+  .near-bar .lbl { color: var(--muted); } .near-bar .lbl b { color: var(--ink); font-weight: 600; }
+  .near-bar .link { margin-left: auto; border: 0; background: transparent; color: var(--muted); text-decoration: underline; padding: 0; font-size: 13px; }
+  .where .dist { color: var(--accent); font-weight: 600; }
+  .toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 50; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 6px; font-size: 14px; max-width: calc(100vw - 32px); box-shadow: var(--shadow); }
+
+  /* ---------- Map ---------- */
+  .map-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px 12px; display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 14px; }
+  @media (max-width: 700px) { .map-wrap { grid-template-columns: 1fr; } }
+  .map-stage { position: relative; min-width: 0; }
+  .map-stage svg { width: 100%; height: auto; display: block; max-width: 100%; touch-action: none; cursor: grab; border-radius: 4px; background: radial-gradient(ellipse at 50% 45%, #2A2A2F 0%, var(--surface) 75%); user-select: none; }
+  .map-stage svg.dragging { cursor: grabbing; }
+  .map-stage svg.picking { cursor: crosshair; }
+  .map-ctl { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; }
+  .map-ctl button { min-width: 30px; height: 30px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 4px; font-size: 17px; line-height: 1; padding: 0 6px; }
+  .map-ctl button.txt { font-size: 11px; font-weight: 600; letter-spacing: .04em; }
+  .map-ctl button:hover { border-color: var(--accent); }
+  .map-tip { position: absolute; pointer-events: none; z-index: 3; white-space: nowrap; background: var(--ink); color: var(--bg); padding: 6px 10px; border-radius: 4px; font-size: 12.5px; line-height: 1.3; transform: translate(-50%, calc(-100% - 12px)); box-shadow: var(--shadow); }
+  .map-tip b { display: block; font-weight: 600; font-size: 13px; }
+  .map-tip::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 10px; height: 10px; background: var(--ink); transform: translateX(-50%) rotate(45deg); }
+  .pick-hint { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); z-index: 3; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px; white-space: nowrap; max-width: calc(100% - 100px); overflow: hidden; text-overflow: ellipsis; }
+  .map-legend { display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: var(--muted); padding-top: 4px; }
+  .map-legend .row { display: flex; gap: 8px; align-items: center; }
+  .map-legend .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .map-legend .sq { width: 12px; height: 12px; border-radius: 2px; flex: none; background: var(--accent); opacity: .18; }
+  .map-legend .stad { width: 12px; height: 12px; flex: none; clip-path: polygon(50% 0, 100% 35%, 82% 100%, 18% 100%, 0 35%); background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--muted); }
+  .map-legend b { color: var(--ink); font-weight: 600; }
+  .water { fill: #27394B; stroke: #3A4B5C; stroke-linejoin: round; }
+  .river { fill: none; stroke: #34424F; stroke-linejoin: round; stroke-linecap: round; }
+  .canal { fill: none; stroke: #2F3B47; stroke-linejoin: round; stroke-linecap: round; }
+  .rlabel { fill: #6C8296; font-style: italic; letter-spacing: .18em; }
+  .park { fill: var(--accent); opacity: .12; stroke: var(--accent); stroke-opacity: .18; stroke-linejoin: round; }
+  .park-label { fill: var(--accent); opacity: .55; font-style: italic; }
+  .road { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+  .road-p { stroke: #35353D; } .road-t { stroke: #4A4A54; } .road-m { stroke: #5E5E6A; }
+  .road-label { fill: #8E8E98; font-weight: 600; letter-spacing: .04em; }
+  .mlabel { fill: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+  .stadium { cursor: pointer; }
+  .stadium path { fill: var(--surface); stroke: var(--muted); stroke-width: 1.3; }
+  .stadium text { fill: var(--muted); font-weight: 700; letter-spacing: .05em; text-anchor: middle; }
+  .stadium:hover path, .stadium:focus path { stroke: var(--ink); }
+  .stadium.active path { fill: var(--team-c); stroke: #fff; stroke-width: 1.6; }
+  .stadium.active text { fill: var(--ink); }
+  .scale line { stroke: var(--muted); } .scale text { fill: var(--muted); }
+  .pin { cursor: pointer; }
+  .pin.dim circle { fill: var(--off); opacity: .28; }
+  .pin.hit circle { fill: var(--accent); stroke: var(--surface); }
+  .pin.team circle { stroke: #fff; }
+  .pin.fav circle { stroke: var(--ink); }
+  .pin:hover circle, .pin:focus circle { stroke: var(--ink); filter: brightness(1.15); }
+  .me circle.ring { fill: var(--accent); opacity: .08; stroke: var(--accent); stroke-dasharray: 4 3; }
+  .me .dot { fill: var(--accent); stroke: #fff; }
+  .me .pulse { fill: none; stroke: var(--accent); opacity: .5; }
+
+  /* ---------- Cards ---------- */
+  .group-title { display: flex; align-items: baseline; gap: 10px; margin-top: 6px; }
+  .group-title h3 { font-size: 16px; }
+  .group-title .count { color: var(--muted); font-size: 13px; }
+  .group-title .rule { flex: 1; border-top: 1px solid var(--line-strong); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 10px; text-align: left; position: relative; min-width: 0; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+  .card.mine { border-left: 4px solid var(--team, var(--brass)); }
+  .card-head { display: flex; align-items: flex-start; gap: 10px; }
+  .card h3 { font-size: 18px; line-height: 1.15; }
+  .card .where { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .chk { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; }
+  .chk.ok { color: var(--accent); } .chk.no { color: var(--off); } .chk.part { color: var(--brass); } .chk.map { color: #8FA6C0; }
+  .fav-btn { margin-left: auto; flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 50%; width: 32px; height: 32px; display: grid; place-items: center; color: var(--muted); }
+  .fav-btn[aria-pressed="true"] { color: var(--brass); border-color: var(--brass); }
+  .strip { display: grid; grid-template-columns: 1fr 1fr 1.15fr; align-items: stretch; gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface-2); }
+  .strip > div { padding: 7px 9px; border-left: 1px solid var(--line); min-width: 0; }
+  .strip > div:first-child { border-left: 0; }
+  .strip .v { font-weight: 700; font-size: 15px; line-height: 1.15; overflow-wrap: anywhere; }
+  .strip .v.num { white-space: nowrap; }
+  .strip .v small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 2px; }
+  .strip .k { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .strip .on { color: var(--accent); } .strip .off { color: var(--off); }
+  .no-fb { padding: 7px 10px; border: 1px dashed var(--line-strong); border-radius: var(--radius); color: var(--muted); font-size: 13px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 4px; line-height: 1.35; background: var(--accent); color: var(--accent-ink); font-weight: 700; letter-spacing: .01em; }
+  .tag.occ { background: transparent; border: 1px solid var(--accent); color: var(--accent); font-weight: 600; padding: 2px 8px; }
+  .tag.feat { background: var(--surface-2); border: 1px solid var(--line-strong); color: var(--ink); font-weight: 500; padding: 2px 8px; }
+  .tag.team { font-weight: 700; border: 1px solid rgba(255, 255, 255, .22); }
+  .tag.team.striped { letter-spacing: .02em; }
+  .why { font-size: 13.5px; color: var(--muted); } .why b { color: var(--ink); font-weight: 600; }
+  .card .open { position: absolute; inset: 0; border: 0; background: transparent; cursor: pointer; border-radius: var(--radius); }
+  .card .open:focus-visible { outline: 2px solid var(--accent); }
+  .card > *:not(.open) { position: relative; z-index: 1; pointer-events: none; }
+  .card .fav-btn { pointer-events: auto; }
+  .empty { background: var(--surface); border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 28px; text-align: center; color: var(--muted); }
+  .empty b { color: var(--ink); }
+  .more { justify-self: center; border: 1px solid var(--line-strong); background: var(--surface); border-radius: var(--radius); padding: 10px 18px; font-weight: 500; }
+
+  /* ---------- Detail ---------- */
+  dialog { border: 0; padding: 0; background: var(--surface); color: var(--ink); border-radius: 8px; width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 32px); box-shadow: var(--shadow); }
+  dialog::backdrop { background: rgba(10, 16, 12, .55); }
+  .d-head { padding: 22px 24px 14px; border-bottom: 1px solid var(--line); display: flex; gap: 12px; align-items: flex-start; }
+  .d-head h2 { font-size: 26px; line-height: 1.1; }
+  .d-head .where { color: var(--muted); margin-top: 6px; }
+  .d-close { margin-left: auto; border: 1px solid var(--line-strong); background: var(--surface); border-radius: 50%; width: 36px; height: 36px; font-size: 18px; flex: none; }
+  .d-body { padding: 18px 24px 24px; display: flex; flex-direction: column; gap: 20px; }
+  .d-sec h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .fact { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 9px 11px; }
+  .fact .k { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+  .fact .v { font-weight: 700; font-size: 17px; line-height: 1.15; margin-top: 2px; }
+  .fact .v small { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+  .fact.on .v { color: var(--accent); } .fact.off .v { color: var(--off); }
+  .screens-map { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pos { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 4px; border: 1px solid var(--line-strong); font-size: 13px; }
+  .pos.yes { background: var(--accent-soft); border-color: transparent; } .pos.no { color: var(--off); border-style: dashed; }
+  .tip { border-left: 3px solid var(--brass); padding: 6px 12px; background: var(--brass-soft); border-radius: 0 4px 4px 0; font-size: 14.5px; }
+  .verify { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; font-size: 13.5px; display: flex; flex-direction: column; gap: 4px; }
+  .verify .chk { font-size: 13px; }
+  .verify .src { color: var(--muted); word-break: break-all; }
+  .d-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { border: 1px solid var(--line-strong); background: var(--surface); border-radius: var(--radius); padding: 8px 14px; text-decoration: none; color: inherit; font-weight: 500; font-size: 14px; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .fine { font-size: 12.5px; color: var(--muted); }
+  footer { max-width: 1280px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: 13px; }
+  footer p { max-width: 70ch; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="top-inner">
+    <a class="wordmark" href="#"><h1>Pub <span>Hub</span></h1><small>Every London pub, sorted by what you're after</small></a>
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Pub name, area or station" autocomplete="off">
+    </label>
+  </div>
+  <nav class="modes" id="modes" aria-label="What are you looking for?"></nav>
+</header>
+
+<div class="shell">
+  <details class="filters" id="filters" open>
+    <summary>Filters <span class="count" id="fcount-m"></span></summary>
+    <div class="fhead"><h2 id="fhead-title">Match day</h2><span class="count" id="fcount"></span></div>
+    <div class="fbody" id="fbody"></div>
+  </details>
+
+  <main class="main">
+    <div class="toolbar">
+      <h2 id="headline">All pubs</h2>
+      <div class="right">
+        <button class="ghost near" id="near" aria-pressed="false" title="Find pubs near your location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg>
+          <span id="near-txt">Near me</span>
+        </button>
+        <button class="ghost" id="map-toggle" aria-pressed="true">Map</button>
+        <select id="sort" aria-label="Sort"></select>
+      </div>
+    </div>
+
+    <div class="near-bar" id="near-bar" hidden>
+      <span class="lbl" id="near-lbl"></span>
+      <div class="seg" id="seg-radius"></div>
+      <button class="link" id="near-pick">Move pin on map</button>
+      <button class="link" id="near-clear">Clear</button>
+    </div>
+
+    <section class="map-wrap" id="map-wrap" aria-label="Map of London">
+      <div class="map-stage">
+        <svg id="map" viewBox="0 0 460 440" role="img" aria-label="Pubs, grounds and parks plotted on a schematic map of London with the Thames"></svg>
+        <div class="map-ctl">
+          <button id="zin" aria-label="Zoom in">+</button>
+          <button id="zout" aria-label="Zoom out">&minus;</button>
+          <button id="zreset" class="txt" aria-label="Reset view">Reset</button>
+        </div>
+        <div class="map-tip" id="map-tip" hidden></div>
+        <div class="pick-hint" id="pick-hint" hidden>Tap the map where you are</div>
+      </div>
+      <div class="map-legend">
+        <div class="row"><span class="dot" id="legend-team" style="background:var(--brass)"></span><span><b>Your team's pubs</b></span></div>
+        <div class="row"><span class="dot" style="background:var(--accent)"></span><span><b>Matches your filters</b></span></div>
+        <div class="row"><span class="dot" style="background:var(--off);opacity:.4"></span><span>Filtered out (written-up pubs only)</span></div>
+        <div class="row"><span class="stad"></span><span>Football ground. Tap to pick that club.</span></div>
+        <div class="row"><span class="sq"></span><span>Parks and commons</span></div>
+        <div class="row"><span class="sq" style="background:#5B5B67;opacity:1;height:3px;border-radius:2px"></span><span>Major roads</span></div>
+        <div class="row" style="margin-top:4px">Scroll to zoom, drag to pan. Roads, parks and river from OpenStreetMap.</div>
+      </div>
+    </section>
+
+    <div id="results"></div>
+  </main>
+</div>
+
+<footer><p id="datanote"></p></footer>
+<dialog id="detail"></dialog>
+
+<script src="pubs.js"></script>
+<script src="london.js"></script>
+<script>
+(() => {
+  const PUBS = window.PUBS || [];
+  const LONDON = window.LONDON || {};
+  const META = window.PUBS_META || { count: PUBS.length, checked: 0 };
+
+  // ---------- Reference data ----------
+  const TEAMS = [
+    ["", "Any team / not fussy", ""],
+    ["ARS", "Arsenal", "London"], ["BRE", "Brentford", "London"], ["CHA", "Charlton Athletic", "London"], ["CHE", "Chelsea", "London"],
+    ["CRY", "Crystal Palace", "London"], ["FUL", "Fulham", "London"], ["LEY", "Leyton Orient", "London"], ["MIL", "Millwall", "London"],
+    ["QPR", "Queens Park Rangers", "London"], ["TOT", "Tottenham Hotspur", "London"], ["WHU", "West Ham United", "London"], ["WIM", "AFC Wimbledon", "London"],
+    ["AVL", "Aston Villa", "Rest of the UK"], ["CEL", "Celtic", "Rest of the UK"], ["EVE", "Everton", "Rest of the UK"], ["LEE", "Leeds United", "Rest of the UK"],
+    ["LIV", "Liverpool", "Rest of the UK"], ["MCI", "Manchester City", "Rest of the UK"], ["MUN", "Manchester United", "Rest of the UK"],
+    ["NEW", "Newcastle United", "Rest of the UK"], ["NOR", "Norwich City", "Rest of the UK"], ["RAN", "Rangers", "Rest of the UK"],
+    ["ENG", "England", "International"], ["IRL", "Ireland", "International"], ["SCO", "Scotland", "International"], ["WAL", "Wales", "International"],
+  ];
+  const TEAM_NAME = Object.fromEntries(TEAMS.map(t => [t[0], t[1]]));
+  const TEAM_COLORS = {
+    ARS: { stripes: ["#EF0107"], text: "#FFFFFF", marker: "#EF0107" }, BRE: { stripes: ["#E30613", "#FFFFFF"], text: "#FFFFFF", marker: "#E30613" },
+    CHA: { stripes: ["#D4021D"], text: "#FFFFFF", marker: "#D4021D" }, CHE: { stripes: ["#034694"], text: "#FFFFFF", marker: "#2F6FD1" },
+    CRY: { stripes: ["#1B458F", "#C4122E"], text: "#FFFFFF", marker: "#C4122E" }, FUL: { stripes: ["#FFFFFF"], text: "#000000", marker: "#FFFFFF" },
+    LEY: { stripes: ["#E4002B"], text: "#FFFFFF", marker: "#E4002B" }, MIL: { stripes: ["#001D5B"], text: "#FFFFFF", marker: "#3B6BC9" },
+    QPR: { stripes: ["#1D5BA4", "#FFFFFF"], text: "#FFFFFF", marker: "#3B82D6" }, TOT: { stripes: ["#FFFFFF"], text: "#132257", marker: "#FFFFFF" },
+    WHU: { stripes: ["#7A263A", "#1BB1E7"], text: "#FFFFFF", marker: "#1BB1E7" }, WIM: { stripes: ["#2B4C9B", "#FFD200"], text: "#FFFFFF", marker: "#FFD200" },
+    AVL: { stripes: ["#670E36", "#95BFE5"], text: "#FFFFFF", marker: "#95BFE5" }, CEL: { stripes: ["#018749", "#FFFFFF"], text: "#FFFFFF", marker: "#1FB36A" },
+    EVE: { stripes: ["#003399"], text: "#FFFFFF", marker: "#3B6BD6" }, LEE: { stripes: ["#FFFFFF"], text: "#1D428A", marker: "#FFCD00" },
+    LIV: { stripes: ["#C8102E"], text: "#FFFFFF", marker: "#C8102E" }, MCI: { stripes: ["#6CABDD"], text: "#1C2C5B", marker: "#6CABDD" },
+    MUN: { stripes: ["#DA291C"], text: "#FFFFFF", marker: "#DA291C" }, NEW: { stripes: ["#241F20", "#FFFFFF"], text: "#FFFFFF", marker: "#FFFFFF" },
+    NOR: { stripes: ["#FFF200", "#00A650"], text: "#000000", marker: "#FFF200" }, RAN: { stripes: ["#1B458F"], text: "#FFFFFF", marker: "#3B82D6" },
+    ENG: { stripes: ["#FFFFFF"], text: "#001F5B", marker: "#FFFFFF" }, IRL: { stripes: ["#169B62", "#FFFFFF", "#FF883E"], text: "#FFFFFF", marker: "#FF883E" },
+    SCO: { stripes: ["#0C1C5F"], text: "#FFFFFF", marker: "#6D8BE8" }, WAL: { stripes: ["#D30731"], text: "#FFFFFF", marker: "#D30731" },
+  };
+  const teamMarker = code => (TEAM_COLORS[code] || {}).marker || "#DDB04E";
+  const REGIONS = { N: "North", E: "East", S: "South", W: "West", C: "Central" };
+  const POS = { bar: "Main bar", all: "Every corner", garden: "Beer garden", room: "Screen room", proj: "Projector wall" };
+  const SOUND = { always: "Always on", big: "Big games", request: "On request", off: "Off" };
+  const ATMOS = { home: "Home crowd", neutral: "Neutral", away: "Away-friendly" };
+  const OCC = { quiet: "Quiet drink", session: "Big session", group: "Large group", outdoor: "Sit outside", date: "Date night", roast: "Sunday roast", late: "Late licence" };
+  const FOODQ = ["No kitchen", "Basic", "Good", "Excellent"];
+  const EAT = { bar: "In the bar", dining: "Separate dining room", both: "Bar or dining room" };
+  const FEAT = { ale: "Real ale", craft: "Craft beer", cocktails: "Cocktails", fire: "Open fire", heritage: "Historic interior", music: "Live music", dj: "DJs", karaoke: "Karaoke", comedy: "Comedy", quiz: "Quiz", games: "Pool or darts", theatre: "Theatre or cinema", dogs: "Dog friendly", family: "Family friendly", rooftop: "Roof terrace", riverside: "Riverside", hire: "Private hire" };
+  const REP = ["Unrated", "Local favourite", "Well rated", "Destination pub"];
+  const isBase = p => p.tier === "base";
+  const OUTKIND = { garden: "Beer garden", benches: "Benches", riverside: "Riverside terrace", terrace: "Terrace", pavement: "Pavement tables", none: "None" };
+  const CUISINES = [...new Set(PUBS.flatMap(p => p.food.cuisine))].filter(c => c !== "Bar snacks").sort();
+
+  const MODES = [
+    ["match", "Match day", '<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4 3 2.2-1.1 3.5H10.1L9 8.2 12 6Z"/>'],
+    ["eat", "Eating out", '<path d="M7 2v8M4 2v4a3 3 0 0 0 6 0V2M7 10v12M17 2c-2 0-3 3-3 6v3h3v11h2V2h-2Z"/>'],
+    ["party", "Big night", '<path d="M4 20 8 6l10 10-14 4Zm12-15 1-3m2 6 3-1M14 3l1 2"/>'],
+    ["quiet", "Quiet pint", '<path d="M6 3h9v6a4.5 4.5 0 0 1-9 0V3Zm9 2h2a2 2 0 0 1 0 4h-2M8 21h5M10.5 13.5V21"/>'],
+    ["outside", "Outdoors", '<path d="M12 3v18M5 11c0-4 3-7 7-7s7 3 7 7c0 2-1 3-2 3H7c-1 0-2-1-2-3ZM3 21h18"/>'],
+    ["explore", "All pubs", '<path d="M3 11 12 3l9 8M5 10v11h14V10M10 21v-6h4v6"/>'],
+  ];
+  const MODE_NAME = Object.fromEntries(MODES.map(m => [m[0], m[1]]));
+
+  // ---------- State ----------
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("soundon:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem("soundon:" + k, JSON.stringify(v)); } catch {} },
+  };
+  const DEFAULTS = {
+    match: { team: store.get("team", ""), minScreens: 0, minBig: 0, pos: new Set(), sound: "", sky: false, tnt: false, all: false, book: false, atmos: "" },
+    eat: { foodMin: 2, cuisine: new Set(), sit: "", eat: "", roast: false, price: 0 },
+    party: { group: 0, lateMin: 0, vibe: new Set(), outdoor: false, fbReq: "" },
+    quiet: { noScreens: true, beer: "", fire: false, heritage: false, dogs: false, foodMin: 0 },
+    outside: { outKind: "", big: false, outScreen: false, roast: false, group: 0 },
+    explore: { price: 0, rep: 0, feat: new Set(), fb: "", foodMin: 0 },
+  };
+  const clone = o => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v instanceof Set ? new Set(v) : v]));
+  const S = {
+    mode: "match", q: "", region: "", favOnly: false, checkedOnly: false,
+    fav: new Set(store.get("favs", [])), sort: "best", map: true,
+    origin: null, radius: 0, picking: false,
+    m: clone(DEFAULTS.match),
+  };
+  function setMode(mode) {
+    S.mode = mode; S.m = clone(DEFAULTS[mode]);
+    if (mode === "match") S.m.team = store.get("team", "");
+    S.sort = "best";
+    renderFilters(); render(); syncControls();
+  }
+
+  // ---------- Helpers ----------
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === "class") n.className = v;
+      else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+      else if (v === false || v == null) continue;
+      else n.setAttribute(k, v === true ? "" : v);
+    }
+    for (const kid of kids.flat()) if (kid != null) n.append(kid.nodeType ? kid : document.createTextNode(kid));
+    return n;
+  };
+  const lateHour = p => { if (!p.late) return 23; const [h, m] = p.late.split(":").map(Number); return (h < 12 ? h + 24 : h) + (m || 0) / 60; };
+  const isTeamPub = p => S.mode === "match" && S.m.team && p.fb && p.fb.teams.includes(S.m.team);
+  const checked = p => p.verify && (p.verify.status === "verified" || p.verify.status === "partial");
+  const distKm = (a, b) => { const R = 6371, dLat = (b.lat - a.lat) * Math.PI / 180, dLng = (b.lng - a.lng) * Math.PI / 180; const x = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) * Math.sin(dLng / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(x)); };
+  const pubDist = p => S.origin ? distKm(S.origin, p) : null;
+  const fmtDist = km => km < 1 ? `${Math.round(km * 1000 / 50) * 50} m` : `${km.toFixed(1)} km`;
+  const walkMins = km => Math.max(1, Math.round(km * 12.5));
+  const soundClass = s => s === "always" ? "on" : s === "off" ? "off" : "";
+  const bigLabel = f => f.proj && f.big >= 100 ? `${f.big}" proj.` : `${f.big}"`;
+  const has = (p, k) => p.feat.includes(k);
+  const outsideText = o => o.kind === "none" ? "None" : OUTKIND[o.kind] + (o.big ? ", large" : "") + (o.benches && o.kind !== "benches" ? ", benches" : "");
+
+  // ---------- Filtering ----------
+  function passes(p) {
+    if (S.q) { const q = S.q.toLowerCase(); if (![p.name, p.area, p.station, REGIONS[p.region]].some(s => s.toLowerCase().includes(q))) return false; }
+    if (S.region && p.region !== S.region) return false;
+    if (S.favOnly && !S.fav.has(p.id)) return false;
+    if (S.checkedOnly && !checked(p)) return false;
+    if (S.origin && S.radius && pubDist(p) > S.radius) return false;
+    if (isBase(p) && (S.mode === "match" || S.mode === "party" || S.mode === "quiet")) return false;
+    const m = S.m, f = p.fb, fd = p.food;
+    switch (S.mode) {
+      case "match":
+        if (!f) return false;
+        if (m.team && !(f.teams.includes(m.team) || f.all || f.atmos !== "home")) return false;
+        if (f.screens < m.minScreens) return false;
+        if (m.minBig && Math.max(f.big, f.proj ? 100 : 0) < m.minBig) return false;
+        if (m.pos.size && ![...m.pos].some(k => f.pos.includes(k))) return false;
+        if (m.sound === "always" && f.sound !== "always") return false;
+        if (m.sound === "big" && !(f.sound === "always" || f.sound === "big")) return false;
+        if (m.sky && !f.sky) return false;
+        if (m.tnt && !f.tnt) return false;
+        if (m.all && !f.all) return false;
+        if (m.book && !f.book) return false;
+        if (m.atmos && f.atmos !== m.atmos) return false;
+        return true;
+      case "eat":
+        if (fd.rating < Math.max(1, m.foodMin)) return false;
+        if (m.cuisine.size && ![...m.cuisine].some(c => fd.cuisine.includes(c))) return false;
+        if (m.sit === "sit" && !fd.sitDown) return false;
+        if (m.eat === "bar" && !(fd.where === "bar" || fd.where === "both")) return false;
+        if (m.eat === "dining" && !(fd.where === "dining" || fd.where === "both")) return false;
+        if (m.roast && !fd.roast) return false;
+        if (m.price && p.price > m.price) return false;
+        return true;
+      case "party":
+        if (m.group && p.group < m.group) return false;
+        if (m.lateMin && lateHour(p) < m.lateMin) return false;
+        if (m.vibe.size && ![...m.vibe].some(k => has(p, k))) return false;
+        if (m.outdoor && p.out.kind === "none") return false;
+        if (m.fbReq === "yes" && !f) return false;
+        if (m.fbReq === "no" && f) return false;
+        return true;
+      case "quiet":
+        if (m.noScreens && f) return false;
+        if (m.beer && !has(p, m.beer)) return false;
+        if (m.fire && !has(p, "fire")) return false;
+        if (m.heritage && !has(p, "heritage")) return false;
+        if (m.dogs && !has(p, "dogs")) return false;
+        if (m.foodMin && fd.rating < m.foodMin) return false;
+        return true;
+      case "outside":
+        if (p.out.kind === "none" && !has(p, "rooftop")) return false;
+        if (m.outKind === "garden" && p.out.kind !== "garden") return false;
+        if (m.outKind === "benches" && !p.out.benches) return false;
+        if (m.outKind === "river" && !p.out.river) return false;
+        if (m.outKind === "rooftop" && !has(p, "rooftop")) return false;
+        if (m.big && !p.out.big) return false;
+        if (m.outScreen && !(f && f.pos.includes("garden"))) return false;
+        if (m.roast && !fd.roast) return false;
+        if (m.group && p.group < m.group) return false;
+        return true;
+      case "explore":
+        if (m.price && p.price > m.price) return false;
+        if (m.rep && p.rep < m.rep) return false;
+        if (m.feat.size && ![...m.feat].every(k => has(p, k))) return false;
+        if (m.fb === "yes" && !f) return false;
+        if (m.fb === "no" && f) return false;
+        if (m.foodMin && fd.rating < m.foodMin) return false;
+        return true;
+    }
+    return true;
+  }
+  function score(p) {
+    let s = p.rep * 3, m = S.m, f = p.fb, fd = p.food;
+    switch (S.mode) {
+      case "match":
+        if (isTeamPub(p)) s += 100;
+        if (m.team && !isTeamPub(p) && f.all) s += 30;
+        if (m.team && !isTeamPub(p) && f.atmos === "away") s += 10;
+        s += Math.min(f.screens, 20) * 1.2 + (f.sound === "always" ? 15 : f.sound === "big" ? 8 : 0) + (f.all ? 8 : 0) + (f.proj ? 4 : 0);
+        if (m.pos.size) s += [...m.pos].filter(k => f.pos.includes(k)).length * 5;
+        break;
+      case "eat":
+        s += fd.rating * 20 + (fd.roast && m.roast ? 10 : 0) + (m.cuisine.size ? [...m.cuisine].filter(c => fd.cuisine.includes(c)).length * 8 : 0) + (fd.where === "both" ? 3 : 0);
+        break;
+      case "party":
+        s += Math.min(p.group, 60) / 2 + Math.max(0, lateHour(p) - 23) * 8 + ["dj", "music", "karaoke", "comedy", "hire"].filter(k => has(p, k)).length * 5 + (p.out.big ? 5 : 0) + (m.fbReq === "yes" && f ? f.screens : 0);
+        break;
+      case "quiet":
+        s += (f ? -20 : 25) + (has(p, "ale") ? 8 : 0) + (has(p, "craft") ? 6 : 0) + (has(p, "fire") ? 6 : 0) + (has(p, "heritage") ? 6 : 0) + (p.group <= 12 ? 5 : 0) + p.rep * 4;
+        break;
+      case "outside":
+        s += (p.out.big ? 15 : 0) + (p.out.benches ? 5 : 0) + (p.out.river ? 10 : 0) + (has(p, "rooftop") ? 8 : 0) + (f && f.pos.includes("garden") ? 6 : 0) + (fd.roast ? 3 : 0);
+        break;
+      case "explore":
+        s += p.rep * 8 + (checked(p) ? 5 : 0) + fd.rating * 3 + p.feat.length;
+        break;
+    }
+    if (S.fav.has(p.id)) s += 3;
+    if (checked(p)) s += 2;
+    if (S.origin) s -= Math.min(pubDist(p), 12) * 2.5;
+    return s;
+  }
+  function sorted(list) {
+    const by = S.sort;
+    return list.slice().sort((a, b) => {
+      if (by === "name") return a.name.localeCompare(b.name);
+      if (by === "area") return a.area.localeCompare(b.area) || a.name.localeCompare(b.name);
+      if (by === "screens") return ((b.fb && b.fb.screens) || 0) - ((a.fb && a.fb.screens) || 0);
+      if (by === "food") return b.food.rating - a.food.rating || b.rep - a.rep;
+      if (by === "late") return lateHour(b) - lateHour(a);
+      if (by === "rating") return b.rep - a.rep || score(b) - score(a);
+      if (by === "near" && S.origin) return pubDist(a) - pubDist(b);
+      return score(b) - score(a) || a.name.localeCompare(b.name);
+    });
+  }
+
+  // ---------- Filter panel ----------
+  const F = document.getElementById("fbody");
+  const group = (label, node, small) => el("div", { class: "fgroup" }, el("span", { class: "label" }, label, small ? el("small", {}, small) : null), node);
+  const seg = (items, get, set) => el("div", { class: "seg" }, items.map(([k, label]) => el("button", { "aria-pressed": get(k), onclick: () => { set(k); refresh(); } }, label)));
+  const chips = (items, get, set) => el("div", { class: "chips" }, items.map(([k, label]) => el("button", { class: "chip", "aria-pressed": get(k), onclick: () => { set(k); refresh(); } }, label)));
+  const toggle = (label, get, set) => el("label", { class: "toggle" }, el("span", {}, label), el("input", { type: "checkbox", onchange: e => { set(e.target.checked); render(); } , ...(get() ? { checked: true } : {}) }));
+  const setToggle = (key, m) => v => { m[key] = v; };
+  const refresh = () => { renderFilters(); render(); };
+  const toggleSet = (set, k) => set.has(k) ? set.delete(k) : set.add(k);
+  const FOODSEG = [[0, "Any"], [1, "Does food"], [2, "Good"], [3, "Excellent"]];
+  const GROUPSEG = [[0, "Any"], [8, "8+"], [15, "15+"], [30, "30+"]];
+  const PRICESEG = [[0, "Any"], [1, "\u00A3"], [2, "\u00A3\u00A3"], [3, "\u00A3\u00A3\u00A3"]];
+
+  function renderFilters() {
+    const m = S.m; F.replaceChildren();
+    document.getElementById("fhead-title").textContent = MODE_NAME[S.mode];
+    const area = group("Area", chips([["", "Anywhere"], ...Object.entries(REGIONS)], k => S.region === k, k => S.region = k));
+    const intro = t => el("p", { class: "fintro" }, t);
+    if (S.mode === "match") {
+      const sel = el("select", { class: "team-select", id: "team", onchange: e => { m.team = e.target.value; store.set("team", m.team); render(); } });
+      const groups = {};
+      for (const [code, name, grp] of TEAMS) { const o = el("option", { value: code }, name); if (!grp) sel.append(o); else (groups[grp] ||= el("optgroup", { label: grp })).append(o); }
+      Object.values(groups).forEach(g => sel.append(g)); sel.value = m.team;
+      F.append(intro("Pubs that show the football, ranked for your club."), area,
+        group("Your team", sel, "remembered on this device"), el("hr", { class: "fdivider" }),
+        group("Screens", seg([[0, "Any"], [4, "4+"], [8, "8+"], [12, "12+"]], k => m.minScreens === k, k => m.minScreens = k)),
+        group("Biggest screen", seg([[0, "Any"], [75, '75"+'], [100, '100"+'], [120, "Cinema"]], k => m.minBig === k, k => m.minBig = k)),
+        group("Where the screens are", chips(Object.entries(POS), k => m.pos.has(k), k => toggleSet(m.pos, k)), "any of"),
+        group("Sound", seg([["", "Any"], ["big", "Big games+"], ["always", "Always on"]], k => m.sound === k, k => m.sound = k)),
+        el("div", { class: "fgroup" }, el("span", { class: "label" }, "Coverage"),
+          toggle("Sky Sports", () => m.sky, setToggle("sky", m)), toggle("TNT Sports", () => m.tnt, setToggle("tnt", m)),
+          toggle("Shows every televised game", () => m.all, setToggle("all", m)), toggle("Takes table bookings", () => m.book, setToggle("book", m))),
+        group("Crowd", seg([["", "Any"], ["home", "Home fans"], ["neutral", "Neutral"], ["away", "Away OK"]], k => m.atmos === k, k => m.atmos = k)));
+    } else if (S.mode === "eat") {
+      F.append(intro("Pubs worth going to for the food."), area,
+        group("How good", seg(FOODSEG.slice(1), k => m.foodMin === k, k => m.foodMin = k)),
+        group("Cuisine", chips(CUISINES.map(c => [c, c]), k => m.cuisine.has(k), k => toggleSet(m.cuisine, k)), "any of"),
+        group("Meal style", seg([["", "Any"], ["sit", "Sit-down meal"]], k => m.sit === k, k => m.sit = k)),
+        group("Where you eat", seg([["", "Any"], ["bar", "In the bar"], ["dining", "Dining room"]], k => m.eat === k, k => m.eat = k)),
+        group("Price", seg(PRICESEG, k => m.price === k, k => m.price = k)),
+        el("div", { class: "fgroup" }, toggle("Sunday roast", () => m.roast, setToggle("roast", m))));
+    } else if (S.mode === "party") {
+      F.append(intro("Birthdays, leaving drinks, the big one. Room for everyone and open late."), area,
+        group("How many of you", seg(GROUPSEG, k => m.group === k, k => m.group = k)),
+        group("Open until at least", seg([[0, "Any"], [24, "Midnight"], [25, "1am"], [26, "2am"]], k => m.lateMin === k, k => m.lateMin = k)),
+        group("The vibe", chips([["dj", "DJs"], ["music", "Live music"], ["karaoke", "Karaoke"], ["comedy", "Comedy"], ["hire", "Private area"]], k => m.vibe.has(k), k => toggleSet(m.vibe, k)), "any of"),
+        group("Football on?", seg([["", "Don't mind"], ["yes", "Yes please"], ["no", "No screens"]], k => m.fbReq === k, k => m.fbReq = k)),
+        el("div", { class: "fgroup" }, toggle("Somewhere to sit outside", () => m.outdoor, setToggle("outdoor", m))));
+    } else if (S.mode === "quiet") {
+      F.append(intro("Conversation, a good pint, no shouting at a telly."), area,
+        el("div", { class: "fgroup" }, el("span", { class: "label" }, "Must haves"),
+          toggle("No screens at all", () => m.noScreens, setToggle("noScreens", m)), toggle("Open fire", () => m.fire, setToggle("fire", m)),
+          toggle("Historic interior", () => m.heritage, setToggle("heritage", m)), toggle("Dog friendly", () => m.dogs, setToggle("dogs", m))),
+        group("Beer", seg([["", "Any"], ["ale", "Real ale"], ["craft", "Craft beer"]], k => m.beer === k, k => m.beer = k)),
+        group("Food", seg(FOODSEG, k => m.foodMin === k, k => m.foodMin = k)));
+    } else if (S.mode === "outside") {
+      F.append(intro("Gardens, benches, riverside walls and roof terraces."), area,
+        group("Kind of outside", seg([["", "Any"], ["garden", "Garden"], ["benches", "Benches"], ["river", "River"], ["rooftop", "Roof"]], k => m.outKind === k, k => m.outKind = k)),
+        group("How many of you", seg(GROUPSEG, k => m.group === k, k => m.group = k)),
+        el("div", { class: "fgroup" }, toggle("Big outdoor space", () => m.big, setToggle("big", m)), toggle("Screen outside for the football", () => m.outScreen, setToggle("outScreen", m)), toggle("Sunday roast", () => m.roast, setToggle("roast", m))));
+    } else {
+      F.append(intro(`Every pub in London: ${META.curated || 0} written up and ${(META.base || 0).toLocaleString("en-GB")} more from the map.`), area,
+        group("Reputation", seg([[0, "Any"], [2, "Well rated"], [3, "Destination"]], k => m.rep === k, k => m.rep = k)),
+        group("Football", seg([["", "Don't mind"], ["yes", "Shows it"], ["no", "No screens"]], k => m.fb === k, k => m.fb = k)),
+        group("Food", seg(FOODSEG, k => m.foodMin === k, k => m.foodMin = k)),
+        group("Price", seg(PRICESEG, k => m.price === k, k => m.price = k)),
+        group("Features", chips(Object.entries(FEAT), k => m.feat.has(k), k => toggleSet(m.feat, k)), "all of"));
+    }
+    F.append(el("hr", { class: "fdivider" }),
+      el("div", { class: "fgroup" }, toggle("Checked pubs only", () => S.checkedOnly, v => S.checkedOnly = v), toggle("Saved pubs only", () => S.favOnly, v => S.favOnly = v)),
+      el("button", { class: "reset", onclick: () => { S.q = ""; S.region = ""; S.favOnly = false; S.checkedOnly = false; S.m = clone(DEFAULTS[S.mode]); if (S.mode === "match") S.m.team = store.get("team", ""); document.getElementById("q").value = ""; refresh(); } }, "Clear all filters"));
+  }
+
+  // ---------- Cards ----------
+  const teamTag = code => {
+    const c = TEAM_COLORS[code] || { stripes: ["#3A3218"], text: "#ECECEE" };
+    const cols = c.stripes.length === 2 ? [c.stripes[0], c.stripes[1], c.stripes[0], c.stripes[1]] : c.stripes, n = cols.length;
+    const bg = n === 1 ? cols[0] : `linear-gradient(to bottom, ${cols.map((col, i) => `${col} ${(i / n * 100).toFixed(1)}% ${((i + 1) / n * 100).toFixed(1)}%`).join(", ")})`;
+    return el("span", { class: "tag team" + (n > 1 ? " striped" : ""), style: `background:${bg};color:${c.text};${n > 1 ? "text-shadow:0 0 3px rgba(0,0,0,.9),0 1px 1px rgba(0,0,0,.7);" : ""}` }, TEAM_NAME[code] || code);
+  };
+  const favIcon = on => { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("width", "16"); s.setAttribute("height", "16"); s.setAttribute("viewBox", "0 0 24 24"); s.innerHTML = `<path d="M6 3h12v18l-6-4-6 4z" fill="${on ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>`; return s; };
+  const chkBadge = p => { const st = p.verify ? p.verify.status : "unverified"; return el("span", { class: "chk " + (st === "verified" ? "ok" : st === "partial" ? "part" : st === "map" ? "map" : "no"), title: st === "verified" ? "Details checked against the pub's website or a pub directory" : st === "partial" ? "Partly checked" : st === "map" ? "From OpenStreetMap: name and position only" : "Not yet checked" }, st === "verified" ? "\u2713 Checked" : st === "partial" ? "\u2713 Partly checked" : st === "map" ? "\u25C7 Map listing" : "\u25CB Unchecked"); };
+  const cell = (v, k, cls) => el("div", {}, el("div", { class: "v " + (cls || "") }, v), el("div", { class: "k" }, k));
+
+  function strip(p) {
+    const f = p.fb, fd = p.food;
+    if (S.mode === "match") return f ? el("div", { class: "strip" },
+      cell([String(f.screens), el("small", {}, "screens")], f.pos.map(k => POS[k]).join(", "), "num"),
+      cell(bigLabel(f), "biggest", "num"),
+      cell(SOUND[f.sound], [f.sky && "Sky", f.tnt && "TNT"].filter(Boolean).join(" + ") || "Terrestrial", soundClass(f.sound)))
+      : el("div", { class: "no-fb" }, "No screens. Nobody will be watching the football here.");
+    if (S.mode === "eat") return el("div", { class: "strip" },
+      cell(FOODQ[fd.rating], "kitchen", fd.rating >= 2 ? "on" : ""), cell(fd.cuisine.slice(0, 2).join(" \u00B7 ") || "\u2014", "cuisine"), cell(fd.where === "both" ? "Bar or dining" : fd.where === "dining" ? "Dining room" : fd.where === "bar" ? "In the bar" : "\u2014", fd.roast ? "Sunday roast" : "where you eat", fd.roast ? "on" : ""));
+    if (S.mode === "party") return el("div", { class: "strip" },
+      cell(p.group >= 40 ? "40+" : `up to ${p.group}`, "group size", "num"), cell(p.late, "last orders", lateHour(p) >= 25 ? "on" : "", "num"),
+      cell(["dj", "music", "karaoke", "comedy"].filter(k => has(p, k)).map(k => FEAT[k]).join(" \u00B7 ") || (has(p, "hire") ? "Private room" : f ? `${f.screens} screens` : "Just drinking"), "the vibe"));
+    if (S.mode === "quiet") return el("div", { class: "strip" },
+      cell(f ? `${f.screens}` : "None", "screens", f ? "off" : "on"), cell(has(p, "ale") ? "Real ale" : has(p, "craft") ? "Craft" : "\u2014", "beer", has(p, "ale") || has(p, "craft") ? "on" : ""),
+      cell([has(p, "fire") && "Fire", has(p, "heritage") && "Historic", has(p, "dogs") && "Dogs"].filter(Boolean).join(" \u00B7 ") || "\u2014", "warmth"));
+    if (S.mode === "outside") return el("div", { class: "strip" },
+      cell(has(p, "rooftop") && p.out.kind === "none" ? "Roof terrace" : OUTKIND[p.out.kind], "outside", p.out.kind !== "none" ? "on" : ""), cell(p.out.big ? "Large" : "Small", "size", p.out.big ? "on" : ""),
+      cell(f && f.pos.includes("garden") ? "Yes" : "No", "screen outside", f && f.pos.includes("garden") ? "on" : "off"));
+    if (isBase(p)) return el("div", { class: "strip" },
+      cell(p.osm && p.osm.real_ale === "yes" ? "Real ale" : "Map listing", "reputation", ""), cell(fd.rating ? (fd.cuisine[0] || "Does food") : "Not known", "food", ""),
+      cell("Unknown", "football", "off"));
+    return el("div", { class: "strip" },
+      cell(REP[p.rep], "reputation", p.rep === 3 ? "on" : ""), cell(FOODQ[fd.rating], "food", fd.rating >= 2 ? "on" : ""),
+      cell(f ? [String(f.screens), el("small", {}, "screens")] : "None", "football", f ? "" : "off"));
+  }
+  function tags(p) {
+    const f = p.fb, out = [];
+    if (S.mode === "match" && f) { f.teams.forEach(t => out.push(teamTag(t))); if (!f.teams.length && f.all) out.push(el("span", { class: "tag" }, "Every game")); }
+    if (S.mode === "eat") { if (p.food.roast) out.push(el("span", { class: "tag" }, "Sunday roast")); if (p.price === 3) out.push(el("span", { class: "tag feat" }, "\u00A3\u00A3\u00A3")); }
+    if (S.mode === "party") ["hire", "dj", "karaoke"].filter(k => has(p, k)).forEach(k => out.push(el("span", { class: "tag" }, FEAT[k])));
+    if (S.mode === "quiet") ["ale", "craft", "fire", "heritage"].filter(k => has(p, k)).forEach(k => out.push(el("span", { class: "tag feat" }, FEAT[k])));
+    if (S.mode === "outside") { if (p.out.river) out.push(el("span", { class: "tag" }, "Riverside")); if (has(p, "rooftop")) out.push(el("span", { class: "tag" }, "Roof terrace")); if (p.out.benches) out.push(el("span", { class: "tag feat" }, "Benches")); }
+    p.occ.slice(0, S.mode === "explore" ? 4 : 3).forEach(o => out.push(el("span", { class: "tag occ" }, OCC[o])));
+    if (S.mode === "explore") p.feat.slice(0, 3).forEach(k => out.push(el("span", { class: "tag feat" }, FEAT[k])));
+    return el("div", { class: "tags" }, out);
+  }
+  function whyLine(p) {
+    const bits = [], f = p.fb, m = S.m;
+    if (S.mode === "match" && f) {
+      if (isTeamPub(p)) bits.push(`<b>${TEAM_NAME[m.team]} pub</b>`); else if (m.team && f.all) bits.push(`<b>Shows every game</b>, ${ATMOS[f.atmos].toLowerCase()}`); else if (m.team) bits.push(`<b>${ATMOS[f.atmos]}</b>`);
+      if (f.pos.includes("garden")) bits.push("screen in the garden"); if (f.sound === "always") bits.push("sound always on"); if (f.book) bits.push("bookable");
+    } else if (S.mode === "eat") { bits.push(`<b>${FOODQ[p.food.rating]} ${p.food.cuisine[0] ? p.food.cuisine[0].toLowerCase() : "kitchen"}</b>`); if (p.food.where) bits.push(EAT[p.food.where].toLowerCase()); }
+    else if (S.mode === "party") { if (lateHour(p) >= 25) bits.push(`<b>open till ${p.late}</b>`); if (p.group >= 30) bits.push(`room for ${p.group}+`); if (p.out.big) bits.push("big outdoor space"); }
+    else if (S.mode === "quiet") { if (!f) bits.push("<b>no screens</b>"); if (p.group <= 8) bits.push("small and cosy"); if (has(p, "ale")) bits.push("proper cask"); }
+    else if (S.mode === "outside") { if (p.out.big) bits.push(p.out.river ? "<b>big riverside terrace</b>" : "<b>big outdoor space</b>"); else if (p.out.benches) bits.push("benches outside"); if (f && f.pos.includes("garden")) bits.push("football on outside"); }
+    else if (isBase(p)) { bits.push("<b>from the map</b>"); if (p.osm && p.osm.brewery) bits.push(p.osm.brewery); if (p.out.kind !== "none") bits.push("outdoor seating"); if (has(p, "ale")) bits.push("real ale"); }
+    else { if (p.rep === 3) bits.push("<b>destination pub</b>"); if (!f) bits.push("no screens"); else bits.push(`${f.screens} screens`); }
+    return bits.join(" \u00B7 ");
+  }
+  function card(p) {
+    const c = el("div", { class: "card" + (isTeamPub(p) ? " mine" : ""), style: isTeamPub(p) ? `--team:${teamMarker(S.m.team)}` : null });
+    c.append(
+      el("div", { class: "card-head" },
+        el("div", {}, el("h3", {}, p.name),
+          el("div", { class: "where" }, `${p.area} \u00B7 ${p.station} ${p.walk} min`, S.origin ? el("span", { class: "dist" }, ` \u00B7 ${fmtDist(pubDist(p))} away, ${walkMins(pubDist(p))} min walk`) : null, " \u00B7 ", chkBadge(p))),
+        el("button", { class: "fav-btn", "aria-pressed": S.fav.has(p.id), "aria-label": "Save " + p.name, title: "Save", onclick: e => { e.stopPropagation(); toggleFav(p.id); } }, favIcon(S.fav.has(p.id)))),
+      strip(p), tags(p));
+    const why = whyLine(p); if (why) { const w = el("div", { class: "why" }); w.innerHTML = why; c.append(w); }
+    c.append(el("button", { class: "open", "aria-label": "Open " + p.name, onclick: () => openDetail(p) }));
+    return c;
+  }
+
+  // ---------- Render ----------
+  const PAGE = 48;
+  let shown = PAGE;
+  function render(keepPage) {
+    if (!keepPage) shown = PAGE;
+    const all = PUBS.filter(passes);
+    const results = document.getElementById("results"); results.replaceChildren();
+    const h = document.getElementById("headline"), m = S.m;
+    const where = S.region ? ` in <em>${REGIONS[S.region]} London</em>` : "";
+    if (S.mode === "match") h.innerHTML = m.team ? `Pubs for <em>${TEAM_NAME[m.team]}</em>${where}` : `Pubs showing <em>the football</em>${where}`;
+    else if (S.mode === "eat") h.innerHTML = m.cuisine.size === 1 ? `Pubs for <em>${[...m.cuisine][0]}</em>${where}` : `Pubs for <em>eating out</em>${where}`;
+    else if (S.mode === "party") h.innerHTML = `Pubs for a <em>big night</em>${where}`;
+    else if (S.mode === "quiet") h.innerHTML = `Pubs for a <em>quiet pint</em>${where}`;
+    else if (S.mode === "outside") h.innerHTML = `Pubs for <em>sitting outside</em>${where}`;
+    else h.innerHTML = S.region ? `Pubs in <em>${REGIONS[S.region]} London</em>` : `All <em>${PUBS.length.toLocaleString("en-GB")}</em> London pubs`;
+    if (S.origin) h.innerHTML += S.radius ? ` within <em>${S.radius} km</em>` : ` <em>near you</em>`;
+    document.getElementById("fcount").textContent = `${all.length} of ${PUBS.length}`;
+    document.getElementById("fcount-m").textContent = `\u00B7 ${all.length} pubs`;
+    if (!all.length) { results.append(el("div", { class: "empty" }, el("b", {}, "Nothing matches that combination."), el("br"), "Loosen a filter or two.")); renderMap(all); return; }
+
+    const list = sorted(all);
+    const more = (arr) => arr.length > shown ? el("button", { class: "more", onclick: () => { shown += PAGE; render(true); } }, `Show ${Math.min(PAGE, arr.length - shown)} more of ${arr.length}`) : null;
+    if (S.mode === "match" && m.team && S.sort === "best") {
+      const mine = list.filter(isTeamPub), rest = list.filter(p => !isTeamPub(p));
+      if (mine.length) results.append(groupTitle(`${TEAM_NAME[m.team]} pubs`, mine.length), el("div", { class: "grid" }, mine.map(card)));
+      else results.append(el("div", { class: "empty" }, el("b", {}, `No dedicated ${TEAM_NAME[m.team]} pubs in the guide yet.`), el("br"), "The neutral pubs below show every televised game and welcome any colours."));
+      if (rest.length) results.append(groupTitle("Neutral pubs showing every game", rest.length), el("div", { class: "grid" }, rest.slice(0, shown).map(card)), more(rest));
+    } else {
+      results.append(el("div", { class: "grid" }, list.slice(0, shown).map(card)), more(list));
+    }
+    renderMap(all);
+  }
+  const groupTitle = (t, n) => el("div", { class: "group-title" }, el("h3", {}, t), el("span", { class: "count num" }, `${n}`), el("span", { class: "rule" }));
+
+  // ---------- Map ----------
+  const BBOX = { w: -0.335, e: 0.085, n: 51.625, s: 51.355 }, BASE = { x: 0, y: 0, w: 460, h: 440 };
+  const proj = (lng, lat) => [((lng - BBOX.w) / (BBOX.e - BBOX.w)) * 440 + 10, ((BBOX.n - lat) / (BBOX.n - BBOX.s)) * 420 + 10];
+  const pxPerLng = 440 / (BBOX.e - BBOX.w), pxPerLat = 420 / (BBOX.n - BBOX.s);
+  const LABELS = [["Richmond", -0.305, 51.452], ["Ealing", -0.3, 51.513], ["Hammersmith", -0.23, 51.497], ["Wandsworth", -0.19, 51.452], ["Westminster", -0.13, 51.503], ["Camden", -0.145, 51.545], ["Islington", -0.1, 51.535], ["Hackney", -0.055, 51.55], ["Tottenham", -0.07, 51.614], ["Walthamstow", -0.02, 51.588], ["Shoreditch", -0.08, 51.524], ["Stratford", -0.005, 51.548], ["Greenwich", 0.0, 51.468], ["Peckham", -0.075, 51.47], ["Brixton", -0.12, 51.45], ["Croydon", -0.095, 51.385], ["Wembley", -0.283, 51.568]];
+  const STADIUMS = [["ARS", "Emirates Stadium", -0.108, 51.555], ["TOT", "Tottenham Hotspur Stadium", -0.066, 51.604], ["CHE", "Stamford Bridge", -0.191, 51.4817], ["WHU", "London Stadium", -0.0166, 51.5387], ["CRY", "Selhurst Park", -0.0856, 51.398], ["FUL", "Craven Cottage", -0.2217, 51.475], ["BRE", "Gtech Community Stadium", -0.2886, 51.4907], ["QPR", "Loftus Road", -0.2321, 51.5093], ["MIL", "The Den", -0.0508, 51.4859], ["CHA", "The Valley", 0.0365, 51.4865], ["LEY", "Brisbane Road", -0.0125, 51.5603], ["WIM", "Plough Lane", -0.188, 51.4315], ["ENG", "Wembley Stadium", -0.2795, 51.556]];
+  const map = document.getElementById("map"), stage = map.parentElement, tip = document.getElementById("map-tip");
+  const svgEl = (t, a = {}) => { const n = document.createElementNS("http://www.w3.org/2000/svg", t); for (const [k, v] of Object.entries(a)) n.setAttribute(k, v); return n; };
+  const view = { ...BASE }; let lastHits = [], dragged = false;
+  const fx = v => (+v).toFixed(1);
+  function renderMap(hits) {
+    lastHits = hits; const k = view.w / BASE.w;
+    map.setAttribute("viewBox", `${fx(view.x)} ${fx(view.y)} ${fx(view.w)} ${fx(view.h)}`); map.replaceChildren();
+    // OpenStreetMap layers: parks, water, roads (all pre-projected into this frame)
+    if (LONDON.parks) map.append(svgEl("path", { class: "park", d: LONDON.parks, "stroke-width": fx(0.4 * k) }));
+    if (LONDON.water) map.append(svgEl("path", { class: "water", d: LONDON.water, "stroke-width": fx(0.5 * k) }));
+    if (LONDON.rivers) map.append(svgEl("path", { class: "river", d: LONDON.rivers, "stroke-width": fx(0.5 + 0.8 * k) }));
+    if (LONDON.canals) map.append(svgEl("path", { class: "canal", d: LONDON.canals, "stroke-width": fx(0.3 + 0.5 * k) }));
+    if (LONDON.roads) {
+      map.append(svgEl("path", { class: "road road-p", d: LONDON.roads.primary, "stroke-width": fx(0.3 + 0.5 * k) }));
+      map.append(svgEl("path", { class: "road road-t", d: LONDON.roads.trunk, "stroke-width": fx(0.6 + 0.9 * k) }));
+      map.append(svgEl("path", { class: "road road-m", d: LONDON.roads.motorway, "stroke-width": fx(0.9 + 1.2 * k) }));
+    }
+    for (const [name, x, y, a] of LONDON.parkLabels || []) {
+      if (!(a >= 220 || (a >= 90 && k < 0.85) || (a >= 45 && k < 0.55) || k < 0.3)) continue;
+      const t = svgEl("text", { class: "park-label", x: fx(x), y: fx(y), "text-anchor": "middle", "font-size": fx(7.5 * k) }); t.textContent = name; map.append(t);
+    }
+    if (k < 0.9) for (const [name, x, y] of LONDON.roadLabels || []) {
+      const t = svgEl("text", { class: "road-label", x: fx(x), y: fx(y - 2 * k), "text-anchor": "middle", "font-size": fx(6.5 * k) }); t.textContent = name; map.append(t);
+    }
+    const rl = svgEl("text", { class: "rlabel", x: fx(proj(-0.165, 51.468)[0]), y: fx(proj(-0.165, 51.468)[1] + 12 * k), "font-size": fx(8.5 * k), "text-anchor": "middle" }); rl.textContent = "RIVER THAMES"; map.append(rl);
+    for (const [t, lng, lat] of LABELS) { const [x, y] = proj(lng, lat); const tx = svgEl("text", { class: "mlabel", x: fx(x), y: fx(y), "text-anchor": "middle", "font-size": fx(9 * k) }); tx.textContent = t; map.append(tx); }
+    const team = S.mode === "match" ? S.m.team : "";
+    for (const [code, name, lng, lat] of STADIUMS) {
+      const [x, y] = proj(lng, lat), active = team === code;
+      const g = svgEl("g", { class: "stadium" + (active ? " active" : ""), transform: `translate(${fx(x)} ${fx(y)}) scale(${fx(k)})`, tabindex: "0", role: "button", style: `--team-c:${teamMarker(code)}` });
+      g.append(svgEl("path", { d: "M0,-6.5 L6,-2.2 L3.8,5 L-3.8,5 L-6,-2.2 Z" })); const t = svgEl("text", { y: "13.5", "font-size": "7" }); t.textContent = code; g.append(t);
+      const pick = () => { if (dragged) return; if (S.mode !== "match") { setMode("match"); } S.m.team = active ? "" : code; store.set("team", S.m.team); renderFilters(); render(); syncControls(); };
+      g.addEventListener("click", pick); g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      g.addEventListener("pointerenter", () => showTip(g, `<b>${name}</b>${TEAM_NAME[code]} \u00B7 ${active ? "tap to clear" : "tap to filter"}`)); g.addEventListener("pointerleave", hideTip);
+      map.append(g);
+    }
+    const hitIds = new Set(hits.map(p => p.id));
+    const CAP = 1500;
+    const drawn = PUBS.filter(p => hitIds.has(p.id)).slice(0, CAP);
+    const dims = PUBS.filter(p => !hitIds.has(p.id) && !isBase(p));
+    const order = [...dims, ...drawn].sort((a, b) => (hitIds.has(a.id) - hitIds.has(b.id)) || (isTeamPub(a) - isTeamPub(b)));
+    for (const p of order) {
+      const [x, y] = proj(p.lng, p.lat), hit = hitIds.has(p.id), mine = hit && isTeamPub(p);
+      const g = svgEl("g", { class: "pin " + (hit ? (mine ? "team" : "hit") : "dim") + (S.fav.has(p.id) ? " fav" : ""), tabindex: hit ? "0" : "-1", role: "button", "aria-label": p.name });
+      const c = svgEl("circle", { cx: fx(x), cy: fx(y), r: fx((hit ? (isBase(p) ? 3.2 : 5) : 3) * k), "stroke-width": fx((S.fav.has(p.id) ? 2 : 1.2) * k) });
+      if (hit && isBase(p)) c.setAttribute("opacity", "0.75");
+      if (mine) c.setAttribute("fill", teamMarker(S.m.team));
+      g.append(c);
+      g.addEventListener("click", () => { if (!dragged) openDetail(p); });
+      g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDetail(p); } });
+      g.addEventListener("pointerenter", () => showTip(g, `<b>${p.name}</b>${p.area}${isBase(p) ? " \u00B7 map listing" : p.fb ? ` \u00B7 ${p.fb.screens} screens \u00B7 sound ${SOUND[p.fb.sound].toLowerCase()}` : " \u00B7 no screens"}`)); g.addEventListener("pointerleave", hideTip);
+      map.append(g);
+    }
+    if (S.origin) {
+      const [ox, oy] = proj(S.origin.lng, S.origin.lat), g = svgEl("g", { class: "me" });
+      if (S.radius) { const rx = (S.radius / (111.32 * Math.cos(51.5 * Math.PI / 180))) * pxPerLng, ry = (S.radius / 111.32) * pxPerLat; g.append(svgEl("ellipse", { class: "ring", cx: fx(ox), cy: fx(oy), rx: fx(rx), ry: fx(ry), "stroke-width": fx(1.2 * k) })); }
+      g.append(svgEl("circle", { class: "pulse", cx: fx(ox), cy: fx(oy), r: fx(11 * k), "stroke-width": fx(1.5 * k) }), svgEl("circle", { class: "dot", cx: fx(ox), cy: fx(oy), r: fx(5.5 * k), "stroke-width": fx(2 * k) }));
+      map.append(g);
+    }
+    const len = (5 / (111.32 * Math.cos(51.5 * Math.PI / 180))) * pxPerLng, sx = view.x + 14 * k, sy = view.y + view.h - 14 * k, sc = svgEl("g", { class: "scale" });
+    sc.append(svgEl("line", { x1: fx(sx), y1: fx(sy), x2: fx(sx + len), y2: fx(sy), "stroke-width": fx(1.5 * k) }), svgEl("line", { x1: fx(sx), y1: fx(sy - 3 * k), x2: fx(sx), y2: fx(sy + 3 * k), "stroke-width": fx(1.5 * k) }), svgEl("line", { x1: fx(sx + len), y1: fx(sy - 3 * k), x2: fx(sx + len), y2: fx(sy + 3 * k), "stroke-width": fx(1.5 * k) }));
+    const st = svgEl("text", { x: fx(sx + len / 2), y: fx(sy - 5 * k), "text-anchor": "middle", "font-size": fx(8.5 * k) }); st.textContent = "5 km"; sc.append(st); map.append(sc);
+    map.classList.toggle("picking", S.picking); document.getElementById("pick-hint").hidden = !S.picking;
+    document.getElementById("legend-team").style.background = team ? teamMarker(team) : "var(--brass)";
+  }
+  function showTip(node, html) { const r = node.getBoundingClientRect(), sr = stage.getBoundingClientRect(); tip.innerHTML = html; tip.style.left = (r.left + r.width / 2 - sr.left) + "px"; tip.style.top = (r.top - sr.top) + "px"; tip.hidden = false; }
+  const hideTip = () => { tip.hidden = true; };
+  function clampView() { view.w = Math.min(Math.max(view.w, BASE.w / 8), BASE.w * 1.6); view.h = view.w * BASE.h / BASE.w; const s = 0.35; view.x = Math.min(Math.max(view.x, -view.w * s), BASE.w - view.w * (1 - s)); view.y = Math.min(Math.max(view.y, -view.h * s), BASE.h - view.h * (1 - s)); }
+  function zoomAt(factor, cx, cy) { const r = map.getBoundingClientRect(); const ux = view.x + ((cx - r.left) / r.width) * view.w, uy = view.y + ((cy - r.top) / r.height) * view.h; const nw = view.w * factor; view.x = ux - (ux - view.x) * (nw / view.w); view.y = uy - (uy - view.y) * (nw / view.w); view.w = nw; clampView(); hideTip(); renderMap(lastHits); }
+  map.addEventListener("wheel", e => { e.preventDefault(); zoomAt(e.deltaY > 0 ? 1.18 : 0.85, e.clientX, e.clientY); }, { passive: false });
+  const zoomCentre = f => { const r = map.getBoundingClientRect(); zoomAt(f, r.left + r.width / 2, r.top + r.height / 2); };
+  document.getElementById("zin").addEventListener("click", () => zoomCentre(0.7));
+  document.getElementById("zout").addEventListener("click", () => zoomCentre(1.4));
+  document.getElementById("zreset").addEventListener("click", () => { Object.assign(view, BASE); renderMap(lastHits); });
+  let drag = null;
+  map.addEventListener("pointerdown", e => { if (e.button !== 0) return; drag = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y }; dragged = false; map.setPointerCapture(e.pointerId); });
+  map.addEventListener("pointermove", e => { if (!drag) return; const r = map.getBoundingClientRect(), dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (!dragged && Math.hypot(dx, dy) < 4) return; dragged = true; map.classList.add("dragging"); hideTip(); view.x = drag.vx - dx * (view.w / r.width); view.y = drag.vy - dy * (view.h / r.height); clampView(); map.setAttribute("viewBox", `${fx(view.x)} ${fx(view.y)} ${fx(view.w)} ${fx(view.h)}`); });
+  const endDrag = () => { if (!drag) return; drag = null; map.classList.remove("dragging"); if (dragged) { renderMap(lastHits); setTimeout(() => { dragged = false; }, 0); } };
+  map.addEventListener("pointerup", endDrag); map.addEventListener("pointercancel", endDrag);
+  map.addEventListener("click", e => { if (!S.picking || dragged) return; e.stopPropagation(); const r = map.getBoundingClientRect(); const ux = view.x + ((e.clientX - r.left) / r.width) * view.w, uy = view.y + ((e.clientY - r.top) / r.height) * view.h; const lng = BBOX.w + ((ux - 10) / 440) * (BBOX.e - BBOX.w), lat = BBOX.n - ((uy - 10) / 420) * (BBOX.n - BBOX.s); setOrigin({ lat, lng, label: "Your chosen spot" }); S.picking = false; render(); syncControls(); }, true);
+  let pinch = null;
+  map.addEventListener("touchstart", e => { if (e.touches.length === 2) pinch = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); }, { passive: true });
+  map.addEventListener("touchmove", e => { if (e.touches.length !== 2 || !pinch) return; const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); zoomAt(pinch / d, (e.touches[0].clientX + e.touches[1].clientX) / 2, (e.touches[0].clientY + e.touches[1].clientY) / 2); pinch = d; }, { passive: true });
+  map.addEventListener("touchend", () => { pinch = null; });
+
+  // ---------- Detail ----------
+  const dlg = document.getElementById("detail");
+  function openDetail(p) {
+    const f = p.fb, fd = p.food, v = p.verify || { status: "unverified" };
+    dlg.replaceChildren(
+      el("div", { class: "d-head" },
+        el("div", {}, el("h2", {}, p.name), el("div", { class: "where" }, `${p.area}, ${REGIONS[p.region]} London \u00B7 ${p.station} station, ${p.walk} min walk`, S.origin ? el("span", { class: "dist" }, ` \u00B7 ${fmtDist(pubDist(p))} from you, about ${walkMins(pubDist(p))} min on foot`) : null)),
+        el("button", { class: "d-close", "aria-label": "Close", onclick: () => dlg.close() }, "\u00D7")),
+      el("div", { class: "d-body" },
+        p.tip ? el("div", { class: "tip" }, p.tip) : null,
+        el("div", { class: "d-sec" }, el("h3", {}, "The football"),
+          isBase(p) ? el("p", { class: "fine" }, "Not known yet. This pub comes from the map and nobody has checked whether it shows sport.") :
+          f ? el("div", { class: "facts" },
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Screens"), el("div", { class: "v num" }, String(f.screens))),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Biggest"), el("div", { class: "v num" }, `${f.big}"`, f.proj ? el("small", {}, " projector") : null)),
+            el("div", { class: "fact " + soundClass(f.sound) }, el("div", { class: "k" }, "Sound"), el("div", { class: "v" }, SOUND[f.sound])),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Coverage"), el("div", { class: "v" }, [f.sky && "Sky", f.tnt && "TNT"].filter(Boolean).join(" + ") || "Terrestrial", f.all ? el("small", {}, " \u00B7 every game") : null)),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Crowd"), el("div", { class: "v" }, ATMOS[f.atmos], el("small", {}, ` \u00B7 ${f.crowd}`))),
+            el("div", { class: "fact " + (f.book ? "on" : "off") }, el("div", { class: "k" }, "Tables"), el("div", { class: "v" }, f.book ? "Bookable" : "First come")))
+          : el("p", { class: "fine" }, "No screens and no plans for any. This is where you go to avoid the match.")),
+        f ? el("div", { class: "d-sec" }, el("h3", {}, "Where the screens are"), el("div", { class: "screens-map" }, Object.entries(POS).map(([k, lbl]) => el("span", { class: "pos " + (f.pos.includes(k) ? "yes" : "no") }, f.pos.includes(k) ? "\u2713 " : "\u2014 ", lbl)))) : null,
+        f && f.teams.length ? el("div", { class: "d-sec" }, el("h3", {}, "Home to"), el("div", { class: "tags" }, f.teams.map(t => teamTag(t)))) : null,
+        el("div", { class: "d-sec" }, el("h3", {}, "The rest of the time"),
+          el("div", { class: "facts" },
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Best for"), el("div", { class: "v", style: "font-size:15px" }, p.occ.map(o => OCC[o]).join(", ") || "\u2014")),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Comfortable group"), el("div", { class: "v num" }, !p.group ? "\u2014" : p.group >= 40 ? "40+" : `up to ${p.group}`)),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Outside"), el("div", { class: "v", style: "font-size:15px" }, outsideText(p.out))),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Last orders Fri/Sat"), el("div", { class: "v num" }, p.late || "\u2014")),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Price"), el("div", { class: "v" }, p.price ? "\u00A3".repeat(p.price) : "\u2014", el("small", {}, ["", " cheap", " average", " pricey"][p.price]))),
+            el("div", { class: "fact " + (p.rep === 3 ? "on" : "") }, el("div", { class: "k" }, "Reputation"), el("div", { class: "v", style: "font-size:15px" }, REP[p.rep])))),
+        el("div", { class: "d-sec" }, el("h3", {}, "Food"),
+          el("div", { class: "facts" },
+            el("div", { class: "fact " + (fd.rating >= 2 ? "on" : fd.rating === 0 ? "off" : "") }, el("div", { class: "k" }, "Kitchen"), el("div", { class: "v" }, isBase(p) ? (fd.rating ? "Does food" : "Not known") : FOODQ[fd.rating])),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Cuisine"), el("div", { class: "v", style: "font-size:15px" }, fd.cuisine.length ? fd.cuisine.join(", ") : "\u2014")),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Meal style"), el("div", { class: "v", style: "font-size:15px" }, fd.rating === 0 ? "\u2014" : fd.sitDown ? "Sit-down meals" : "Snacks only")),
+            el("div", { class: "fact" }, el("div", { class: "k" }, "Where you eat"), el("div", { class: "v", style: "font-size:15px" }, EAT[fd.where] || "\u2014")),
+            el("div", { class: "fact " + (fd.roast ? "on" : "off") }, el("div", { class: "k" }, "Sunday roast"), el("div", { class: "v" }, fd.roast ? "Yes" : "No"))),
+          el("p", { class: "fine", style: "margin:8px 0 0" }, fd.note)),
+        p.feat.length ? el("div", { class: "d-sec" }, el("h3", {}, "Also"), el("div", { class: "tags" }, p.feat.map(k => el("span", { class: "tag feat" }, FEAT[k] || k)))) : null,
+        p.osm ? el("div", { class: "d-sec" }, el("h3", {}, "From the map"),
+          el("div", { class: "facts" },
+            p.osm.housenumber || p.osm.street ? el("div", { class: "fact" }, el("div", { class: "k" }, "Address"), el("div", { class: "v", style: "font-size:14px" }, [p.osm.housenumber, p.osm.street, p.osm.postcode].filter(Boolean).join(" "))) : null,
+            p.osm.hours ? el("div", { class: "fact" }, el("div", { class: "k" }, "Opening hours"), el("div", { class: "v", style: "font-size:13px;font-weight:500" }, p.osm.hours)) : null,
+            p.osm.brewery ? el("div", { class: "fact" }, el("div", { class: "k" }, "Run by"), el("div", { class: "v", style: "font-size:14px" }, p.osm.brewery)) : null,
+            p.osm.real_ale ? el("div", { class: "fact " + (p.osm.real_ale === "yes" ? "on" : "") }, el("div", { class: "k" }, "Real ale"), el("div", { class: "v" }, p.osm.real_ale === "yes" ? "Yes" : p.osm.real_ale)) : null,
+            p.osm.outdoor || p.osm.beer_garden ? el("div", { class: "fact on" }, el("div", { class: "k" }, "Outdoor seating"), el("div", { class: "v" }, p.osm.beer_garden === "yes" ? "Beer garden" : p.osm.outdoor === "yes" ? "Yes" : p.osm.outdoor)) : null,
+            p.osm.wheelchair ? el("div", { class: "fact" }, el("div", { class: "k" }, "Wheelchair"), el("div", { class: "v", style: "font-size:14px" }, p.osm.wheelchair)) : null,
+            p.osm.phone ? el("div", { class: "fact" }, el("div", { class: "k" }, "Phone"), el("div", { class: "v", style: "font-size:14px" }, p.osm.phone)) : null),
+          p.osm.website ? el("p", { class: "fine", style: "margin:8px 0 0" }, el("a", { href: p.osm.website.startsWith("http") ? p.osm.website : "https://" + p.osm.website, target: "_blank", rel: "noopener" }, p.osm.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))) : null,
+          el("p", { class: "fine", style: "margin:6px 0 0" }, "Map data \u00A9 OpenStreetMap contributors.")) : null,
+        el("div", { class: "d-sec" }, el("h3", {}, "How sure are we"),
+          el("div", { class: "verify" }, chkBadge(p),
+            el("span", {}, v.status === "unverified" ? "Written from general knowledge and not yet checked against the pub's own information. Treat screens, sound and hours as indicative." : (v.notes || "Checked against the pub's website or a pub directory.") + (v.checked ? ` Checked ${v.checked}.` : "")),
+            v.source ? el("a", { class: "src", href: v.source, target: "_blank", rel: "noopener" }, v.source.replace(/^https?:\/\/(www\.)?/, "")) : null)),
+        el("div", { class: "d-actions" },
+          el("a", { class: "btn primary", target: "_blank", rel: "noopener", href: "https://www.google.com/maps/search/" + encodeURIComponent(`${p.name.replace(/\s*\(.*\)$/, "")} pub ${p.area} London`) }, "Directions"),
+          el("button", { class: "btn", onclick: e => { toggleFav(p.id); e.currentTarget.textContent = S.fav.has(p.id) ? "Saved" : "Save pub"; } }, S.fav.has(p.id) ? "Saved" : "Save pub"))));
+    dlg.showModal();
+  }
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  function toggleFav(id) { S.fav.has(id) ? S.fav.delete(id) : S.fav.add(id); store.set("favs", [...S.fav]); render(true); }
+
+  // ---------- Near me ----------
+  let toastTimer;
+  function toast(msg, ms = 4200) { let t = document.querySelector(".toast"); if (!t) { t = el("div", { class: "toast", role: "status" }); document.body.append(t); } t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, ms); }
+  function setOrigin(o) { S.origin = o; if (o) { if (!S.radius) S.radius = 2; S.sort = "near"; S.map = true; } else { S.radius = 0; if (S.sort === "near") S.sort = "best"; } }
+  function startPick(reason) { S.picking = true; S.map = true; render(); syncControls(); toast(reason ? reason + " Tap the map where you are instead." : "Tap the map where you are."); document.getElementById("map-wrap").scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+  const nearBtn = document.getElementById("near"), nearTxt = document.getElementById("near-txt");
+  nearBtn.addEventListener("click", () => {
+    if (S.origin) { setOrigin(null); S.picking = false; render(); syncControls(); return; }
+    const allowed = !document.featurePolicy || !document.featurePolicy.allowsFeature || document.featurePolicy.allowsFeature("geolocation");
+    if (!navigator.geolocation || !allowed) { startPick("Location isn't available on this page."); return; }
+    nearBtn.classList.add("busy"); nearTxt.textContent = "Locating\u2026";
+    const done = () => { nearBtn.classList.remove("busy"); nearTxt.textContent = "Near me"; };
+    navigator.geolocation.getCurrentPosition(pos => {
+      done(); const { latitude: lat, longitude: lng } = pos.coords;
+      if (lat < BBOX.s - 0.15 || lat > BBOX.n + 0.15 || lng < BBOX.w - 0.2 || lng > BBOX.e + 0.2) { startPick("You don't seem to be in London right now."); return; }
+      setOrigin({ lat, lng, label: "Your location" }); render(); syncControls(); toast("Showing pubs nearest to you.");
+    }, err => { done(); startPick(err.code === 1 ? "Location permission was refused." : "Couldn't get a location fix."); }, { enableHighAccuracy: false, timeout: 9000, maximumAge: 300000 });
+  });
+  document.getElementById("near-clear").addEventListener("click", () => { setOrigin(null); S.picking = false; render(); syncControls(); });
+  document.getElementById("near-pick").addEventListener("click", () => startPick(""));
+
+  // ---------- Controls ----------
+  const modesNav = document.getElementById("modes");
+  function renderModes() {
+    modesNav.replaceChildren(...MODES.map(([k, label, icon]) => {
+      const b = el("button", { "aria-pressed": S.mode === k, onclick: () => setMode(k) });
+      const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", "2"); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.innerHTML = icon;
+      b.append(s, label); return b;
+    }));
+  }
+  const SORTS = { best: "Best match", near: "Nearest first", screens: "Most screens", food: "Best food", late: "Latest opening", rating: "Reputation", name: "Name A\u2013Z", area: "Area" };
+  const modeSorts = () => ["best", ...(S.origin ? ["near"] : []), ...({ match: ["screens"], eat: ["food"], party: ["late"], explore: ["rating"] }[S.mode] || []), "name", "area"];
+  function syncControls() {
+    renderModes();
+    const sort = document.getElementById("sort"); sort.replaceChildren(...modeSorts().map(k => el("option", { value: k }, SORTS[k])));
+    if (!modeSorts().includes(S.sort)) S.sort = "best"; sort.value = S.sort;
+    document.getElementById("map-wrap").hidden = !S.map; document.getElementById("map-toggle").setAttribute("aria-pressed", S.map);
+    nearBtn.setAttribute("aria-pressed", !!S.origin); nearBtn.title = S.origin ? "Stop using your location" : "Find pubs near your location";
+    const bar = document.getElementById("near-bar"); bar.hidden = !S.origin;
+    if (S.origin) { document.getElementById("near-lbl").innerHTML = `<b>${S.origin.label}</b> \u00B7 show pubs within`; document.getElementById("seg-radius").replaceChildren(...[[1, "1 km"], [2, "2 km"], [5, "5 km"], [0, "Any"]].map(([k, l]) => el("button", { "aria-pressed": S.radius === k, onclick: () => { S.radius = k; render(); syncControls(); } }, l))); }
+  }
+  document.getElementById("sort").addEventListener("change", e => { S.sort = e.target.value; render(); });
+  document.getElementById("q").addEventListener("input", e => { S.q = e.target.value.trim(); render(); });
+  document.getElementById("map-toggle").addEventListener("click", () => { S.map = !S.map; syncControls(); });
+  document.getElementById("datanote").innerHTML = `<b>About the data.</b> ${PUBS.length.toLocaleString("en-GB")} London pubs. ${META.curated} have full write-ups, of which ${META.checked} have been checked against the pub's own website or a pub directory (\u2713 Checked) and the rest are written from general knowledge (\u25CB Unchecked). The other ${(META.base || 0).toLocaleString("en-GB")} come from OpenStreetMap (\u25C7 Map listing): name, position and nearest station are reliable, everything else is unknown until checked. Screen counts, sound and hours change with landlords and fixtures, so ring ahead for a big match. Saved pubs and your team are stored only in this browser. Map data \u00A9 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL.`;
+  if (matchMedia("(max-width: 860px)").matches) document.getElementById("filters").open = false;
+
+  renderFilters(); syncControls(); render();
+})();
+</script>
+
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}</script>
+</body>
+</html>

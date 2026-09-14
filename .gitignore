@@ -1,0 +1,6 @@
+# raw OpenStreetMap downloads are large; regenerate with the scripts in data/
+data/osm_pubs.json
+data/osm_roads.json
+data/osm_parks.json
+data/osm_water.json
+.DS_Store

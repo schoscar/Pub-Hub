@@ -1,0 +1,2777 @@
+[
+ {
+  "id": "tollington",
+  "name": "The Tollington",
+  "area": "Holloway",
+  "region": "N",
+  "station": "Holloway Road",
+  "walk": 3,
+  "lat": 51.556,
+  "lng": -0.115,
+  "fb": {
+   "screens": 8,
+   "big": 85,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "ARS"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Thai",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Home-cooked pub food with a Thai fusion menu and Sunday roasts, eaten in the bar"
+  },
+  "price": 2,
+  "tip": "The Arsenal cathedral. Standing room only on match day; book a table for anything against a top-six side.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://tollingtonarms-holloway.co.uk/",
+   "notes": "8 giant screens (not 14), Sky+TNT, every live game. Home-cooked food + Thai fusion, Sunday roasts. Large front terrace. Voted best Arsenal pub by Gooner readers. 115 Hornsey Rd."
+  },
+  "feat": [],
+  "rep": 2
+ },
+ {
+  "id": "twelve-pins",
+  "name": "The Twelve Pins",
+  "area": "Finsbury Park",
+  "region": "N",
+  "station": "Finsbury Park",
+  "walk": 1,
+  "lat": 51.565,
+  "lng": -0.106,
+  "fb": {
+   "screens": 8,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "ARS",
+    "CEL",
+    "IRL"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Irish",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": true,
+   "note": "Irish pub grub, all day"
+  },
+  "price": 1,
+  "tip": "Irish pub that doubles as an Arsenal and Celtic house. Gets loud early, so arrive an hour before kick-off.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.fanzo.com/en/bar/4747/the-twelve-pins",
+   "notes": "6 big screens plus screens in the beer garden; large front and back gardens; Arsenal, GAA and major sports; pies, roasts, spice bags."
+  },
+  "feat": [],
+  "rep": 2
+ },
+ {
+  "id": "famous-cock",
+  "name": "The Famous Cock",
+  "area": "Highbury",
+  "region": "N",
+  "station": "Highbury & Islington",
+  "walk": 1,
+  "lat": 51.546,
+  "lng": -0.104,
+  "fb": {
+   "screens": 9,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "ARS",
+    "IRL"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "terrace",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Standard pub menu, fine for a pre-match feed"
+  },
+  "price": 2,
+  "tip": "Right outside the station on the walk to the Emirates. A screen in every eyeline and sound up for every game.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.fanzo.com/en/bar/83/famous-cock-tavern-islington-london",
+   "notes": "Multi-screen, Sky and TNT, often two games at once, loud. Booths at front, outside area at back. 8 min to Emirates."
+  },
+  "feat": [],
+  "rep": 2
+ },
+ {
+  "id": "faltering-fullback",
+  "name": "The Faltering Fullback",
+  "area": "Stroud Green",
+  "region": "N",
+  "station": "Finsbury Park",
+  "walk": 8,
+  "lat": 51.567,
+  "lng": -0.113,
+  "fb": {
+   "screens": 5,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "room"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": false,
+   "teams": [
+    "ARS"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "outdoor",
+   "session"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Thai"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": false,
+   "note": "Cheap, very good Thai in the dining room, the garden or the bar"
+  },
+  "price": 1,
+  "tip": "Famous for its multi-level treehouse garden and £8 Thai. Screens are inside; the garden is for the after.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://falteringfullback.com/our-story/",
+   "notes": "Big screens for live sport with a dedicated 'Sin Bin' sports area; rugby hotspot; award-winning multi-level garden; Thai menu."
+  },
+  "feat": [
+   "heritage",
+   "dogs"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "bank-of-friendship",
+  "name": "The Bank of Friendship",
+  "area": "Highbury",
+  "region": "N",
+  "station": "Arsenal",
+  "walk": 5,
+  "lat": 51.553,
+  "lng": -0.1,
+  "fb": {
+   "screens": 2,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "ARS"
+   ],
+   "atmos": "home",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "quiet"
+  ],
+  "group": 10,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "Small plates"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Small plates and bar food"
+  },
+  "price": 2,
+  "tip": "The gentler Arsenal option: a proper local with a tidy back garden. Good for a pre-match pint without the crush.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/bank-of-friendship-highbury-124844",
+   "notes": "TV for sport in saloon bar, quiet public bar. Paved rear garden with open fires. Open mic Thursdays, live sessions summer Sundays. Arsenal memorabilia, very busy on home days."
+  },
+  "feat": [
+   "music",
+   "fire",
+   "ale"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "bricklayers",
+  "name": "The Bricklayers Arms",
+  "area": "Tottenham",
+  "region": "N",
+  "station": "White Hart Lane",
+  "walk": 4,
+  "lat": 51.603,
+  "lng": -0.07,
+  "fb": {
+   "screens": 6,
+   "big": 55,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "TOT"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Burgers"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Burger van on match days, snacks otherwise"
+  },
+  "price": 1,
+  "tip": "Spurs home turf on the High Road. Screen in the garden means you don't lose your spot for a smoke.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.thebricklayerstottenham.co.uk/",
+   "notes": "Home supporters only on match days. 3 indoor screens plus 50-inch TVs in the outdoor seating with its own bar. Pool, darts."
+  },
+  "feat": [
+   "games"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "antwerp-arms",
+  "name": "The Antwerp Arms",
+  "area": "Tottenham",
+  "region": "N",
+  "station": "Bruce Grove",
+  "walk": 6,
+  "lat": 51.598,
+  "lng": -0.073,
+  "fb": {
+   "screens": 2,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "TOT"
+   ],
+   "atmos": "home",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "quiet",
+   "outdoor"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Crisps and snacks at the bar"
+  },
+  "price": 1,
+  "tip": "Community-owned Spurs local. Two screens, real ale, and regulars who have been coming for decades.",
+  "verify": {
+   "status": "partial",
+   "checked": "2026-09",
+   "source": "https://www.antwerparms.co.uk/",
+   "notes": "Community-owned since 2015, CAMRA North London Pub of the Year 2020, Redemption beers, beer garden, quiz Tuesdays, 200m from the ground and busy on match days. Screen count unconfirmed."
+  },
+  "feat": [
+   "ale",
+   "quiz",
+   "dogs"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "beehive",
+  "name": "The Beehive",
+  "area": "Tottenham",
+  "region": "N",
+  "station": "Seven Sisters",
+  "walk": 10,
+  "lat": 51.593,
+  "lng": -0.07,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": true,
+   "pos": [
+    "bar",
+    "proj",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "TOT"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "outdoor",
+   "late"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "02:00",
+  "food": {
+   "cuisine": [
+    "British",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Traditional British menu from the Bruce Stove kitchen, burgers and fish and chips, BBQ outside on match days"
+  },
+  "price": 1,
+  "tip": "Huge beer garden with a big screen for summer tournaments. Reliably loud for Spurs.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://beehiven17.com/",
+   "notes": "Sky and TNT; outside bar and BBQ on Spurs match days; heated, sheltered garden; football tables; British menu (burgers, fish and chips); Fri/Sat open until 2am."
+  },
+  "feat": [
+   "games",
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "butchers-hook",
+  "name": "The Butcher's Hook",
+  "area": "Fulham Broadway",
+  "region": "W",
+  "station": "Fulham Broadway",
+  "walk": 3,
+  "lat": 51.482,
+  "lng": -0.192,
+  "fb": {
+   "screens": 7,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "CHE"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "British",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Pub classics with a proper dining area away from the screens"
+  },
+  "price": 2,
+  "tip": "Chelsea FC was founded here in 1905. Opposite the ground, so it's members and regulars on home days.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.greeneking.co.uk/pubs/greater-london/butchers-hook/sports",
+   "notes": "Greene King. Opposite Stamford Bridge; Chelsea FC founded here in 1905 (then the Rising Sun). Sky, TNT, BBC and ITV on big screens. Family and dog friendly, restaurant section."
+  },
+  "feat": [
+   "dogs",
+   "family",
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "chelsea-pensioner",
+  "name": "The Chelsea Pensioner",
+  "area": "Fulham Road",
+  "region": "W",
+  "station": "Fulham Broadway",
+  "walk": 3,
+  "lat": 51.483,
+  "lng": -0.19,
+  "fb": {
+   "screens": 8,
+   "big": 85,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "CHE"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Burgers",
+    "Pies"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Burgers and pies in the bar"
+  },
+  "price": 2,
+  "tip": "Loud, blue and unashamed. Sound is always on and the projector comes down for the big ones.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.thechelseapensioner.co.uk/",
+   "notes": "358 Fulham Rd, 2 min from Stamford Bridge. Live sport on screens, DJ before kick-off on home games. Otherwise quiz, karaoke, comedy, live music, pool and a sunny garden."
+  },
+  "feat": [
+   "music",
+   "dj",
+   "quiz",
+   "karaoke",
+   "comedy",
+   "games"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "imperial-arms",
+  "name": "The Imperial Arms",
+  "area": "Chelsea",
+  "region": "W",
+  "station": "Fulham Broadway",
+  "walk": 7,
+  "lat": 51.478,
+  "lng": -0.18,
+  "fb": {
+   "screens": 4,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "CHE"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "roast"
+  ],
+  "group": 16,
+  "out": {
+   "kind": "garden",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Proper gastropub cooking, dining room plus tables in the bar. Strong Sunday roast"
+  },
+  "price": 3,
+  "tip": "The smarter Chelsea option on the King's Road with a covered garden and a screen out there.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.designmynight.com/london/pubs/fulham/the-imperial-arms/review",
+   "notes": "Designated dining area beside a weatherproof year-round covered garden. Family-style Sunday roasts. Football-heavy crowd on match days."
+  },
+  "feat": [],
+  "rep": 2
+ },
+ {
+  "id": "boleyn-tavern",
+  "name": "The Boleyn Tavern",
+  "area": "Upton Park",
+  "region": "E",
+  "station": "Upton Park",
+  "walk": 3,
+  "lat": 51.532,
+  "lng": 0.04,
+  "fb": null,
+  "occ": [
+   "roast",
+   "quiet",
+   "group",
+   "date"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Pies",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pies and pub classics, roast on Sundays, dining room at the back"
+  },
+  "price": 2,
+  "tip": "West Ham's old cathedral, restored to its 1899 glory: seven bars, etched glass and a stained-glass skylight over the dining room. Go for the building and the roast, not the screens.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://boleyntavern.co.uk/",
+   "notes": "Own site: no mention of live sport, screens, Sky or TNT. Hours Mon-Wed 4-11, Thu 12-11, Fri-Sat 12-12, Sun 12-10. Grade II, CAMRA historic interior, 1.5m Remarkable Pubs restoration 2021, open kitchen and dining area, three cask ales, garden. Treat as a heritage food pub with West Ham history, not a match-day screen pub."
+  },
+  "feat": [
+   "heritage",
+   "ale",
+   "family"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "carpenters-arms",
+  "name": "The Carpenters Arms",
+  "area": "Stratford",
+  "region": "E",
+  "station": "Stratford High Street",
+  "walk": 4,
+  "lat": 51.54,
+  "lng": -0.005,
+  "fb": {
+   "screens": 6,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "WHU"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "outdoor"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "price": 1,
+  "tip": "The go-to pre-match for the London Stadium. Rammed for home games; the garden screen takes the overflow.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://footballgroundguide.com/news/best-pubs-for-fans-near-london-stadium-where-to-drink-if-heading-to-the-home-of-west-ham.html",
+   "notes": "Spiritual home of West Ham fans since the stadium move. Large patio garden, vertical drinking space, West Ham decor. 15 min walk to London Stadium, Stratford High St 350m."
+  },
+  "feat": [],
+  "rep": 2
+ },
+ {
+  "id": "denmark-arms",
+  "name": "The Denmark Arms",
+  "area": "East Ham",
+  "region": "E",
+  "station": "East Ham",
+  "walk": 2,
+  "lat": 51.538,
+  "lng": 0.052,
+  "fb": {
+   "screens": 3,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": false,
+   "teams": [
+    "WHU"
+   ],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Antic kitchen, pub classics and roasts"
+  },
+  "price": 2,
+  "tip": "Old-school Irons pub by the station. Every game on, no fuss, cheap pints.",
+  "verify": {
+   "status": "partial",
+   "checked": "2026-09",
+   "source": "https://newhamrecorder.co.uk/news/denmark-arms-pub-in-east-ham-is-sold-to-antic-3188058",
+   "notes": "Grade II, 381 Barking Rd. Closed 2018 after the stadium move; reopened Nov 2018 under Antic as a craft-and-food pub. Sky TV listed. Heritage West Ham pub rather than a match-day fortress now."
+  },
+  "feat": [
+   "heritage",
+   "craft"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "clifton-arms",
+  "name": "The Clifton Arms",
+  "area": "Selhurst",
+  "region": "S",
+  "station": "Selhurst",
+  "walk": 5,
+  "lat": 51.397,
+  "lng": -0.085,
+  "fb": {
+   "screens": 5,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "CRY"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "outdoor"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "price": 1,
+  "tip": "The Palace pub, a few minutes from the Holmesdale. Red-and-blue to the rafters, sound always up.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/clifton-arms-south-norwood-141407",
+   "notes": "Victorian pub c.1865, 2 min from Selhurst Park, the unofficial home pub for Palace fans. Real ale. Open 12-23 Mon-Sat."
+  },
+  "feat": [
+   "ale",
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "prince-george",
+  "name": "The Prince George",
+  "area": "Thornton Heath",
+  "region": "S",
+  "station": "Thornton Heath",
+  "walk": 4,
+  "lat": 51.399,
+  "lng": -0.1,
+  "fb": {
+   "screens": 3,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "CRY"
+   ],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "quiet"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "No kitchen"
+  },
+  "price": 1,
+  "tip": "Quieter Palace local for the walk in from Thornton Heath.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://whatpub.com/pubs/CRO/11437/prince-george-thornton-heath",
+   "notes": "Live sport on three screens, welcomes home and away fans, quiz Monday."
+  },
+  "feat": [
+   "quiz"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "crabtree",
+  "name": "The Crabtree",
+  "area": "Fulham Riverside",
+  "region": "W",
+  "station": "Hammersmith",
+  "walk": 12,
+  "lat": 51.483,
+  "lng": -0.222,
+  "fb": {
+   "screens": 7,
+   "big": 85,
+   "proj": true,
+   "pos": [
+    "bar",
+    "garden",
+    "proj"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "FUL"
+   ],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "roast",
+   "date"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Gastropub",
+    "BBQ"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 3,
+   "roast": true,
+   "note": "Gastropub menu inside, BBQ in the garden in summer, big Sunday roast"
+  },
+  "price": 3,
+  "tip": "Enormous riverside garden ten minutes from Craven Cottage. Big-screen tournament summers are legendary.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.thecrabtreew6.co.uk/",
+   "notes": "4 Rainville Rd. Seven HD screens inside plus outdoor screens in the enormous riverside garden; glazed colonnade terrace on the Thames. Pre and post match for Craven Cottage, Boat Race, tournaments."
+  },
+  "feat": [
+   "riverside",
+   "family",
+   "dogs"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "temperance",
+  "name": "The Temperance",
+  "area": "Fulham",
+  "region": "W",
+  "station": "Putney Bridge",
+  "walk": 3,
+  "lat": 51.47,
+  "lng": -0.208,
+  "fb": {
+   "screens": 15,
+   "big": 85,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [
+    "FUL"
+   ],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 16,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "American",
+    "Pizza"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Comfort food: loaded burgers, wings, mac and cheese and stone-baked pizzas, served in the hall"
+  },
+  "price": 2,
+  "tip": "Handsome Fulham High Street pub on the walk to the Cottage. Screens in the back room, calm at the front.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.socialpubandkitchen.co.uk/temperance-fulham/live-sport-pub",
+   "notes": "Grade II 1910 former billiards hall, 90 Fulham High St. Now a live-sports pub that hosts AWAY fans on Craven Cottage match days, with a very large number of TVs. Comfort food: mac and cheese, wings, burgers, stone-baked pizza. Three pool tables, darts."
+  },
+  "feat": [
+   "games",
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "griffin",
+  "name": "The Griffin",
+  "area": "Brentford",
+  "region": "W",
+  "station": "Brentford",
+  "walk": 8,
+  "lat": 51.49,
+  "lng": -0.303,
+  "fb": {
+   "screens": 4,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "BRE"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "session"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "price": 1,
+  "tip": "One of the famous four corner pubs of the old Griffin Park. Still the Bees' pre-match.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.griffinbrentford.co.uk/",
+   "notes": "The surviving corner pub of old Griffin Park. Friendly local, small shaded patio garden, Bees fans watch games on the screens pre and post match. Featured in Green Street."
+  },
+  "feat": [
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "globe-brentford",
+  "name": "The Globe",
+  "area": "Brentford",
+  "region": "W",
+  "station": "Brentford",
+  "walk": 6,
+  "lat": 51.487,
+  "lng": -0.308,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "BRE"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Fresh food cooked to order from sustainable, organic and free-range ingredients"
+  },
+  "price": 1,
+  "tip": "Six screens with Sky and TNT, live music at weekends and a proper kitchen. Bees and London Irish both drink here.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.theglobebrentford.com/",
+   "notes": "Victorian 1888 pub, 104 Windmill Rd. Fuller's ales. Live Sky and TNT across 6 big screens, live music every weekend, quiz Wednesday, pool, fresh organic kitchen. Supporter of Brentford FC and London Irish."
+  },
+  "feat": [
+   "music",
+   "quiz",
+   "games",
+   "ale",
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "crown-sceptre",
+  "name": "The Crown & Sceptre",
+  "area": "Shepherd's Bush",
+  "region": "W",
+  "station": "Shepherd's Bush Market",
+  "walk": 6,
+  "lat": 51.507,
+  "lng": -0.23,
+  "fb": {
+   "screens": 5,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "QPR"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "roast",
+   "group"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "British",
+    "Thai"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Gastropub menu, good roast, tables in the bar and a quieter back room"
+  },
+  "price": 2,
+  "tip": "Rangers pre-match with a decent garden and a serious roast for Sunday fixtures.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.crownandsceptreshepherdsbush.co.uk/",
+   "notes": "Fuller's, 57 Melina Rd, in the shadow of Loftus Road. Big screens, real ales, British pub fare plus Thai dishes, well-regarded Sunday roast, heated garden. Family and dog friendly. Filming location for Minder and Steptoe and Son."
+  },
+  "feat": [
+   "dogs",
+   "family",
+   "heritage",
+   "ale"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "springbok",
+  "name": "Queens Tavern (ex Springbok)",
+  "area": "White City",
+  "region": "W",
+  "station": "White City",
+  "walk": 4,
+  "lat": 51.511,
+  "lng": -0.232,
+  "fb": {
+   "screens": 4,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "QPR"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "No kitchen"
+  },
+  "price": 1,
+  "tip": "Yards from Loftus Road and now a supporters' bar: match days only, home fans only. Not a Tuesday-night pint.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/queens-tavern-shepherds-bush-129105",
+   "notes": "Renamed the Queens Tavern in 2016. Now a supporters' bar: open on match days only and for home fans only. Darts teams."
+  },
+  "feat": [
+   "games"
+  ],
+  "rep": 2,
+  "matchdayOnly": true
+ },
+ {
+  "id": "blue-anchor",
+  "name": "The Blue Anchor",
+  "area": "Bermondsey",
+  "region": "S",
+  "station": "Bermondsey",
+  "walk": 5,
+  "lat": 51.494,
+  "lng": -0.062,
+  "fb": {
+   "screens": 5,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": false,
+   "teams": [
+    "MIL"
+   ],
+   "atmos": "home",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "No kitchen"
+  },
+  "price": 1,
+  "tip": "Lions local on the way to The Den. Not one for neutrals on derby day.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/blue-anchor-bermondsey-east-158603",
+   "notes": "251 Southwark Park Rd, built 1875. Craft Union since 2021. Live sport on TV daily, very busy on Millwall home days, dartboards, wall of framed Millwall shirts. London Pride, Doom Bar. Thu-Sat until midnight."
+  },
+  "feat": [
+   "games",
+   "ale"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "royal-oak-charlton",
+  "name": "The Royal Oak",
+  "area": "Charlton",
+  "region": "S",
+  "station": "Charlton",
+  "walk": 6,
+  "lat": 51.486,
+  "lng": 0.033,
+  "fb": {
+   "screens": 4,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": false,
+   "teams": [
+    "CHA"
+   ],
+   "atmos": "home",
+   "crowd": "lively"
+  },
+  "occ": [
+   "outdoor",
+   "quiet"
+  ],
+  "group": 12,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "Snacks only"
+  },
+  "price": 1,
+  "tip": "Charlton's pre-match, a short walk to The Valley. Friendly garden, real ale.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/royal-oak-charlton-158791",
+   "notes": "300 yards from The Valley, the default pre-match pub, packed on match days. Large screens, beer garden, occasional DJs, darts, Charlton memorabilia."
+  },
+  "feat": [
+   "games",
+   "dj"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "coach-horses-leyton",
+  "name": "The Coach & Horses",
+  "area": "Leyton",
+  "region": "E",
+  "station": "Leyton",
+  "walk": 5,
+  "lat": 51.561,
+  "lng": -0.012,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "LEY"
+   ],
+   "atmos": "home",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "outdoor",
+   "group",
+   "session"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Sri Lankan",
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Authentic Sri Lankan street food from the kitchen, eaten in the back dining area, the bar or the covered garden"
+  },
+  "price": 2,
+  "tip": "Big garden on Leyton High Road, five minutes from Brisbane Road. O's fans and families.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://whatpub.com/pubs/ELC/13929/coach-horses-leyton",
+   "notes": "391 High Rd Leyton, pub since 1863, independent. Up to 25 draught beers and cask, authentic Sri Lankan street food. Main bar plus small back dining area. Partially covered garden. Home fans only on Orient home days (ticket shown at the door), six screens indoor and outdoor. Live music Fridays. Family and dog friendly."
+  },
+  "feat": [
+   "music",
+   "craft",
+   "dogs",
+   "family"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "sports-bar-victoria",
+  "name": "Sports Bar & Grill",
+  "area": "Victoria",
+  "region": "C",
+  "station": "Victoria",
+  "walk": 1,
+  "lat": 51.495,
+  "lng": -0.143,
+  "fb": {
+   "screens": 30,
+   "big": 130,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session",
+   "late"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:30",
+  "food": {
+   "cuisine": [
+    "American",
+    "Grill"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "American grill menu served at your booth while the game is on"
+  },
+  "price": 3,
+  "tip": "A wall of screens under the station. Every match, every league, sound on for the featured game. Bookable booths for groups.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.stonegategroup.co.uk/press/full-steam-ahead-for-sports-bar-and-grill-victoria/",
+   "notes": "Upstairs at Victoria Station. Huge array of screens, interactive video wall, nine bookable booths each with its own TV. Open from 7am with breakfast."
+  },
+  "feat": [
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "f3k",
+  "name": "The Famous Three Kings",
+  "area": "West Kensington",
+  "region": "W",
+  "station": "West Kensington",
+  "walk": 1,
+  "lat": 51.49,
+  "lng": -0.207,
+  "fb": {
+   "screens": 38,
+   "big": 120,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "away",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pub grub in the bar"
+  },
+  "price": 2,
+  "tip": "London's original all-sport pub. Multiple rooms, multiple matches, sound on everywhere. Any club welcome.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://famousthreekings.co.uk/sports/",
+   "notes": "171 North End Rd, next to West Kensington station. 38 screens plus two projector screens, Sky and TNT, all national and international football plus rugby, NFL, boxing, F1. Multiple Sports Pub of the Year wins at the Great British Pub Awards. Cocktails and food."
+  },
+  "feat": [
+   "cocktails"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "greenwood",
+  "name": "The Greenwood",
+  "area": "Victoria",
+  "region": "C",
+  "station": "Victoria",
+  "walk": 3,
+  "lat": 51.496,
+  "lng": -0.14,
+  "fb": {
+   "screens": 30,
+   "big": 150,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "session"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "terrace",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Burgers",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Burgers and pub classics, dining tables upstairs away from the main screens"
+  },
+  "price": 3,
+  "tip": "Big, bright sports pub with a giant projector screen upstairs. Easy for mixed groups of fans.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.sportlondon.com/greenwood",
+   "notes": "Opposite Victoria Station, calls itself London's biggest premium sports bar. 30+ UHD screens and a 150-inch TV wall across two floors, 200-capacity private room, sun-trap terrace, breakfast to dinner."
+  },
+  "feat": [
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "belushis-lb",
+  "name": "Belushi's",
+  "area": "London Bridge",
+  "region": "S",
+  "station": "London Bridge",
+  "walk": 2,
+  "lat": 51.504,
+  "lng": -0.087,
+  "fb": {
+   "screens": 10,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "bar",
+    "all",
+    "room",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "away",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "late",
+   "group"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "03:00",
+  "food": {
+   "cuisine": [
+    "Burgers",
+    "American"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Burgers and wings in the bar"
+  },
+  "price": 2,
+  "tip": "Backpacker bar that turns into a party after the final whistle. Good for away fans and overseas supporters.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://belushis.com/sports-bar-london-bridge",
+   "notes": "Multi-screen with two huge projectors; The Dugout downstairs with 4K screens, Sky Q and Dolby Atmos. Open till 2am Sun-Thu and 3am Fri-Sat. Live music, DJs and karaoke after the match."
+  },
+  "feat": [
+   "dj",
+   "karaoke",
+   "music"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "bar-kick",
+  "name": "Bar Kick",
+  "area": "Shoreditch",
+  "region": "E",
+  "station": "Shoreditch High Street",
+  "walk": 3,
+  "lat": 51.526,
+  "lng": -0.08,
+  "fb": {
+   "screens": 12,
+   "big": 85,
+   "proj": true,
+   "pos": [
+    "bar",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 25,
+  "out": {
+   "kind": "pavement",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "00:30",
+  "food": {
+   "cuisine": [
+    "Burgers",
+    "American"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Dirty burgers and proper fried chicken, eaten wherever you can see a screen"
+  },
+  "price": 2,
+  "tip": "Table football and Serie A on the projector. The place for European nights and neutrals.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.urbanpubsandbars.com/venues/bar-kick-at-the-shoreditch-arms",
+   "notes": "Now Bar Kick at The Shoreditch Arms (Urban Pubs and Bars). Twelve big screens across three floors, up to three games at once. Six championship-grade football tables at 1 pound a game. Dirty burgers and fried chicken, craft beer, cocktails, comedy nights."
+  },
+  "feat": [
+   "games",
+   "comedy",
+   "cocktails",
+   "craft"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "boxpark-wembley",
+  "name": "Boxpark Wembley",
+  "area": "Wembley Park",
+  "region": "N",
+  "station": "Wembley Park",
+  "walk": 6,
+  "lat": 51.556,
+  "lng": -0.283,
+  "fb": {
+   "screens": 8,
+   "big": 200,
+   "proj": true,
+   "pos": [
+    "all",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "ENG"
+   ],
+   "atmos": "neutral",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 60,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "A dozen street-food traders; eat at the long tables in front of the screen"
+  },
+  "price": 2,
+  "tip": "Fan-zone energy for England games: a cinema-sized screen, street food and standing-room crowds. Ticketed for tournaments.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.boxpark.co.uk/venues/wembley/sports-bar/where-to-watch-football",
+   "notes": "20,000 sq ft events space by Wembley Stadium, huge screens and sound system, 20+ street-food vendors, PlayBox bar upstairs, club room, karaoke and comedy nights. Pre-match fan zone needs a valid match ticket plus general admission."
+  },
+  "feat": [
+   "karaoke",
+   "comedy",
+   "dj",
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "boxpark-croydon",
+  "name": "Boxpark Croydon",
+  "area": "Croydon",
+  "region": "S",
+  "station": "East Croydon",
+  "walk": 1,
+  "lat": 51.375,
+  "lng": -0.096,
+  "fb": {
+   "screens": 6,
+   "big": 200,
+   "proj": true,
+   "pos": [
+    "all",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [
+    "ENG",
+    "CRY"
+   ],
+   "atmos": "neutral",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "session",
+   "group",
+   "late"
+  ],
+  "group": 60,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": false,
+   "note": "Street-food hall with communal tables around the big screen"
+  },
+  "price": 2,
+  "tip": "The big screen that went viral for England goals. Loud, young, and standing.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://boxpark.co.uk/croydon/crystal-palace/",
+   "notes": "Shows every televised Crystal Palace game plus the big tournaments. Most games have free and paid tickets; walk-ins welcome but a digital Black Card sign-up is needed for entry."
+  },
+  "feat": [
+   "dj",
+   "karaoke"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "kings-arms-wandsworth",
+  "name": "The King's Arms",
+  "area": "Wandsworth",
+  "region": "S",
+  "station": "Wandsworth Town",
+  "walk": 6,
+  "lat": 51.457,
+  "lng": -0.193,
+  "fb": {
+   "screens": 6,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "outdoor",
+   "roast"
+  ],
+  "group": 30,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "British",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Young's pub menu, Sunday roast, tables in the bar and the garden"
+  },
+  "price": 2,
+  "tip": "Big garden with long benches and a screen out there for summer fixtures. Turns into a proper session by evening.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.kingsarmswandsworth.co.uk/",
+   "notes": "94-96 Wandsworth High St. Young's. Extensive garden with huts running alongside the River Wandle, semi-private Moatside garden area. Screens spread throughout for rugby and football. British classics, Young's ales and craft."
+  },
+  "feat": [
+   "hire",
+   "riverside"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "ship-wandsworth",
+  "name": "The Ship",
+  "area": "Wandsworth",
+  "region": "S",
+  "station": "Wandsworth Town",
+  "walk": 5,
+  "lat": 51.462,
+  "lng": -0.187,
+  "fb": {
+   "screens": 5,
+   "big": 100,
+   "proj": true,
+   "pos": [
+    "bar",
+    "garden",
+    "room"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "outdoor",
+   "roast",
+   "date"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "Pub classics",
+    "BBQ"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Classic pub menu of burgers and sausages with a summer BBQ on the terrace; bookable riverside cabins for groups"
+  },
+  "price": 3,
+  "tip": "Riverside institution. Huge terrace, outdoor BBQ, big screen in the garden for tournaments. Bring everyone.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.theship.co.uk/",
+   "notes": "18th-century pub at 41 Jews Row by Wandsworth Bridge. Riverside terrace, summer outdoor BBQ, classic bar menu. Shows major European and domestic fixtures including TNT Champions League and Premier League. Riverside cabins for private parties seat up to 15, each with a plasma screen. Private boat dock."
+  },
+  "feat": [
+   "hire",
+   "riverside",
+   "dogs"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "pub-on-the-park",
+  "name": "Pub on the Park",
+  "area": "London Fields",
+  "region": "E",
+  "station": "London Fields",
+  "walk": 3,
+  "lat": 51.541,
+  "lng": -0.062,
+  "fb": {
+   "screens": 9,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "all",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": false,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "session",
+   "group",
+   "outdoor",
+   "late"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Pizza",
+    "BBQ"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Pizza and summer BBQ, eaten at the benches"
+  },
+  "price": 2,
+  "tip": "Long benches spilling onto London Fields, DJs at weekends. The template for a big-group summer session.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://pubonthepark.com/",
+   "notes": "19 Martello St, behind London Fields station. Fairy-lit wrap-around terrace with heaters and large outdoor screens; seven TV screens in the main bar often showing different games at once. Resident DJs at weekends. Two private-hire spaces (70s speakeasy, retro basement) with no booking fee."
+  },
+  "feat": [
+   "dj",
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "harp",
+  "name": "The Harp",
+  "area": "Covent Garden",
+  "region": "C",
+  "station": "Charing Cross",
+  "walk": 2,
+  "lat": 51.51,
+  "lng": -0.126,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date"
+  ],
+  "group": 4,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Sausages from the bar, nothing more"
+  },
+  "price": 2,
+  "tip": "Narrow, no screens, no music. Ten cask ales and the best pint in the West End.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.harpcoventgarden.com/",
+   "notes": "47 Chandos Place. Fuller's since 2014. Ten handpumps of cask ale plus bag-in-box ciders and perries. CAMRA National Pub of the Year 2010 (first London winner), Evening Standard best pub 2019 and 2020. Two small rooms, no screens."
+  },
+  "feat": [
+   "ale",
+   "heritage"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "southampton-arms",
+  "name": "The Southampton Arms",
+  "area": "Gospel Oak",
+  "region": "N",
+  "station": "Gospel Oak",
+  "walk": 4,
+  "lat": 51.555,
+  "lng": -0.145,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "outdoor"
+  ],
+  "group": 6,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "Bar snacks"
+   ],
+   "sitDown": false,
+   "where": "bar",
+   "rating": 1,
+   "roast": false,
+   "note": "Pork baps and scratchings"
+  },
+  "price": 1,
+  "tip": "Ale and cider house. Cash only, no screens, a small yard out back. Pure quiet-pint territory.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "http://www.thesouthamptonarms.co.uk/",
+   "notes": "139 Highgate Rd. Ale and cider house: 18 lines, all from independent UK producers. Cash only, vinyl only, meaty bar snacks, old piano, small beer garden. 5 min from Gospel Oak."
+  },
+  "feat": [
+   "ale",
+   "music"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "royal-oak-borough",
+  "name": "The Royal Oak",
+  "area": "Borough",
+  "region": "S",
+  "station": "Borough",
+  "walk": 3,
+  "lat": 51.5,
+  "lng": -0.093,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "roast"
+  ],
+  "group": 6,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "Pies",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": true,
+   "note": "Pies and a well-loved Sunday roast in the bar"
+  },
+  "price": 2,
+  "tip": "Harvey's of Lewes pub with two quiet bars and no telly. The anti-sports pub.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://camra.org.uk/pubs/royal-oak-london-158404",
+   "notes": "44 Tabard St. Harvey's of Lewes' first London pub since 1997, Victorian two-bar layout, four handpumps in each bar, no machines, no music, just conversation. Daily Telegraph top-10 UK pub."
+  },
+  "feat": [
+   "ale",
+   "heritage"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "dove-hammersmith",
+  "name": "The Dove",
+  "area": "Hammersmith",
+  "region": "W",
+  "station": "Ravenscourt Park",
+  "walk": 8,
+  "lat": 51.49,
+  "lng": -0.234,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "outdoor",
+   "roast"
+  ],
+  "group": 6,
+  "out": {
+   "kind": "riverside",
+   "benches": false,
+   "river": true,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Pub classics and Sunday roast, small dining room upstairs"
+  },
+  "price": 2,
+  "tip": "17th-century riverside pub with the smallest bar in Britain. Tiny terrace over the water; go early.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.dovehammersmith.co.uk/about",
+   "notes": "19 Upper Mall, Grade II, Fuller's since 1796, early 18th century. Guinness record for the smallest bar room. Riverside terrace. Literary history (Greene, Hemingway, Morris next door). Food and restaurant."
+  },
+  "feat": [
+   "heritage",
+   "riverside",
+   "fire",
+   "ale"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "mayflower",
+  "name": "The Mayflower",
+  "area": "Rotherhithe",
+  "region": "S",
+  "station": "Rotherhithe",
+  "walk": 2,
+  "lat": 51.501,
+  "lng": -0.053,
+  "fb": null,
+  "occ": [
+   "date",
+   "quiet",
+   "outdoor",
+   "roast"
+  ],
+  "group": 60,
+  "out": {
+   "kind": "riverside",
+   "benches": true,
+   "river": true,
+   "big": false
+  },
+  "late": "23:00",
+  "food": {
+   "cuisine": [
+    "British"
+   ],
+   "sitDown": true,
+   "where": "dining",
+   "rating": 2,
+   "roast": true,
+   "note": "Upstairs restaurant over the river, roast on Sundays"
+  },
+  "price": 2,
+  "tip": "Candlelit riverside pub on a jetty over the Thames. No screens, all atmosphere.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.mayflowerpub.co.uk/",
+   "notes": "117 Rotherhithe St, origins 1550, claims oldest pub on the Thames. Wooden jetty over the river for about 30 drinkers. Upstairs candlelit restaurant with river views, private parties up to 60. Classic British menu, traditional ales, craft beer, local gins."
+  },
+  "feat": [
+   "heritage",
+   "riverside",
+   "hire",
+   "fire"
+  ],
+  "rep": 3
+ },
+ {
+  "id": "old-blue-last",
+  "name": "The Old Blue Last",
+  "area": "Shoreditch",
+  "region": "E",
+  "station": "Old Street",
+  "walk": 5,
+  "lat": 51.524,
+  "lng": -0.081,
+  "fb": null,
+  "occ": [
+   "session",
+   "late"
+  ],
+  "group": 15,
+  "out": {
+   "kind": "none",
+   "benches": false,
+   "river": false,
+   "big": false
+  },
+  "late": "03:00",
+  "food": {
+   "cuisine": [],
+   "sitDown": false,
+   "where": null,
+   "rating": 0,
+   "roast": false,
+   "note": "No kitchen"
+  },
+  "price": 2,
+  "tip": "Gigs upstairs, sticky floors downstairs. For the night after the match, not the match.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.theoldbluelast.com/",
+   "notes": "38 Great Eastern St. Live music daily, free to 15 pounds, free jazz Sundays, free club nights Fri and Sat until 3am. Open until midnight Sun-Wed, 1am Thu, 2am Fri-Sat."
+  },
+  "feat": [
+   "music",
+   "dj"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "half-moon-putney",
+  "name": "The Half Moon",
+  "area": "Putney",
+  "region": "S",
+  "station": "Putney Bridge",
+  "walk": 4,
+  "lat": 51.465,
+  "lng": -0.215,
+  "fb": {
+   "screens": 3,
+   "big": 65,
+   "proj": false,
+   "pos": [
+    "bar"
+   ],
+   "sound": "request",
+   "sky": true,
+   "tnt": false,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "relaxed"
+  },
+  "occ": [
+   "session",
+   "late",
+   "roast"
+  ],
+  "group": 20,
+  "out": {
+   "kind": "terrace",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "American",
+    "British"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Americana-inspired menu and a well-regarded Sunday roast, eaten in the front bar"
+  },
+  "price": 2,
+  "tip": "Legendary live-music pub. A few screens up front for the match, then a band in the back room.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.halfmoon.co.uk/",
+   "notes": "Music venue since the 1960s, nine shows a week, reopened April 2026 after a revamp. Big screens inside for major events like the Boat Race. Americana-inspired menu and a Sunday roast."
+  },
+  "feat": [
+   "music",
+   "hire"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "windmill-clapham",
+  "name": "The Windmill",
+  "area": "Clapham Common",
+  "region": "S",
+  "station": "Clapham Common",
+  "walk": 5,
+  "lat": 51.457,
+  "lng": -0.146,
+  "fb": {
+   "screens": 5,
+   "big": 75,
+   "proj": false,
+   "pos": [
+    "bar",
+    "garden"
+   ],
+   "sound": "big",
+   "sky": true,
+   "tnt": true,
+   "all": false,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "lively"
+  },
+  "occ": [
+   "group",
+   "outdoor",
+   "session",
+   "roast"
+  ],
+  "group": 40,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "00:00",
+  "food": {
+   "cuisine": [
+    "British",
+    "Pub classics"
+   ],
+   "sitDown": true,
+   "where": "both",
+   "rating": 2,
+   "roast": true,
+   "note": "Conservatory restaurant with British classics and a strong Sunday roast; Burger Shack in the garden in summer"
+  },
+  "price": 2,
+  "tip": "On the common itself, with a big garden and a screen out there for summer football. Groups of thirty are normal.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.windmillclapham.co.uk/live-sports/",
+   "notes": "Young's, dates from 1665, Grade II, with a 42-room hotel. Three large screens inside plus two outside in summer; Six Nations, Premier League, Wimbledon. Big garden with picnic benches, seasonal Burger Shack and Max's Shack cabin on match days. Conservatory restaurant, Sunday roasts."
+  },
+  "feat": [
+   "heritage",
+   "family",
+   "dogs"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "duke-edinburgh",
+  "name": "The Duke of Edinburgh",
+  "area": "Brixton",
+  "region": "S",
+  "station": "Brixton",
+  "walk": 8,
+  "lat": 51.462,
+  "lng": -0.108,
+  "fb": {
+   "screens": 8,
+   "big": 150,
+   "proj": true,
+   "pos": [
+    "bar",
+    "garden",
+    "proj"
+   ],
+   "sound": "always",
+   "sky": true,
+   "tnt": true,
+   "all": true,
+   "book": true,
+   "teams": [],
+   "atmos": "neutral",
+   "crowd": "rowdy"
+  },
+  "occ": [
+   "group",
+   "outdoor",
+   "session",
+   "late"
+  ],
+  "group": 50,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": true
+  },
+  "late": "01:00",
+  "food": {
+   "cuisine": [
+    "Caribbean",
+    "Street food"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Jerk Valley's jerk chicken and Caribbean plates from the kitchen, eaten in the garden or the bar"
+  },
+  "price": 2,
+  "tip": "One of the biggest beer gardens in south London with a proper jumbo screen outside. Tournament summers here are chaos in the best way.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://dukeofedinburghpub.com/",
+   "notes": "204 Ferndale Rd, Grade II 1936 Truman's pub. One of south London's biggest gardens with covered heated areas and two outdoor bars. Huge projector screen in the garden plus seven big screens inside and out; Sky, TNT and Amazon. Pool table. Kitchen resident Jerk Valley (Caribbean), gluten-free menu, private hire."
+  },
+  "feat": [
+   "games",
+   "hire",
+   "heritage"
+  ],
+  "rep": 2
+ },
+ {
+  "id": "pineapple",
+  "name": "The Pineapple",
+  "area": "Kentish Town",
+  "region": "N",
+  "station": "Kentish Town",
+  "walk": 5,
+  "lat": 51.549,
+  "lng": -0.142,
+  "fb": null,
+  "occ": [
+   "quiet",
+   "date",
+   "outdoor"
+  ],
+  "group": 8,
+  "out": {
+   "kind": "garden",
+   "benches": true,
+   "river": false,
+   "big": false
+  },
+  "late": "23:30",
+  "food": {
+   "cuisine": [
+    "Thai"
+   ],
+   "sitDown": true,
+   "where": "bar",
+   "rating": 2,
+   "roast": false,
+   "note": "Thai kitchen, eaten in the bar or conservatory"
+  },
+  "price": 2,
+  "tip": "Grade II listed backstreet local with a conservatory and small garden. Nobody is watching anything.",
+  "verify": {
+   "status": "verified",
+   "checked": "2026-09",
+   "source": "https://www.thepineapplepubnw5.com/",
+   "notes": "51 Leverton St, Grade II, built c.1868. Thai kitchen, changing craft ales, fireplaces, conservatory and rear garden, 60-person upstairs function room, quiz Monday 9pm, very dog friendly."
+  },
+  "feat": [
+   "fire",
+   "quiz",
+   "dogs",
+   "hire",
+   "ale",
+   "heritage"
+  ],
+  "rep": 3
+ }
+]
