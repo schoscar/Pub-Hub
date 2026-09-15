@@ -62,8 +62,8 @@
     display: inline-flex; align-items: center; gap: 7px;
   }
   .modes button svg { width: 15px; height: 15px; flex: none; }
-  .modes button:hover { color: var(--tab, var(--ink)); }
-  .modes button[aria-pressed="true"] { color: var(--ink); }
+  .modes button:hover { color: var(--ink); }
+  .modes button[aria-pressed="true"] { color: var(--tab, var(--ink)); }
   .modes button[aria-pressed="true"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: var(--tab, var(--accent)); border-radius: 2px 2px 0 0; }
   @media (max-width: 1100px) { .wordmark small { display: none; } }
   @media (max-width: 860px) { .top-inner { gap: 10px; } .search { flex: 1 1 100%; margin-left: 0; } }
@@ -92,11 +92,11 @@
   .team-select { font-weight: 600; border-color: var(--brass); }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chip { border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 5px 11px; font-size: 13.5px; line-height: 1.2; }
-  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 500; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
   .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
   .seg button { border: 0; background: var(--surface); padding: 7px 3px; font-size: 12.5px; border-left: 1px solid var(--line); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .seg button:first-child { border-left: 0; }
-  .seg button[aria-pressed="true"] { background: var(--blue); color: var(--blue-ink); font-weight: 600; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
   .toggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 0; font-size: 14px; }
   .toggle input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
   .reset { align-self: flex-start; border: 0; background: transparent; color: var(--muted); text-decoration: underline; padding: 0; font-size: 13px; }
@@ -427,6 +427,7 @@
     for (const [k, v] of Object.entries(attrs)) {
       if (k === "class") n.className = v;
       else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+      else if (k.startsWith("aria-")) n.setAttribute(k, String(v));
       else if (v === false || v == null) continue;
       else n.setAttribute(k, v === true ? "" : v);
     }
