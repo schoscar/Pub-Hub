@@ -333,7 +333,7 @@
 <footer><p id="datanote"></p></footer>
 <dialog id="detail"></dialog>
 
-<script src="pubs.js?v=45d6d1dd"></script>
+<script src="pubs.js?v=adf02cd3"></script>
 <script src="london.js?v=0f118e2e"></script>
 <script>
 (() => {
@@ -377,7 +377,7 @@
   // Only offer a dietary filter once enough pubs actually state it, so the panel
   // grows on its own as OpenStreetMap fills in and never offers an empty filter.
   const dietCount = k => PUBS.reduce((n, p) => n + (p.diet && p.diet[k] === true ? 1 : 0), 0);
-  let DIET_ON = [];
+  let DIET_ON = [], TIES = [];
   const OCC = { quiet: "Quiet drink", session: "Big session", group: "Large group", outdoor: "Sit outside", date: "Date night", roast: "Sunday roast", late: "Late licence" };
   const FOODQ = ["No kitchen", "Basic", "Good", "Excellent"];
   const EAT = { bar: "In the bar", dining: "Separate dining room", both: "Bar or dining room" };
@@ -409,7 +409,7 @@
     party: { group: 0, lateMin: 0, vibe: new Set(), outdoor: false, fbReq: "" },
     quiet: { noScreens: true, beer: "", fire: false, heritage: false, dogs: false, foodMin: 0 },
     outside: { outKind: "", big: false, outScreen: false, roast: false, group: 0 },
-    explore: { price: 0, rep: 0, feat: new Set(), fb: "", foodMin: 0 },
+    explore: { tie: new Set(), price: 0, rep: 0, feat: new Set(), fb: "", foodMin: 0 },
   };
   const clone = o => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v instanceof Set ? new Set(v) : v]));
   const S = {
@@ -458,8 +458,11 @@
     if (S.favOnly && !S.fav.has(p.id)) return false;
     if (S.checkedOnly && !checked(p)) return false;
     if (S.origin && S.radius && pubDist(p) > S.radius) return false;
-    if (isBase(p) && (S.mode === "match" || S.mode === "party" || S.mode === "quiet")) return false;
+    // A quiet pint is a promise about atmosphere. Nothing in OpenStreetMap can
+    // support it, so that tab stays written-up only.
+    if (isBase(p) && S.mode === "quiet") return false;
     const m = S.m, f = p.fb, fd = p.food;
+    if (isBase(p) && S.mode !== "explore") return mapPasses(p, m, f, fd);
     switch (S.mode) {
       case "match":
         if (!f) return false;
@@ -519,6 +522,7 @@
         if (m.fb === "yes" && !f) return false;
         if (m.fb === "no" && f) return false;
         if (m.foodMin && fd.rating < m.foodMin) return false;
+        if (m.tie.size && !(p.beer && m.tie.has(p.beer.tie))) return false;
         return true;
     }
     return true;
@@ -554,6 +558,39 @@
     if (S.origin) s -= Math.min(pubDist(p), 12) * 2.5;
     return s;
   }
+  // A map listing carries a handful of OpenStreetMap tags and no write-up, so it
+  // answers only the coarse question each tab opens with. Set any filter that
+  // needs detail we do not hold and the listing drops out rather than guessing.
+  function mapPasses(p, m, f, fd) {
+    switch (S.mode) {
+      case "match":
+        // live_sport=yes means "shows sport" and nothing more.
+        if (!f) return false;
+        return !(m.team || m.minScreens || m.minBig || m.pos.size || m.sound || m.sky || m.tnt || m.all || m.book || m.atmos);
+      case "eat":
+        // food=yes means "has a kitchen"; it is no basis for calling it good.
+        if (fd.rating < 1 || m.foodMin > 2) return false;
+        if (m.cuisine.size && ![...m.cuisine].some(c => fd.cuisine.includes(c))) return false;
+        if (m.diet.size && ![...m.diet].every(k => p.diet && p.diet[k] === true)) return false;
+        return !(m.sit || m.eat || m.roast || m.price);
+      case "party":
+        // Only listings that stay open to midnight, from their posted hours.
+        if (lateHour(p) < 24) return false;
+        if (m.lateMin && lateHour(p) < m.lateMin) return false;
+        if (m.outdoor && p.out.kind === "none") return false;
+        if (m.fbReq === "yes" && !f) return false;
+        if (m.fbReq === "no" && f) return false;
+        return !(m.group || m.vibe.size);
+      case "outside":
+        if (p.out.kind === "none" && !has(p, "rooftop")) return false;
+        if (m.outKind === "garden" && p.out.kind !== "garden") return false;
+        if (m.outKind === "river" && !p.out.river) return false;
+        if (m.outKind === "rooftop" && !has(p, "rooftop")) return false;
+        return !(m.outKind === "benches" || m.big || m.outScreen || m.roast || m.group);
+    }
+    return true;
+  }
+
   function sorted(list) {
     const by = S.sort;
     return list.slice().sort((a, b) => {
@@ -636,7 +673,9 @@
         group("Football", seg([["", "Don't mind"], ["yes", "Shows it"], ["no", "No screens"]], k => m.fb === k, k => m.fb = k)),
         group("Food", seg(FOODSEG, k => m.foodMin === k, k => m.foodMin = k)),
         group("Price", seg(PRICESEG, k => m.price === k, k => m.price = k)),
-        group("Features", chips(Object.entries(FEAT), k => m.feat.has(k), k => toggleSet(m.feat, k)), "all of"));
+        group("Features", chips(Object.entries(FEAT), k => m.feat.has(k), k => toggleSet(m.feat, k)), "all of"),
+        TIES.length ? group("Brewery", el("div", {}, chips(TIES, k => m.tie.has(k), k => toggleSet(m.tie, k)),
+          el("p", { class: "fintro", style: "margin-top:7px" }, "Who the pub is tied to, which settles most of what is on the bar.")), "any of") : null);
     }
     F.append(el("hr", { class: "fdivider" }),
       el("div", { class: "fgroup" }, toggle("Checked pubs only", () => S.checkedOnly, v => S.checkedOnly = v), toggle("Saved pubs only", () => S.favOnly, v => S.favOnly = v)),
@@ -652,6 +691,27 @@
       known.map(k => el("span", { class: "pos " + (d[k] ? "yes" : "no") }, d[k] ? "\u2713 " : "\u2014 ", DIET[k])));
   }
 
+  // No live tap list exists for British pubs without a paid feed, but the
+  // brewery a pub is tied to settles most of what will be on the bar, so this
+  // reports the tie and what it reliably pours rather than pretending to know
+  // tonight's guest.
+  function beerSec(p) {
+    const b = p.beer || {}, bits = [];
+    if (b.tie) bits.push(el("div", { class: "fact" }, el("div", { class: "k" }, "Brewery tie"), el("div", { class: "v", style: "font-size:15px" }, b.tie)));
+    if (b.ale) bits.push(el("div", { class: "fact on" }, el("div", { class: "k" }, "Cask"), el("div", { class: "v" }, "Real ale")));
+    if (b.craft) bits.push(el("div", { class: "fact on" }, el("div", { class: "k" }, "Keg"), el("div", { class: "v" }, b.micro ? "Brews on site" : "Craft beer")));
+    if (b.guest === false) bits.push(el("div", { class: "fact off" }, el("div", { class: "k" }, "Guest beers"), el("div", { class: "v" }, "None")));
+    if (!bits.length && !b.pours.length) return null;
+    return el("div", { class: "d-sec" }, el("h3", {}, "What you'll be drinking"),
+      bits.length ? el("div", { class: "facts" }, bits) : null,
+      b.pours.length ? el("div", { class: "tags", style: "margin-top:8px" }, b.pours.map(n => el("span", { class: "tag feat" }, n))) : null,
+      el("p", { class: "fine", style: "margin:8px 0 0" },
+        b.tie ? (b.guest === false
+          ? `A ${b.tie} house, and they sell nothing else, so the bar will not change.`
+          : `A ${b.tie} house. Those are the regulars; guests and kegs rotate.`)
+        : "Free of tie as far as the map says, so the range is down to the landlord."));
+  }
+
   // ---------- Cards ----------
   const teamTag = code => {
     const c = TEAM_COLORS[code] || { stripes: ["#3A3218"], text: "#ECECEE" };
@@ -665,6 +725,7 @@
 
   function strip(p) {
     const f = p.fb, fd = p.food;
+    if (S.mode === "match" && f && f.stub) return el("div", { class: "no-fb" }, "Says it shows live sport. No screen count, screen size or sound on record.");
     if (S.mode === "match") return f ? el("div", { class: "strip" },
       cell([String(f.screens), el("small", {}, "screens")], f.pos.map(k => POS[k]).join(", "), "num"),
       cell(bigLabel(f), "biggest", "num"),
@@ -674,19 +735,19 @@
       cell(FOODQ[fd.rating], "kitchen", fd.rating >= 2 ? "on" : ""), cell(fd.cuisine.slice(0, 2).join(" \u00B7 ") || "\u2014", "cuisine"), cell(fd.where === "both" ? "Bar or dining" : fd.where === "dining" ? "Dining room" : fd.where === "bar" ? "In the bar" : "\u2014", fd.roast ? "Sunday roast" : "where you eat", fd.roast ? "on" : ""));
     if (S.mode === "party") return el("div", { class: "strip" },
       cell(p.group >= 40 ? "40+" : `up to ${p.group}`, "group size", "num"), cell(p.late, "last orders", lateHour(p) >= 25 ? "on" : "", "num"),
-      cell(["dj", "music", "karaoke", "comedy"].filter(k => has(p, k)).map(k => FEAT[k]).join(" \u00B7 ") || (has(p, "hire") ? "Private room" : f ? `${f.screens} screens` : "Just drinking"), "the vibe"));
+      cell(["dj", "music", "karaoke", "comedy"].filter(k => has(p, k)).map(k => FEAT[k]).join(" \u00B7 ") || (has(p, "hire") ? "Private room" : f && !f.stub ? `${f.screens} screens` : f ? "Shows sport" : "Just drinking"), "the vibe"));
     if (S.mode === "quiet") return el("div", { class: "strip" },
-      cell(f ? `${f.screens}` : "None", "screens", f ? "off" : "on"), cell(has(p, "ale") ? "Real ale" : has(p, "craft") ? "Craft" : "\u2014", "beer", has(p, "ale") || has(p, "craft") ? "on" : ""),
+      cell(f && !f.stub ? `${f.screens}` : f ? "Some" : "None", "screens", f ? "off" : "on"), cell(has(p, "ale") ? "Real ale" : has(p, "craft") ? "Craft" : "\u2014", "beer", has(p, "ale") || has(p, "craft") ? "on" : ""),
       cell([has(p, "fire") && "Fire", has(p, "heritage") && "Historic", has(p, "dogs") && "Dogs"].filter(Boolean).join(" \u00B7 ") || "\u2014", "warmth"));
     if (S.mode === "outside") return el("div", { class: "strip" },
       cell(has(p, "rooftop") && p.out.kind === "none" ? "Roof terrace" : OUTKIND[p.out.kind], "outside", p.out.kind !== "none" ? "on" : ""), cell(p.out.big ? "Large" : "Small", "size", p.out.big ? "on" : ""),
       cell(f && f.pos.includes("garden") ? "Yes" : "No", "screen outside", f && f.pos.includes("garden") ? "on" : "off"));
     if (isBase(p)) return el("div", { class: "strip" },
       cell(p.osm && p.osm.real_ale === "yes" ? "Real ale" : "Map listing", "reputation", ""), cell(fd.rating ? (fd.cuisine[0] || "Does food") : "Not known", "food", ""),
-      cell("Unknown", "football", "off"));
+      cell(f ? "Shows sport" : "Not known", "football", f ? "on" : "off"));
     return el("div", { class: "strip" },
       cell(REP[p.rep], "reputation", p.rep === 3 ? "on" : ""), cell(FOODQ[fd.rating], "food", fd.rating >= 2 ? "on" : ""),
-      cell(f ? [String(f.screens), el("small", {}, "screens")] : "None", "football", f ? "" : "off"));
+      cell(f && !f.stub ? [String(f.screens), el("small", {}, "screens")] : f ? "Shows sport" : "None", "football", f ? "" : "off"));
   }
   function tags(p) {
     const f = p.fb, out = [];
@@ -701,7 +762,8 @@
   }
   function whyLine(p) {
     const bits = [], f = p.fb, m = S.m;
-    if (S.mode === "match" && f) {
+    if (S.mode === "match" && f && f.stub) { bits.push("<b>from the map</b>"); if (p.beer && p.beer.tie) bits.push(p.beer.tie); if (p.late) bits.push(`till ${p.late}`); }
+    else if (S.mode === "match" && f) {
       if (isTeamPub(p)) bits.push(`<b>${TEAM_NAME[m.team]} pub</b>`); else if (m.team && f.all) bits.push(`<b>Shows every game</b>, ${ATMOS[f.atmos].toLowerCase()}`); else if (m.team) bits.push(`<b>${ATMOS[f.atmos]}</b>`);
       if (f.pos.includes("garden")) bits.push("screen in the garden"); if (f.sound === "always") bits.push("sound always on"); if (f.book) bits.push("bookable");
     } else if (S.mode === "eat") { bits.push(`<b>${FOODQ[p.food.rating]} ${p.food.cuisine[0] ? p.food.cuisine[0].toLowerCase() : "kitchen"}</b>`); if (p.food.where) bits.push(EAT[p.food.where].toLowerCase()); }
@@ -753,10 +815,26 @@
       else results.append(el("div", { class: "empty" }, el("b", {}, `No dedicated ${TEAM_NAME[m.team]} pubs in the guide yet.`), el("br"), "The neutral pubs below show every televised game and welcome any colours."));
       if (rest.length) results.append(groupTitle("Neutral pubs showing every game", rest.length), el("div", { class: "grid" }, rest.slice(0, shown).map(card)), more(rest));
     } else {
-      results.append(el("div", { class: "grid" }, list.slice(0, shown).map(card)), more(list));
+      // Written-up pubs first, then map listings in their own band, so the
+      // detail the guide actually holds is never diluted by the bulk.
+      const written = list.filter(p => !isBase(p)), mapped = list.filter(isBase);
+      if (S.mode !== "explore" && written.length && mapped.length) {
+        results.append(groupTitle(BAND[S.mode][0], written.length), el("div", { class: "grid" }, written.slice(0, shown).map(card)), more(written),
+          groupTitle(BAND[S.mode][1], mapped.length), el("p", { class: "fintro", style: "margin:-2px 0 2px" }, BAND[S.mode][2]),
+          el("div", { class: "grid" }, mapped.slice(0, shown).map(card)), more(mapped));
+      } else {
+        results.append(el("div", { class: "grid" }, list.slice(0, shown).map(card)), more(list));
+      }
     }
     renderMap(all);
   }
+  const BAND = {
+    match:   ["Written up", "Also shows the football", "These say they show live sport on OpenStreetMap. No screen count, no sound, nobody has been in. Set any filter above and they drop out."],
+    eat:     ["Written up", "Also does food", "OpenStreetMap says these have a kitchen. How good it is, nobody has checked."],
+    party:   ["Written up", "Also open late", "Open to midnight or later by their posted hours. Capacity and what the night is like are unknown."],
+    outside: ["Written up", "Also has outside space", "OpenStreetMap records a terrace or garden. How big, and whether there are benches, is unknown."],
+    quiet:   ["Written up", "", ""],
+  };
   const groupTitle = (t, n) => el("div", { class: "group-title" }, el("h3", {}, t), el("span", { class: "count num" }, `${n}`), el("span", { class: "rule" }));
 
   // ---------- Map ----------
@@ -948,6 +1026,7 @@
       el("div", { class: "d-body" },
         p.tip ? el("div", { class: "tip" }, p.tip) : null,
         el("div", { class: "d-sec" }, el("h3", {}, "The football"),
+          f && f.stub ? el("p", { class: "fine" }, "OpenStreetMap records this pub as showing live sport. That is the whole of it: no screen count, no screen size, no word on whether the sound goes on, and nobody has been in to check.") :
           isBase(p) ? el("p", { class: "fine" }, "Not known yet. This pub comes from the map and nobody has checked whether it shows sport.") :
           f ? el("div", { class: "facts" },
             el("div", { class: "fact" }, el("div", { class: "k" }, "Screens"), el("div", { class: "v num" }, String(f.screens))),
@@ -957,7 +1036,7 @@
             el("div", { class: "fact" }, el("div", { class: "k" }, "Crowd"), el("div", { class: "v" }, ATMOS[f.atmos], el("small", {}, ` \u00B7 ${f.crowd}`))),
             el("div", { class: "fact " + (f.book ? "on" : "off") }, el("div", { class: "k" }, "Tables"), el("div", { class: "v" }, f.book ? "Bookable" : "First come")))
           : el("p", { class: "fine" }, "No screens and no plans for any. This is where you go to avoid the match.")),
-        f ? el("div", { class: "d-sec" }, el("h3", {}, "Where the screens are"), el("div", { class: "screens-map" }, Object.entries(POS).map(([k, lbl]) => el("span", { class: "pos " + (f.pos.includes(k) ? "yes" : "no") }, f.pos.includes(k) ? "\u2713 " : "\u2014 ", lbl)))) : null,
+        f && !f.stub ? el("div", { class: "d-sec" }, el("h3", {}, "Where the screens are"), el("div", { class: "screens-map" }, Object.entries(POS).map(([k, lbl]) => el("span", { class: "pos " + (f.pos.includes(k) ? "yes" : "no") }, f.pos.includes(k) ? "\u2713 " : "\u2014 ", lbl)))) : null,
         f && f.teams.length ? el("div", { class: "d-sec" }, el("h3", {}, "Home to"), el("div", { class: "tags" }, f.teams.map(t => teamTag(t)))) : null,
         el("div", { class: "d-sec" }, el("h3", {}, "The rest of the time"),
           el("div", { class: "facts" },
@@ -976,6 +1055,7 @@
             el("div", { class: "fact " + (fd.roast ? "on" : "off") }, el("div", { class: "k" }, "Sunday roast"), el("div", { class: "v" }, fd.roast ? "Yes" : "No"))),
           dietRow(p),
           el("p", { class: "fine", style: "margin:8px 0 0" }, fd.note)),
+        beerSec(p),
         p.feat.length ? el("div", { class: "d-sec" }, el("h3", {}, "Also"), el("div", { class: "tags" }, p.feat.map(k => el("span", { class: "tag feat" }, FEAT[k] || k)))) : null,
         p.osm ? el("div", { class: "d-sec" }, el("h3", {}, "From the map"),
           el("div", { class: "facts" },
@@ -1048,6 +1128,9 @@
   document.getElementById("datanote").innerHTML = `<b>About the data.</b> ${PUBS.length.toLocaleString("en-GB")} London pubs. ${META.curated} have full write-ups, of which ${META.checked} have been checked against the pub's own website or a pub directory (\u2713 Checked) and the rest are written from general knowledge (\u25CB Unchecked). The other ${(META.base || 0).toLocaleString("en-GB")} come from OpenStreetMap (\u25C7 Map listing): name, position and nearest station are reliable, everything else is unknown until checked. Screen counts, sound and hours change with landlords and fixtures, so ring ahead for a big match. Saved pubs and your team are stored only in this browser. Map data \u00A9 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL.`;
   if (matchMedia("(max-width: 860px)").matches) document.getElementById("filters").open = false;
 
+  TIES = [...new Set(PUBS.map(p => p.beer && p.beer.tie).filter(Boolean))]
+    .map(t => [t, PUBS.reduce((n, p) => n + (p.beer && p.beer.tie === t ? 1 : 0), 0)])
+    .filter(([, n]) => n >= 5).sort((a, b) => b[1] - a[1]).map(([t]) => [t, t]);
   DIET_ON = Object.keys(DIET).filter(k => dietCount(k) >= 10).map(k => [k, DIET[k].replace(" options", "")]);
   document.body.dataset.mode = S.mode;
   renderFilters(); syncControls(); render();
