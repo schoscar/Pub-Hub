@@ -333,8 +333,8 @@
 <footer><p id="datanote"></p></footer>
 <dialog id="detail"></dialog>
 
-<script src="pubs.js"></script>
-<script src="london.js"></script>
+<script src="pubs.js?v=45d6d1dd"></script>
+<script src="london.js?v=0f118e2e"></script>
 <script>
 (() => {
   const PUBS = window.PUBS || [];
@@ -373,6 +373,11 @@
   const POS = { bar: "Main bar", all: "Every corner", garden: "Beer garden", room: "Screen room", proj: "Projector wall" };
   const SOUND = { always: "Always on", big: "Big games", request: "On request", off: "Off" };
   const ATMOS = { home: "Home crowd", neutral: "Neutral", away: "Away-friendly" };
+  const DIET = { veg: "Vegetarian options", vegan: "Vegan options", gf: "Gluten-free options", halal: "Halal" };
+  // Only offer a dietary filter once enough pubs actually state it, so the panel
+  // grows on its own as OpenStreetMap fills in and never offers an empty filter.
+  const dietCount = k => PUBS.reduce((n, p) => n + (p.diet && p.diet[k] === true ? 1 : 0), 0);
+  let DIET_ON = [];
   const OCC = { quiet: "Quiet drink", session: "Big session", group: "Large group", outdoor: "Sit outside", date: "Date night", roast: "Sunday roast", late: "Late licence" };
   const FOODQ = ["No kitchen", "Basic", "Good", "Excellent"];
   const EAT = { bar: "In the bar", dining: "Separate dining room", both: "Bar or dining room" };
@@ -400,7 +405,7 @@
   };
   const DEFAULTS = {
     match: { team: store.get("team", ""), minScreens: 0, minBig: 0, pos: new Set(), sound: "", sky: false, tnt: false, all: false, book: false, atmos: "" },
-    eat: { foodMin: 2, cuisine: new Set(), sit: "", eat: "", roast: false, price: 0 },
+    eat: { foodMin: 2, cuisine: new Set(), sit: "", eat: "", roast: false, price: 0, diet: new Set() },
     party: { group: 0, lateMin: 0, vibe: new Set(), outdoor: false, fbReq: "" },
     quiet: { noScreens: true, beer: "", fire: false, heritage: false, dogs: false, foodMin: 0 },
     outside: { outKind: "", big: false, outScreen: false, roast: false, group: 0 },
@@ -478,6 +483,7 @@
         if (m.eat === "dining" && !(fd.where === "dining" || fd.where === "both")) return false;
         if (m.roast && !fd.roast) return false;
         if (m.price && p.price > m.price) return false;
+        if (m.diet.size && ![...m.diet].every(k => p.diet && p.diet[k] === true)) return false;
         return true;
       case "party":
         if (m.group && p.group < m.group) return false;
@@ -602,7 +608,9 @@
         group("Meal style", seg([["", "Any"], ["sit", "Sit-down meal"]], k => m.sit === k, k => m.sit = k)),
         group("Where you eat", seg([["", "Any"], ["bar", "In the bar"], ["dining", "Dining room"]], k => m.eat === k, k => m.eat = k)),
         group("Price", seg(PRICESEG, k => m.price === k, k => m.price = k)),
-        el("div", { class: "fgroup" }, toggle("Sunday roast", () => m.roast, setToggle("roast", m))));
+        el("div", { class: "fgroup" }, toggle("Sunday roast", () => m.roast, setToggle("roast", m))),
+        DIET_ON.length ? group("Dietary", el("div", {}, chips(DIET_ON, k => m.diet.has(k), k => toggleSet(m.diet, k)),
+          el("p", { class: "fintro", style: "margin-top:7px" }, "Only pubs that state it, so this hides the many that have not said either way. Ring ahead if it matters.")), "all of") : null);
     } else if (S.mode === "party") {
       F.append(intro("Birthdays, leaving drinks, the big one. Room for everyone and open late."), area,
         group("How many of you", seg(GROUPSEG, k => m.group === k, k => m.group = k)),
@@ -633,6 +641,15 @@
     F.append(el("hr", { class: "fdivider" }),
       el("div", { class: "fgroup" }, toggle("Checked pubs only", () => S.checkedOnly, v => S.checkedOnly = v), toggle("Saved pubs only", () => S.favOnly, v => S.favOnly = v)),
       el("button", { class: "reset", onclick: () => { S.q = ""; S.region = ""; S.favOnly = false; S.checkedOnly = false; S.m = clone(DEFAULTS[S.mode]); if (S.mode === "match") S.m.team = store.get("team", ""); document.getElementById("q").value = ""; refresh(); } }, "Clear all filters"));
+  }
+
+  // Dietary information comes from what the pub or OpenStreetMap states, so a
+  // pub that has simply never said is shown as unknown rather than as a no.
+  function dietRow(p) {
+    const d = p.diet || {}, known = Object.keys(DIET).filter(k => d[k] != null);
+    if (!known.length) return el("p", { class: "fine", style: "margin:8px 0 0" }, "No dietary information on record for this pub.");
+    return el("div", { class: "screens-map", style: "margin-top:8px" },
+      known.map(k => el("span", { class: "pos " + (d[k] ? "yes" : "no") }, d[k] ? "\u2713 " : "\u2014 ", DIET[k])));
   }
 
   // ---------- Cards ----------
@@ -957,6 +974,7 @@
             el("div", { class: "fact" }, el("div", { class: "k" }, "Meal style"), el("div", { class: "v", style: "font-size:15px" }, fd.rating === 0 ? "\u2014" : fd.sitDown ? "Sit-down meals" : "Snacks only")),
             el("div", { class: "fact" }, el("div", { class: "k" }, "Where you eat"), el("div", { class: "v", style: "font-size:15px" }, EAT[fd.where] || "\u2014")),
             el("div", { class: "fact " + (fd.roast ? "on" : "off") }, el("div", { class: "k" }, "Sunday roast"), el("div", { class: "v" }, fd.roast ? "Yes" : "No"))),
+          dietRow(p),
           el("p", { class: "fine", style: "margin:8px 0 0" }, fd.note)),
         p.feat.length ? el("div", { class: "d-sec" }, el("h3", {}, "Also"), el("div", { class: "tags" }, p.feat.map(k => el("span", { class: "tag feat" }, FEAT[k] || k)))) : null,
         p.osm ? el("div", { class: "d-sec" }, el("h3", {}, "From the map"),
@@ -1030,6 +1048,7 @@
   document.getElementById("datanote").innerHTML = `<b>About the data.</b> ${PUBS.length.toLocaleString("en-GB")} London pubs. ${META.curated} have full write-ups, of which ${META.checked} have been checked against the pub's own website or a pub directory (\u2713 Checked) and the rest are written from general knowledge (\u25CB Unchecked). The other ${(META.base || 0).toLocaleString("en-GB")} come from OpenStreetMap (\u25C7 Map listing): name, position and nearest station are reliable, everything else is unknown until checked. Screen counts, sound and hours change with landlords and fixtures, so ring ahead for a big match. Saved pubs and your team are stored only in this browser. Map data \u00A9 <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, ODbL.`;
   if (matchMedia("(max-width: 860px)").matches) document.getElementById("filters").open = false;
 
+  DIET_ON = Object.keys(DIET).filter(k => dietCount(k) >= 10).map(k => [k, DIET[k].replace(" options", "")]);
   document.body.dataset.mode = S.mode;
   renderFilters(); syncControls(); render();
 })();

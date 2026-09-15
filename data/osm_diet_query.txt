@@ -1,0 +1,10 @@
+[out:json][timeout:180];
+(
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:vegetarian"](51.355,-0.335,51.625,0.085);
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:vegan"](51.355,-0.335,51.625,0.085);
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:gluten_free"](51.355,-0.335,51.625,0.085);
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:halal"](51.355,-0.335,51.625,0.085);
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:kosher"](51.355,-0.335,51.625,0.085);
+  nwr["amenity"~"^(pub|bar|biergarten)$"]["diet:dairy_free"](51.355,-0.335,51.625,0.085);
+);
+out tags center;
