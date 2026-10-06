@@ -1254,12 +1254,13 @@
   }
 
   // ----- keyword fallback -----
+  const TEAM_NICK = ["qpr", "gunners", "gooners", "spurs", "hammers", "the dons", "man utd", "man united", "man city"];
   const TEAM_ALIAS = [
-    ["QPR", ["queens park rangers", "qpr", "\\bhoops\\b"]], ["ARS", ["arsenal", "gunners", "gooners"]], ["TOT", ["tottenham", "spurs"]],
-    ["WHU", ["west ham", "hammers"]], ["CHE", ["chelsea"], 1], ["CRY", ["crystal palace", "palace"], 1], ["FUL", ["fulham"], 1],
-    ["BRE", ["brentford"], 1], ["MIL", ["millwall"], 1], ["CHA", ["charlton"], 1], ["LEY", ["leyton orient", "orient"], 1], ["WIM", ["afc wimbledon", "the dons"]],
-    ["LIV", ["liverpool"]], ["MCI", ["man city", "manchester city"]], ["MUN", ["man utd", "man united", "manchester united"]], ["NEW", ["newcastle"]],
-    ["EVE", ["everton"]], ["AVL", ["aston villa"]], ["LEE", ["leeds"]], ["NOR", ["norwich"]], ["CEL", ["celtic"]], ["RAN", ["rangers"]],
+    ["QPR", ["queens park rangers", "qpr"], 1], ["ARS", ["arsenal", "gunners", "gooners"], 1], ["TOT", ["tottenham", "spurs"], 1],
+    ["WHU", ["west ham", "hammers"], 1], ["CHE", ["chelsea"], 1], ["CRY", ["crystal palace", "palace"], 1], ["FUL", ["fulham"], 1],
+    ["BRE", ["brentford"], 1], ["MIL", ["millwall"], 1], ["CHA", ["charlton"], 1], ["LEY", ["leyton orient", "orient"], 1], ["WIM", ["afc wimbledon", "the dons"], 1],
+    ["LIV", ["liverpool"], 1], ["MCI", ["man city", "manchester city"], 1], ["MUN", ["man utd", "man united", "manchester united"], 1], ["NEW", ["newcastle"], 1],
+    ["EVE", ["everton"], 1], ["AVL", ["aston villa"], 1], ["LEE", ["leeds"], 1], ["NOR", ["norwich"], 1], ["CEL", ["celtic"], 1], ["RAN", ["rangers"], 1],
     ["ENG", ["england"]], ["IRL", ["ireland", "irish"]], ["SCO", ["scotland", "scottish"]], ["WAL", ["wales", "welsh"]],
   ];
   function parseAsk(text) {
@@ -1267,9 +1268,11 @@
     const f = blankAsk(), found = re => re.test(t), feats = new Set(), said = [];
     const football = found(/\b(game|match|playing|watch|football|footy|kick[- ]?off|fixture|derby|fans|showing|on tv|on telly|premier league|champions league|fa cup)\b/);
     const rugby = found(/rugby|six nations|twickenham|autumn internationals?|harlequins|\bquins\b|saracens|calcutta cup/);
+    // Stations and streets named after clubs are places, not teams.
+    t = t.replace(/liverpool street|tottenham (court road|hale)|fulham broadway|queens park(?! rangers)|(arsenal|west ham|charlton|crystal palace|brentford|wimbledon) station/g, m => " " + m.replace(/ /g, "_") + " ");
     for (const [code, aliases, needsContext] of TEAM_ALIAS) {
-      const hit = aliases.find(a => new RegExp("\\b" + a.replace(/\\b/g, "") + "\\b").test(t));
-      if (!hit || (needsContext && !football)) continue;
+      const hit = aliases.find(a => new RegExp("\\b" + a + "\\b").test(t));
+      if (!hit || (needsContext && !football && !TEAM_NICK.includes(hit))) continue;
       if (["ENG", "IRL", "SCO", "WAL"].includes(code) && rugby) { f.rugby_fans.push(code); t = t.replace(hit, " "); continue; }
       if (!f.team && !rugby) { f.team = code; said.push(TEAM_NAME[code]); t = t.replace(hit, " "); }
     }
@@ -1279,7 +1282,7 @@
     else if (found(/\b(late|midnight|12 ?am|late licen[cs]e|late one)\b/)) f.open_until = 24;
     const F = [["music", /live music|\bband\b|\bgig\b|live act/], ["dj", /\bdjs?\b|decks/], ["karaoke", /karaoke/], ["comedy", /comedy|stand[- ]up/],
       ["quiz", /\bquiz/], ["games", /\bpool\b|darts|table tennis|shuffleboard/], ["dogs", /\bdogs?\b/], ["ale", /real ale|\bcask\b/], ["craft", /craft beer|\bcraft\b/],
-      ["cocktails", /cocktail/], ["fire", /\bfire\b|fireplace|log burner/], ["heritage", /historic|victorian|old[- ]school|olde?\b/],
+      ["cocktails", /cocktail/], ["fire", /\bfire\b|fireplace|log burner/], ["heritage", /historic|victorian|old[- ]school|\bye olde\b|old boozer|old pub|traditional/],
       ["rooftop", /roof/], ["riverside", /riverside|by the river|thames|on the river/], ["family", /\bkids\b|children|family|pram/], ["hire", /private (room|hire|area)/],
       ["outdoor", /garden|outside|outdoor|terrace|sunny|sunshine|al fresco/]];
     for (const [k, re] of F) if (found(re)) feats.add(k);
@@ -1295,6 +1298,7 @@
     else if (found(/east london|\be\d+\b/)) f.region = "E";
     else if (found(/west london|\bw\d+\b/)) f.region = "W";
     else if (found(/central|west end|the city|zone 1/)) f.region = "C";
+    t = t.replace(/_/g, " ");
     const place = PLACES.filter(p => new RegExp("\\b" + p.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(t)).sort((a, b) => b.length - a.length)[0];
     if (place) f.place = place;
     f.tab = rugby ? "rugby" : f.team || football ? "match"
@@ -1316,9 +1320,13 @@
   function mergeAsk(ai, kw, text) {
     const t = text.toLowerCase(), f = { ...ai }, union = (a, b) => [...new Set([...a, ...b])];
     const sport = kw.tab === "match" || kw.tab === "rugby";
+    const named = code => (TEAM_ALIAS.find(a => a[0] === code) || [0, []])[1].some(a => new RegExp("\\b" + a + "\\b").test(t));
+    const aiTeam = ai.team && named(ai.team) ? ai.team : "";
+    const saysSport = /football|footy|soccer|\bgame\b|\bmatch\b|derby|rugby|six nations|kick[- ]?off|fixture|\bfans\b|premier league|\bwatch/.test(t) || !!aiTeam;
     if (sport) f.tab = kw.tab;
-    else if (ai.tab === "match" || ai.tab === "rugby" || ai.tab === "explore") f.tab = kw.tab;
-    f.team = kw.team || (f.tab === "match" ? ai.team : "");
+    else if ((ai.tab === "match" || ai.tab === "rugby") && !saysSport) f.tab = kw.tab;
+    else if (ai.tab === "explore") f.tab = kw.tab;
+    f.team = kw.team || (f.tab === "match" ? aiTeam : "");
     f.rugby_fans = kw.rugby_fans.length ? kw.rugby_fans : f.tab === "rugby" ? ai.rugby_fans : [];
     f.twickenham = f.tab === "rugby" && (kw.twickenham || ai.twickenham);
     const aiPlace = ai.place && t.includes(ai.place.toLowerCase()) ? findPlace(ai.place) : "";
@@ -1329,8 +1337,13 @@
     f.group_size = kw.group_size || ai.group_size;
     f.cuisine = union(ai.cuisine, kw.cuisine).filter(c => t.includes(c.toLowerCase()));
     f.diet = union(ai.diet, kw.diet); f.roast = ai.roast || kw.roast; f.no_screens = ai.no_screens || kw.no_screens;
-    const seen = new Set();
-    f.cant_filter = [...kw.cant_filter, ...ai.cant_filter].filter(c => { const k = c.toLowerCase().replace(/[^a-z0-9]/g, ""); return !seen.has(k) && seen.add(k); });
+    // Drop "can't check" notes for things the app can in fact filter on (the
+    // model sometimes lists "six nations"), and repeats of the same time.
+    const seen = new Set(), filterable = c => { if (/\d/.test(c)) return false; const k = parseAsk(c); return k.tab !== "explore" || k.features.length || k.team || k.place || k.region || k.rugby_fans.length || k.open_until; };
+    f.cant_filter = [...kw.cant_filter, ...ai.cant_filter].filter(c => {
+      const key = (c.match(/\d+[:.]?\d*/g) || [c.toLowerCase().replace(/[^a-z]/g, "")]).join("|");
+      if (seen.has(key) || filterable(c)) return false; seen.add(key); return true;
+    });
     f.summary = "";
     return f;
   }
