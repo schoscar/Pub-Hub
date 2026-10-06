@@ -1215,7 +1215,7 @@
   // Cloudflare's free allowance; if it is unset, offline, out of allowance or
   // slow, the keyword parser below answers instead. Either way the result is
   // only ever a set of filters applied to the app's own data.
-  const ASK_URL = (["localhost", "127.0.0.1"].includes(location.hostname) && new URLSearchParams(location.search).get("ask")) || "";
+  const ASK_URL = (["localhost", "127.0.0.1"].includes(location.hostname) && new URLSearchParams(location.search).get("ask")) || "https://pub-hub-ask.oscar-schroeder.workers.dev";
   const LATE_LABEL = { 24: "Open till midnight", 25: "Open till 1am", 26: "Open till 2am" };
   const bucket = n => n >= 30 ? 30 : n >= 15 ? 15 : n >= 8 ? 8 : 0;
   let PLACES = [];
@@ -1308,6 +1308,32 @@
     return f;
   }
 
+  // The model is good at judging what a night is for and weak at the details,
+  // and it occasionally invents a place or picks the wrong sport. So the keyword
+  // reading is merged in: anything it recognises outright wins, a place or
+  // region only counts if the sentence says it, and both readings' extras are
+  // kept. The read-back is always written from the filters actually applied.
+  function mergeAsk(ai, kw, text) {
+    const t = text.toLowerCase(), f = { ...ai }, union = (a, b) => [...new Set([...a, ...b])];
+    const sport = kw.tab === "match" || kw.tab === "rugby";
+    if (sport) f.tab = kw.tab;
+    else if (ai.tab === "match" || ai.tab === "rugby" || ai.tab === "explore") f.tab = kw.tab;
+    f.team = kw.team || (f.tab === "match" ? ai.team : "");
+    f.rugby_fans = kw.rugby_fans.length ? kw.rugby_fans : f.tab === "rugby" ? ai.rugby_fans : [];
+    f.twickenham = f.tab === "rugby" && (kw.twickenham || ai.twickenham);
+    const aiPlace = ai.place && t.includes(ai.place.toLowerCase()) ? findPlace(ai.place) : "";
+    f.place = kw.place || aiPlace;
+    f.region = kw.region || (/\b(north|south|east|west|central|city|west end)\b/.test(t) ? ai.region : "");
+    f.features = union(ai.features, kw.features);
+    f.open_until = Math.max(ai.open_until, kw.open_until);
+    f.group_size = kw.group_size || ai.group_size;
+    f.cuisine = union(ai.cuisine, kw.cuisine).filter(c => t.includes(c.toLowerCase()));
+    f.diet = union(ai.diet, kw.diet); f.roast = ai.roast || kw.roast; f.no_screens = ai.no_screens || kw.no_screens;
+    const seen = new Set();
+    f.cant_filter = [...kw.cant_filter, ...ai.cant_filter].filter(c => { const k = c.toLowerCase().replace(/[^a-z0-9]/g, ""); return !seen.has(k) && seen.add(k); });
+    f.summary = "";
+    return f;
+  }
   function findPlace(name) {
     const n = name.trim().toLowerCase(); if (n.length < 3) return "";
     return PLACES.find(p => p.toLowerCase() === n) || PLACES.find(p => p.toLowerCase().startsWith(n)) || "";
@@ -1394,7 +1420,7 @@
     let f = null, how = "keywords";
     if (ASK_URL && navigator.onLine !== false) {
       go.disabled = true; go.textContent = "Reading\u2026";
-      try { f = await askAI(text); how = "ai"; } catch { how = "fallback"; }
+      try { f = mergeAsk(await askAI(text), parseAsk(text), text); how = "ai"; } catch { how = "fallback"; }
       go.disabled = false; go.textContent = "Find pubs";
     }
     applyAsk(f || parseAsk(text), how, text);
