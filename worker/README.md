@@ -18,10 +18,10 @@ falls back to keyword matching until midnight UTC.
 ## Deploy it (dashboard, no installs)
 
 1. Sign in or sign up at https://dash.cloudflare.com. The free plan is enough.
-2. Go to **Workers & Pages**, choose **Create**, then **Create Worker**.
-   Name it `pub-hub-ask` and deploy the starter code.
-3. Choose **Edit code**, delete everything, paste in the whole of
-   `worker/pub-hub-ask.js`, and **Deploy**.
+2. Go to **Workers & Pages** and choose **Create application**. On the "Make something
+   new" screen, pick **Start with Hello World!**. Name it `pub-hub-ask` and **Deploy**.
+3. On the Worker's page choose **Edit code**, delete everything in the editor, paste in
+   the whole of `worker/pub-hub-ask.js`, and **Deploy**.
 4. Open the Worker's **Settings**, find **Bindings**, **Add** a **Workers AI** binding,
    and set the variable name to `AI`. Deploy again if asked.
 5. Copy the Worker's address. It looks like `https://pub-hub-ask.<your-name>.workers.dev`.
