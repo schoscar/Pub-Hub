@@ -1,0 +1,6 @@
+name = "pub-hub-ask"
+main = "pub-hub-ask.js"
+compatibility_date = "2026-10-01"
+
+[ai]
+binding = "AI"

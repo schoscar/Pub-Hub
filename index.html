@@ -69,6 +69,25 @@
   @media (max-width: 1100px) { .wordmark small { display: none; } }
   @media (max-width: 860px) { .top-inner { gap: 10px; } .search { flex: 1 1 100%; margin-left: 0; } }
 
+  /* ---------- Ask ---------- */
+  .ask { max-width: 1280px; margin: 0 auto; padding: 10px 20px 0; display: flex; gap: 8px; }
+  .ask-field { flex: 1; min-width: 0; display: flex; align-items: center; gap: 9px; border: 1px solid var(--blue-line); background: var(--blue-soft); border-radius: var(--radius); padding: 0 12px; }
+  .ask-field:focus-within { border-color: var(--blue-lit); }
+  .ask-field svg { color: var(--blue-lit); flex: none; }
+  .ask-field input { border: 0; background: transparent; padding: 11px 0; width: 100%; outline: none; min-width: 0; }
+  .ask-field input::placeholder { color: var(--muted); }
+  .ask button { flex: none; border: 0; background: var(--blue); color: var(--blue-ink); font-weight: 600; border-radius: var(--radius); padding: 0 16px; }
+  .ask button[disabled] { opacity: .65; cursor: progress; }
+  .ask-bar { display: flex; flex-direction: column; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--blue); border-radius: var(--radius); padding: 10px 12px; font-size: 13.5px; }
+  .ask-bar .ask-top { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .ask-bar .ask-sum { font-weight: 600; flex: 1; min-width: 12em; }
+  .ask-bar .ask-how { color: var(--muted); font-size: 12px; }
+  .ask-bar .link { border: 0; background: transparent; color: var(--muted); text-decoration: underline; padding: 0; font-size: 13px; }
+  .ask-bar .chip { display: inline-flex; gap: 6px; align-items: center; }
+  .ask-bar .chip b { font-weight: 400; color: var(--muted); }
+  .ask-bar .cant { color: var(--muted); margin: 0; }
+  @media (max-width: 600px) { .ask button { padding: 0 12px; } }
+
   /* ---------- Layout ---------- */
   .shell { max-width: 1280px; margin: 0 auto; padding: 20px 20px 48px; display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 24px; align-items: start; }
   @media (max-width: 860px) { .shell { grid-template-columns: 1fr; gap: 16px; } }
@@ -275,6 +294,13 @@
       <input id="q" type="search" placeholder="Pub name, area or station" autocomplete="off">
     </label>
   </div>
+  <form class="ask" id="ask-form" role="search" autocomplete="off">
+    <label class="ask-field">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3zM19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8L19 15z"/></svg>
+      <input id="ask" type="text" maxlength="300" enterkeyhint="search" aria-label="Describe what you are after" placeholder="Describe your night: the Arsenal game in south London, somewhere with live music after">
+    </label>
+    <button type="submit" id="ask-go">Find pubs</button>
+  </form>
   <nav class="modes" id="modes" aria-label="What are you looking for?"></nav>
 </header>
 
@@ -296,6 +322,12 @@
         <button class="ghost" id="map-toggle" aria-pressed="true">Map</button>
         <select id="sort" aria-label="Sort"></select>
       </div>
+    </div>
+
+    <div class="ask-bar" id="ask-bar" hidden>
+      <div class="ask-top"><span class="ask-sum" id="ask-sum"></span><span class="ask-how" id="ask-how"></span><button class="link" id="ask-clear">Clear search</button></div>
+      <div class="chips" id="ask-chips"></div>
+      <p class="cant fine" id="ask-cant" hidden></p>
     </div>
 
     <div class="near-bar" id="near-bar" hidden>
@@ -423,7 +455,8 @@
     origin: null, radius: 0, picking: false,
     m: clone(DEFAULTS.match),
   };
-  function setMode(mode) {
+  function setMode(mode, keepAsk) {
+    if (!keepAsk) S.ask = null;
     S.mode = mode; S.m = clone(DEFAULTS[mode]);
     document.body.dataset.mode = mode;
     if (mode === "match") S.m.team = store.get("team", "");
@@ -463,6 +496,7 @@
     if (S.favOnly && !S.fav.has(p.id)) return false;
     if (S.checkedOnly && !checked(p)) return false;
     if (S.origin && S.radius && pubDist(p) > S.radius) return false;
+    if (!askPasses(p)) return false;
     // A quiet pint is a promise about atmosphere. Nothing in OpenStreetMap can
     // support it, so that tab stays written-up only.
     if (isBase(p) && S.mode === "quiet") return false;
@@ -713,7 +747,7 @@
     }
     F.append(el("hr", { class: "fdivider" }),
       el("div", { class: "fgroup" }, toggle("Checked pubs only", () => S.checkedOnly, v => S.checkedOnly = v), toggle("Saved pubs only", () => S.favOnly, v => S.favOnly = v)),
-      el("button", { class: "reset", onclick: () => { S.q = ""; S.region = ""; S.favOnly = false; S.checkedOnly = false; S.m = clone(DEFAULTS[S.mode]); if (S.mode === "match") S.m.team = store.get("team", ""); document.getElementById("q").value = ""; refresh(); } }, "Clear all filters"));
+      el("button", { class: "reset", onclick: () => { S.ask = null; S.q = ""; S.region = ""; S.favOnly = false; S.checkedOnly = false; S.m = clone(DEFAULTS[S.mode]); if (S.mode === "match") S.m.team = store.get("team", ""); document.getElementById("q").value = ""; refresh(); } }, "Clear all filters"));
   }
 
   // Dietary information comes from what the pub or OpenStreetMap states, so a
@@ -833,6 +867,7 @@
   let shown = PAGE;
   function render(keepPage) {
     if (!keepPage) shown = PAGE;
+    renderAskBar();
     const all = PUBS.filter(passes);
     const results = document.getElementById("results"); results.replaceChildren();
     const h = document.getElementById("headline"), m = S.m;
@@ -847,7 +882,13 @@
     if (S.origin) h.innerHTML += S.radius ? ` within <em>${S.radius} km</em>` : ` <em>near you</em>`;
     document.getElementById("fcount").textContent = `${all.length} of ${PUBS.length}`;
     document.getElementById("fcount-m").textContent = `\u00B7 ${all.length} pubs`;
-    if (!all.length) { results.append(el("div", { class: "empty" }, el("b", {}, "Nothing matches that combination."), el("br"), "Loosen a filter or two.")); renderMap(all); return; }
+    if (!all.length) {
+      const narrowed = S.ask && (S.q || S.region);
+      results.append(el("div", { class: "empty" }, el("b", {}, "Nothing matches that combination."), el("br"),
+        narrowed ? `Nothing ${S.q ? "near " + S.q : "in " + REGIONS[S.region] + " London"} fits all of it. ` : "Loosen a filter or two.",
+        narrowed ? el("button", { class: "btn", style: "margin-top:10px", onclick: () => { S.q = ""; S.region = ""; document.getElementById("q").value = ""; renderFilters(); render(); syncControls(); } }, "Search all of London instead") : null));
+      renderMap(all); return;
+    }
 
     const list = sorted(all);
     const more = (arr) => arr.length > shown ? el("button", { class: "more", onclick: () => { shown += PAGE; render(true); } }, `Show ${Math.min(PAGE, arr.length - shown)} more of ${arr.length}`) : null;
@@ -1168,6 +1209,202 @@
   document.getElementById("near-pick").addEventListener("click", () => startPick(""));
 
   // ---------- Controls ----------
+
+  // ---------- Ask ----------
+  // One sentence in, Pub Hub's own filters out. The Worker asks a model on
+  // Cloudflare's free allowance; if it is unset, offline, out of allowance or
+  // slow, the keyword parser below answers instead. Either way the result is
+  // only ever a set of filters applied to the app's own data.
+  const ASK_URL = (["localhost", "127.0.0.1"].includes(location.hostname) && new URLSearchParams(location.search).get("ask")) || "";
+  const LATE_LABEL = { 24: "Open till midnight", 25: "Open till 1am", 26: "Open till 2am" };
+  const bucket = n => n >= 30 ? 30 : n >= 15 ? 15 : n >= 8 ? 8 : 0;
+  let PLACES = [];
+
+  function blankAsk() { return { tab: "explore", place: "", region: "", team: "", rugby_fans: [], twickenham: false, open_until: 0, features: [], group_size: 0, cuisine: [], diet: [], roast: false, no_screens: false, cant_filter: [], summary: "" }; }
+  // The Worker already checks every field; checking again here means a changed
+  // or misbehaving endpoint can never push an unknown value into the filters.
+  function sanitize(r) {
+    const f = blankAsk(), inList = (v, l) => l.includes(v);
+    if (!r || typeof r !== "object") return f;
+    if (inList(r.tab, Object.keys(MODE_NAME))) f.tab = r.tab;
+    if (typeof r.place === "string") f.place = r.place.slice(0, 40);
+    if (inList(r.region, Object.keys(REGIONS))) f.region = r.region;
+    if (r.team && TEAM_NAME[r.team]) f.team = r.team;
+    if (Array.isArray(r.rugby_fans)) f.rugby_fans = r.rugby_fans.filter(k => ["ENG", "IRL", "SCO", "WAL"].includes(k));
+    f.twickenham = r.twickenham === true;
+    if ([24, 25, 26].includes(r.open_until)) f.open_until = r.open_until;
+    if (Array.isArray(r.features)) f.features = r.features.filter(k => FEAT[k] || k === "outdoor");
+    f.group_size = Math.max(0, Math.min(200, parseInt(r.group_size, 10) || 0));
+    if (Array.isArray(r.cuisine)) f.cuisine = r.cuisine.filter(c => CUISINES.includes(c));
+    if (Array.isArray(r.diet)) f.diet = r.diet.filter(k => ["veg", "vegan", "gf"].includes(k));
+    f.roast = r.roast === true; f.no_screens = r.no_screens === true;
+    if (Array.isArray(r.cant_filter)) f.cant_filter = r.cant_filter.filter(x => typeof x === "string").map(x => x.slice(0, 80)).slice(0, 4);
+    if (typeof r.summary === "string") f.summary = r.summary.slice(0, 200);
+    return f;
+  }
+
+  async function askAI(text) {
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 9000);
+    try {
+      const r = await fetch(ASK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ q: text }), signal: ctl.signal });
+      const j = await r.json();
+      if (!r.ok || !j.filters) throw new Error(j.error || `HTTP ${r.status}`);
+      return sanitize(j.filters);
+    } finally { clearTimeout(timer); }
+  }
+
+  // ----- keyword fallback -----
+  const TEAM_ALIAS = [
+    ["QPR", ["queens park rangers", "qpr", "\\bhoops\\b"]], ["ARS", ["arsenal", "gunners", "gooners"]], ["TOT", ["tottenham", "spurs"]],
+    ["WHU", ["west ham", "hammers"]], ["CHE", ["chelsea"], 1], ["CRY", ["crystal palace", "palace"], 1], ["FUL", ["fulham"], 1],
+    ["BRE", ["brentford"], 1], ["MIL", ["millwall"], 1], ["CHA", ["charlton"], 1], ["LEY", ["leyton orient", "orient"], 1], ["WIM", ["afc wimbledon", "the dons"]],
+    ["LIV", ["liverpool"]], ["MCI", ["man city", "manchester city"]], ["MUN", ["man utd", "man united", "manchester united"]], ["NEW", ["newcastle"]],
+    ["EVE", ["everton"]], ["AVL", ["aston villa"]], ["LEE", ["leeds"]], ["NOR", ["norwich"]], ["CEL", ["celtic"]], ["RAN", ["rangers"]],
+    ["ENG", ["england"]], ["IRL", ["ireland", "irish"]], ["SCO", ["scotland", "scottish"]], ["WAL", ["wales", "welsh"]],
+  ];
+  function parseAsk(text) {
+    let t = " " + text.toLowerCase().replace(/[\u2018\u2019]/g, "'").replace(/\s+/g, " ") + " ";
+    const f = blankAsk(), found = re => re.test(t), feats = new Set(), said = [];
+    const football = found(/\b(game|match|playing|watch|football|footy|kick[- ]?off|fixture|derby|fans|showing|on tv|on telly|premier league|champions league|fa cup)\b/);
+    const rugby = found(/rugby|six nations|twickenham|autumn internationals?|harlequins|\bquins\b|saracens|calcutta cup/);
+    for (const [code, aliases, needsContext] of TEAM_ALIAS) {
+      const hit = aliases.find(a => new RegExp("\\b" + a.replace(/\\b/g, "") + "\\b").test(t));
+      if (!hit || (needsContext && !football)) continue;
+      if (["ENG", "IRL", "SCO", "WAL"].includes(code) && rugby) { f.rugby_fans.push(code); t = t.replace(hit, " "); continue; }
+      if (!f.team && !rugby) { f.team = code; said.push(TEAM_NAME[code]); t = t.replace(hit, " "); }
+    }
+    f.twickenham = rugby && found(/twickenham/);
+    if (found(/\b(2 ?am|all night|till late|until late|dancing|clubbing)\b/)) f.open_until = 26;
+    else if (found(/\b1 ?am\b/)) f.open_until = 25;
+    else if (found(/\b(late|midnight|12 ?am|late licen[cs]e|late one)\b/)) f.open_until = 24;
+    const F = [["music", /live music|\bband\b|\bgig\b|live act/], ["dj", /\bdjs?\b|decks/], ["karaoke", /karaoke/], ["comedy", /comedy|stand[- ]up/],
+      ["quiz", /\bquiz/], ["games", /\bpool\b|darts|table tennis|shuffleboard/], ["dogs", /\bdogs?\b/], ["ale", /real ale|\bcask\b/], ["craft", /craft beer|\bcraft\b/],
+      ["cocktails", /cocktail/], ["fire", /\bfire\b|fireplace|log burner/], ["heritage", /historic|victorian|old[- ]school|olde?\b/],
+      ["rooftop", /roof/], ["riverside", /riverside|by the river|thames|on the river/], ["family", /\bkids\b|children|family|pram/], ["hire", /private (room|hire|area)/],
+      ["outdoor", /garden|outside|outdoor|terrace|sunny|sunshine|al fresco/]];
+    for (const [k, re] of F) if (found(re)) feats.add(k);
+    f.features = [...feats];
+    const g = t.match(/(?:group|party|table|booking) (?:of|for) (\d{1,3})/) || t.match(/\b(\d{1,3}) (?:of us|people|mates|friends|guests)\b/) || t.match(/\bfor (\d{1,3})(?! ?(?:am|pm|o'clock|[:.]\d))\b/);
+    if (g && +g[1] >= 2) f.group_size = +g[1];
+    f.cuisine = CUISINES.filter(c => !/roast/i.test(c) && new RegExp("\\b" + c.toLowerCase() + "\\b").test(t));
+    if (found(/\bvegan\b/)) f.diet.push("vegan"); if (found(/vegetarian|veggie/)) f.diet.push("veg"); if (found(/gluten[- ]?free|coeliac|celiac/)) f.diet.push("gf");
+    f.roast = found(/\broast/);
+    f.no_screens = found(/no (tv|telly|screens|football|sport)|away from the (football|telly)|without (the )?(football|screens)/);
+    if (found(/south[- ]?east|south[- ]?west|south london|south of the river|\bse\d*\b|\bsw\d*\b/)) f.region = "S";
+    else if (found(/north[- ]?west|north london|\bnw\d*\b/)) f.region = "N";
+    else if (found(/east london|\be\d+\b/)) f.region = "E";
+    else if (found(/west london|\bw\d+\b/)) f.region = "W";
+    else if (found(/central|west end|the city|zone 1/)) f.region = "C";
+    const place = PLACES.filter(p => new RegExp("\\b" + p.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(t)).sort((a, b) => b.length - a.length)[0];
+    if (place) f.place = place;
+    f.tab = rugby ? "rugby" : f.team || football ? "match"
+      : f.cuisine.length || f.roast || f.diet.length || found(/\b(food|eat|eating|dinner|lunch|brunch|meal|gastro|menu|hungry)\b/) ? "eat"
+      : found(/birthday|leaving drinks|big night|\bparty\b|session|dancing|\bstag\b|\bhen\b|celebrat|messy/) || f.open_until || feats.has("dj") || feats.has("karaoke") ? "party"
+      : f.no_screens || found(/\bquiet\b|\bchat\b|catch[- ]?up|cosy|cozy|peaceful|\bdate\b/) ? "quiet"
+      : feats.has("outdoor") || feats.has("rooftop") || feats.has("riverside") ? "outside" : "explore";
+    if (f.tab === "quiet") f.no_screens = true;
+    const tm = text.match(/\b\d{1,2}([:.]\d{2})? ?(am|pm)\b|\b\d{1,2}[:.]\d{2}\b/i);
+    if (tm && f.tab === "match") f.cant_filter.push(`kick-off at ${tm[0]}`);
+    return f;
+  }
+
+  function findPlace(name) {
+    const n = name.trim().toLowerCase(); if (n.length < 3) return "";
+    return PLACES.find(p => p.toLowerCase() === n) || PLACES.find(p => p.toLowerCase().startsWith(n)) || "";
+  }
+
+  function applyAsk(f, how, text) {
+    setMode(f.tab, true);
+    const m = S.m, feats = new Set(f.features), extra = { lateMin: 0, group: 0, outdoor: false, feat: new Set() };
+    S.region = ""; S.q = "";
+    const place = f.place && findPlace(f.place);
+    if (place) S.q = place; else if (f.region) S.region = f.region;
+    document.getElementById("q").value = S.q;
+    switch (f.tab) {
+      case "match": if (f.team) m.team = f.team; break;
+      case "rugby": f.rugby_fans.forEach(k => m.fans.add(k)); m.twick = f.twickenham; break;
+      case "eat": f.cuisine.forEach(c => m.cuisine.add(c)); f.diet.forEach(d => m.diet.add(d)); m.roast = f.roast; break;
+      case "party":
+        m.lateMin = f.open_until; m.group = bucket(f.group_size);
+        ["dj", "music", "karaoke", "comedy", "hire"].forEach(k => { if (feats.delete(k)) m.vibe.add(k); });
+        if (feats.delete("outdoor")) m.outdoor = true; break;
+      case "quiet":
+        m.noScreens = true; if (feats.delete("ale")) m.beer = "ale"; else if (feats.delete("craft")) m.beer = "craft";
+        ["fire", "heritage", "dogs"].forEach(k => { if (feats.delete(k)) m[k] = true; }); break;
+      case "outside":
+        feats.delete("outdoor"); m.group = bucket(f.group_size); m.roast = f.roast;
+        if (feats.delete("rooftop")) m.outKind = "rooftop"; else if (feats.delete("riverside")) m.outKind = "river"; break;
+      case "explore": [...feats].forEach(k => { if (FEAT[k]) { m.feat.add(k); feats.delete(k); } }); break;
+    }
+    // Whatever the chosen tab has no filter for travels along as an extra, so
+    // "the Arsenal game, then live music" keeps both halves.
+    if (f.tab !== "party" && f.open_until) extra.lateMin = f.open_until;
+    if (!["party", "outside"].includes(f.tab) && f.group_size >= 8) extra.group = f.group_size;
+    if (feats.delete("outdoor")) extra.outdoor = true;
+    feats.forEach(k => FEAT[k] && extra.feat.add(k));
+    const cant = [...f.cant_filter];
+    if (f.tab !== "eat" && (f.diet.length || f.cuisine.length)) cant.push("food preferences, which only apply under Eating out");
+    S.ask = { text, how, summary: f.summary || autoSummary(f), cant, extra };
+    renderFilters(); render(); syncControls();
+    document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  function autoSummary(f) {
+    const lead = {
+      match: f.team ? `Pubs showing the ${TEAM_NAME[f.team]} game` : "Pubs showing the football",
+      rugby: f.rugby_fans.length ? `Rugby pubs for ${f.rugby_fans.map(k => TEAM_NAME[k]).join(" and ")} fans` : f.twickenham ? "Pubs for a Twickenham match day" : "Pubs showing the rugby",
+      eat: f.roast ? "Pubs for a Sunday roast" : f.cuisine.length ? `Pubs serving ${f.cuisine.join(" or ")}` : "Pubs for eating out",
+      party: "Pubs for a big night", quiet: "Pubs for a quiet pint", outside: "Pubs with outside space", explore: "Pubs",
+    }[f.tab];
+    const where = f.place ? ` near ${f.place}` : f.region ? ` in ${REGIONS[f.region]} London` : "";
+    const SAY = { ale: "real ale", craft: "craft beer", cocktails: "cocktails", fire: "an open fire", heritage: "a historic interior", music: "live music", dj: "DJs", karaoke: "karaoke", comedy: "comedy", quiz: "a quiz", games: "pool or darts", theatre: "a theatre", dogs: "a welcome for dogs", family: "space for kids", rooftop: "a roof terrace", riverside: "a riverside spot", hire: "a private room", hidden: "a hidden-away spot", quirky: "real character" };
+    const withs = [...f.features.filter(k => SAY[k]).map(k => SAY[k]), ...(f.features.includes("outdoor") && f.tab !== "outside" ? ["somewhere to sit outside"] : []),
+      ...(f.group_size >= 8 ? [`room for ${f.group_size}`] : [])];
+    const list = a => a.length > 1 ? a.slice(0, -1).join(", ") + " and " + a.at(-1) : a[0];
+    return lead + where + (f.open_until ? `, ${LATE_LABEL[f.open_until].toLowerCase()}` : "") + (withs.length ? `, with ${list(withs)}` : "") + ".";
+  }
+  function askPasses(p) {
+    const x = S.ask && S.ask.extra; if (!x) return true;
+    if (x.lateMin && lateHour(p) < x.lateMin) return false;
+    if (x.group && p.group < x.group) return false;
+    if (x.outdoor && p.out.kind === "none" && !has(p, "rooftop")) return false;
+    for (const k of x.feat) if (!has(p, k)) return false;
+    return true;
+  }
+  function renderAskBar() {
+    const bar = document.getElementById("ask-bar"), a = S.ask;
+    bar.hidden = !a; if (!a) return;
+    document.getElementById("ask-sum").textContent = a.summary;
+    document.getElementById("ask-how").textContent = a.how === "ai" ? "Read by AI" : a.how === "fallback" ? "Smart search unavailable, matched by keywords" : "Matched by keywords";
+    const x = a.extra, chip = (label, drop) => el("button", { class: "chip", "aria-pressed": "true", title: "Remove", onclick: () => { drop(); render(); } }, label, el("b", {}, "\u00D7"));
+    const chips = [];
+    if (x.lateMin) chips.push(chip(LATE_LABEL[x.lateMin], () => x.lateMin = 0));
+    if (x.group) chips.push(chip(`Room for ${x.group}+`, () => x.group = 0));
+    if (x.outdoor) chips.push(chip("Outside space", () => x.outdoor = false));
+    x.feat.forEach(k => chips.push(chip(FEAT[k], () => x.feat.delete(k))));
+    document.getElementById("ask-chips").replaceChildren(...chips);
+    document.getElementById("ask-chips").hidden = !chips.length;
+    const cant = document.getElementById("ask-cant");
+    cant.hidden = !a.cant.length; cant.textContent = a.cant.length ? `Pub Hub can't check ${a.cant.join(", ")} yet, so that part is up to you.` : "";
+  }
+
+  document.getElementById("ask-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const input = document.getElementById("ask"), text = input.value.trim(), go = document.getElementById("ask-go");
+    if (!text) { input.focus(); return; }
+    let f = null, how = "keywords";
+    if (ASK_URL && navigator.onLine !== false) {
+      go.disabled = true; go.textContent = "Reading\u2026";
+      try { f = await askAI(text); how = "ai"; } catch { how = "fallback"; }
+      go.disabled = false; go.textContent = "Find pubs";
+    }
+    applyAsk(f || parseAsk(text), how, text);
+  });
+  document.getElementById("ask-clear").addEventListener("click", () => {
+    S.ask = null; S.q = ""; S.region = ""; document.getElementById("q").value = ""; document.getElementById("ask").value = "";
+    S.m = clone(DEFAULTS[S.mode]); if (S.mode === "match") S.m.team = store.get("team", "");
+    renderFilters(); render(); syncControls();
+  });
+
   const modesNav = document.getElementById("modes");
   function renderModes() {
     modesNav.replaceChildren(...MODES.map(([k, label, icon]) => {
@@ -1198,6 +1435,7 @@
     .map(t => [t, PUBS.reduce((n, p) => n + (p.beer && p.beer.tie === t ? 1 : 0), 0)])
     .filter(([, n]) => n >= 5).sort((a, b) => b[1] - a[1]).map(([t]) => [t, t]);
   DIET_ON = Object.keys(DIET).filter(k => dietCount(k) >= 10).map(k => [k, DIET[k].replace(" options", "")]);
+  PLACES = [...new Set(PUBS.flatMap(p => [p.area, p.station]).filter(n => n && n.length >= 4 && !/^(london|central london)$/i.test(n)))];
   document.body.dataset.mode = S.mode;
   renderFilters(); syncControls(); render();
 })();

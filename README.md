@@ -11,6 +11,7 @@ A single static web app. No build step, no server: open `index.html` or host the
   Written-up pubs and map listings are shown in separate bands, and a map listing drops out of the results the moment you set a filter it cannot answer.
 - `london.js` — map layers (roads, parks, water) derived from OpenStreetMap and simplified.
 - `manifest.webmanifest`, `sw.js`, `icon*` — lets phones add it to the home screen and open it offline.
+- `worker/` — the free-text search endpoint, a Cloudflare Worker on Workers AI's free allowance. See `worker/README.md`.
 - `data/` — source data and the Python scripts that build `pubs.js` and `london.js`.
 - `verify/` — notes and sources from checking pubs against their websites and pub directories.
 
