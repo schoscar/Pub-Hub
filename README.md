@@ -21,6 +21,7 @@ A single static web app. No build step, no server: open `index.html` or host the
 
     python3 data/osm_enrich.py   # live_sport, closing times, brewery ties, feature tags
     python3 data/diet_import.py  # adds dietary info from OpenStreetMap diet:* tags
+    python3 data/rugby_import.py # applies the researched rugby pubs in data/rugby.json
     python3 data/build_js.py     # regenerates pubs.js and stamps the data URLs
 The raw OpenStreetMap downloads are not committed; fetch them again with the Overpass queries noted in the scripts.
 

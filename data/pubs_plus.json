@@ -346,6 +346,19 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [
+"IRL"
+],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "North London's Irish rugby pub. Screens in the front room and a big screen over wooden benches in the back; named second-best rugby pub in London by Time Out.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -1454,6 +1467,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Riverside Fulham pub that shows the Six Nations.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -2334,6 +2358,19 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [
+"WAL"
+],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Called a Welsh oasis by its landlord: Brains on tap and Delilah sung when Wales play. Thirty-eight screens and two projectors.",
+"src": "https://www.thedrinksbusiness.com/2023/01/six-london-pubs-to-watch-the-six-nations-at/"
 }
 },
 {
@@ -2836,6 +2873,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Screens spread through the pub for rugby and football.",
+"src": "verified notes"
 }
 },
 {
@@ -2932,6 +2980,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Riverside pub with a big rugby following, and heated outdoor cabins with their own televisions that can be booked on some days.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -3027,6 +3086,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "LED screens inside and covered, heated screens outside.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -3668,6 +3738,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Three large screens inside and two outside in summer, with the Six Nations on.",
+"src": "verified notes"
 }
 },
 {
@@ -7265,6 +7346,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Twelve large screens with room for two hundred, and the Six Nations on.",
+"src": "verified notes"
 }
 },
 {
@@ -9289,6 +9381,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Two air-conditioned floors set up for major rugby fixtures.",
+"src": "verified notes"
 }
 },
 {
@@ -9651,6 +9754,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "A large projector room for football and rugby.",
+"src": "verified notes"
 }
 },
 {
@@ -10534,6 +10648,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Screens for the Six Nations and a covered riverside garden.",
+"src": "verified notes"
 }
 },
 {
@@ -14093,6 +14218,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "England's players met here in 1871 before the first ever international rugby match. Bookable seating for screenings and a big garden.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -15623,6 +15759,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Riverside Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -16503,6 +16650,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Lively pub on Clapham Common South Side with a couple of big projectors and five screens.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -16977,6 +17135,17 @@
 "ale": false,
 "craft": true,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Sky Sports for the Six Nations and tournaments, with a garden and two hire rooms.",
+"src": "verified notes"
 }
 },
 {
@@ -17484,6 +17653,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Green-tiled Young's pub opposite the station with a pull-down screen for big matches; packed for rugby.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -17651,6 +17831,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Riverside Young's pub with screens for the Six Nations and a Rowing Club room on the terrace.",
+"src": "verified notes"
 }
 },
 {
@@ -18024,6 +18215,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Six screens with Sky and TNT, bookable tables and match-day packages for the Six Nations.",
+"src": "verified notes"
 }
 },
 {
@@ -18103,6 +18305,17 @@
 "ale": true,
 "craft": true,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Ale pub off Northcote Road whose screens wake up for the rugby.",
+"src": "verified notes"
 }
 },
 {
@@ -19071,6 +19284,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Two large screens for tournaments and the Six Nations.",
+"src": "verified notes"
 }
 },
 {
@@ -20823,6 +21047,17 @@
 "ale": true,
 "craft": true,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "The Sloaney Pony: standing room in front of the screens and booking recommended for Six Nations days.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -22060,6 +22295,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "A Six Nations pub rather than a football one, with DJs at the weekend and late opening.",
+"src": "verified notes"
 }
 },
 {
@@ -23549,6 +23795,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Five or more screens with the Six Nations on.",
+"src": "verified notes"
 }
 },
 {
@@ -23926,6 +24183,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Twenty screens with full Sky and TNT, rugby included.",
+"src": "verified notes"
 }
 },
 {
@@ -24004,6 +24272,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Large screen downstairs and a permanently crowded pavement out front.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -24393,6 +24672,19 @@
 "ale": true,
 "craft": true,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [
+"IRL"
+],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Irish pub that Time Out calls a rugby pub at heart, with an international crowd and one of the West End's biggest terraces.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -24923,6 +25215,19 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [
+"IRL"
+],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Tiny Guinness bar where Sky Sports is on for Ireland rugby.",
+"src": "verified notes"
 }
 },
 {
@@ -25182,6 +25487,19 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [
+"IRL"
+],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Nine screens including three big projectors, with fan-zone areas for rugby, GAA and football.",
+"src": "verified notes"
 }
 },
 {
@@ -25353,6 +25671,19 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [
+"SCO"
+],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Kingly Street pub whose name is Gaelic for meeting place; draws Scotland fans for the Calcutta Cup, with whisky behind the bar.",
+"src": "https://www.thedrinksbusiness.com/2023/01/six-london-pubs-to-watch-the-six-nations-at/"
 }
 },
 {
@@ -26382,6 +26713,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -30413,6 +30755,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": true,
+"hire": false,
+"note": "Multiple screens and a beer garden near Finsbury Park.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-north-london"
 }
 },
 {
@@ -34021,6 +34374,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Fuller's pub on Worton Road with a big terrace, about fifteen minutes' walk to the stadium.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -39388,6 +39752,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Clapham Old Town pub that screens the Six Nations.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -46066,6 +46441,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Takes over its beer garden for the Six Nations with deckchairs and several large screens.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -47363,6 +47749,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": true,
+"note": "Rose Room for private Six Nations screenings, with its own horseshoe bar.",
+"src": "https://www.cityam.com/where-to-watch-the-2025-six-nations-in-london-from-sports-bars-to-posh-pubs/"
 }
 },
 {
@@ -52025,6 +52422,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Multiple screens and comfortable seating, with whisky and smoked meats.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -56240,6 +56648,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -60495,6 +60914,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Fulham Road pub that shows the Six Nations.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -63346,6 +63776,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -69081,6 +69522,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -82500,6 +82952,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Garden with built-in outdoor televisions for the Six Nations.",
+"src": "https://www.cityam.com/where-to-watch-the-2025-six-nations-in-london-from-sports-bars-to-posh-pubs/"
 }
 },
 {
@@ -100015,6 +100478,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Gets busy for rugby; group bookings taken in advance.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -109689,6 +110163,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Big screens dotted around a big space that suits groups.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-north-london"
 }
 },
 {
@@ -114935,6 +115420,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -115161,6 +115657,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -118136,6 +118643,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -122868,6 +123386,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -128973,6 +129502,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -129092,6 +129632,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Large TVs in an industrial-style Angel pub.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-north-london"
 }
 },
 {
@@ -136564,6 +137115,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -147160,6 +147722,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -148584,6 +149157,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Cosy Hampstead pub showing the Six Nations.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-north-london"
 }
 },
 {
@@ -158923,6 +159507,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Small Kensal Rise pub showing the Six Nations.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -166280,6 +166875,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "One of south London's best-loved sports pubs, with big screens.",
+"src": "https://www.theresident.co.uk/news/21487758.watch-six-nations-wherever-london/"
 }
 },
 {
@@ -167125,6 +167731,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": true,
+"big": true,
+"garden": true,
+"book": false,
+"hire": true,
+"note": "Opposite Twickenham station and billed as the most famous rugby pub in the world. Rugby memorabilia throughout, Sky and TNT, an outdoor bar on international days and private screening rooms. Named London's best rugby pub by Time Out.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -167244,6 +167861,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Ale pub on Staines Road, a mile or so from the stadium, busy on match days.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -167851,6 +168479,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Three-hundred-year-old pub on Richmond Green, busy on Twickenham days.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -170375,6 +171014,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Sunny beer garden, real ales and traditional food; a rugby-day favourite.",
+"src": "https://imperialhotels.co.uk/about-us/blog/top-london-rugby-pubs-to-watch-six-nations/73-46"
 }
 },
 {
@@ -170926,6 +171576,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -177182,6 +177843,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": true,
+"hire": false,
+"note": "Large screens in a pub dating back to 1670.",
+"src": "https://www.urbanpubsandbars.com/stories/best-pubs-to-watch-the-six-nations-in-north-london"
 }
 },
 {
@@ -179660,6 +180332,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Nicholson's pub on the Quadrant, on the route to Twickenham.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -179806,6 +180489,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": true,
+"book": false,
+"hire": false,
+"note": "Opposite Richmond station, with a big screen inside and a patio bar and barbecue that open on match days.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -188618,6 +189312,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Whitton pub that fills for live rugby, with sharing boards and pub classics.",
+"src": "https://imperialhotels.co.uk/about-us/blog/top-london-rugby-pubs-to-watch-six-nations/73-46"
 }
 },
 {
@@ -193872,6 +194577,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Riverside Twickenham pub on the match-day circuit near the stadium.",
+"src": "https://www.cityam.com/where-to-watch-the-2025-six-nations-in-london-from-sports-bars-to-posh-pubs/"
 }
 },
 {
@@ -197317,6 +198033,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-central-london"
 }
 },
 {
@@ -197516,6 +198243,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": true,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Church Street local whose walls are covered in framed tickets, caricatures and signed shirts. Known for its beer and for packing out with rugby crowds.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -197601,6 +198339,17 @@
 "ale": true,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": true,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Church Street pub with large HD screens and a good craft range; a regular pre-match stop.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -209264,6 +210013,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -212790,6 +213550,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 2,
+"fans": [],
+"twick": false,
+"big": true,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Projector for live rugby with street-food residencies on match days.",
+"src": "https://www.timeout.com/london/bars-and-pubs/rugby-pubs-in-london"
 }
 },
 {
@@ -212988,6 +213759,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -213510,6 +214292,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 1,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Young's pub on the Six Nations list.",
+"src": "https://www.youngs.co.uk/pubs-to-watch-the-six-nations-in-west-london"
 }
 },
 {
@@ -217354,6 +218147,17 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Fuller's pub on Parkshot full of rugby memorabilia and photographs, and packed with rugby people.",
+"src": "https://www.rugbyworld.com/countries/england-countries/best-pubs-near-twickenham-stadium-for-six-nations-games-149262"
 }
 },
 {
@@ -217564,6 +218368,19 @@
 "ale": false,
 "craft": false,
 "micro": false
+},
+"rg": {
+"level": 3,
+"fans": [
+"IRL"
+],
+"twick": false,
+"big": false,
+"garden": false,
+"book": false,
+"hire": false,
+"note": "Irish pub in Camden with a ceiling of scarves; a home for Ireland fans during the Six Nations.",
+"src": "https://www.thedrinksbusiness.com/2023/01/six-london-pubs-to-watch-the-six-nations-at/"
 }
 },
 {

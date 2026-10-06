@@ -27,6 +27,7 @@
   }
   /* One accent per mode. Everything built on --accent follows the tab you're on. */
   body[data-mode="match"]   { --accent: #5FD186; --accent-ink: #0F1A13; --accent-soft: #24352B; }
+  body[data-mode="rugby"]   { --accent: #E5534B; --accent-ink: #230B09; --accent-soft: #3D1F1C; }
   body[data-mode="eat"]     { --accent: #F2944D; --accent-ink: #21140A; --accent-soft: #3B2A19; }
   body[data-mode="party"]   { --accent: #EE6FA9; --accent-ink: #210D16; --accent-soft: #3A1E2C; }
   body[data-mode="quiet"]   { --accent: #A99CF5; --accent-ink: #14102A; --accent-soft: #2A2740; }
@@ -318,8 +319,9 @@
       <div class="map-legend">
         <div class="row" id="legend-team-row"><span class="dot" id="legend-team" style="background:var(--brass)"></span><span><b>Your team's pubs</b></span></div>
         <div class="row"><span class="dot" style="background:var(--accent)"></span><span><b>Matches your filters</b></span></div>
+        <div class="row" id="legend-weak"><span class="dot" style="background:var(--accent);opacity:.45;width:8px;height:8px;margin:0 2px"></span><span>Also matches, not written up for this</span></div>
         <div class="row"><span class="dot" style="background:var(--off);opacity:.4"></span><span>Filtered out (written-up pubs only)</span></div>
-        <div class="row"><span class="stad"></span><span>Football ground. Tap to pick that club.</span></div>
+        <div class="row"><span class="stad"></span><span id="legend-ground">Football ground. Tap to pick that club.</span></div>
         <div class="row"><span class="sq"></span><span>Parks and commons</span></div>
         <div class="row"><span class="sq" style="background:#5B5B67;opacity:1;height:3px;border-radius:2px"></span><span>Major roads</span></div>
         <div class="row" style="margin-top:4px">Scroll to zoom, drag to pan. Roads, parks and river from OpenStreetMap.</div>
@@ -333,7 +335,7 @@
 <footer><p id="datanote"></p></footer>
 <dialog id="detail"></dialog>
 
-<script src="pubs.js?v=adf02cd3"></script>
+<script src="pubs.js?v=ee112f15"></script>
 <script src="london.js?v=0f118e2e"></script>
 <script>
 (() => {
@@ -373,6 +375,7 @@
   const POS = { bar: "Main bar", all: "Every corner", garden: "Beer garden", room: "Screen room", proj: "Projector wall" };
   const SOUND = { always: "Always on", big: "Big games", request: "On request", off: "Off" };
   const ATMOS = { home: "Home crowd", neutral: "Neutral", away: "Away-friendly" };
+  const RG_LEVEL = { 1: "Shows the Six Nations", 2: "Good for big games", 3: "Rugby pub" };
   const DIET = { veg: "Vegetarian options", vegan: "Vegan options", gf: "Gluten-free options", halal: "Halal" };
   // Only offer a dietary filter once enough pubs actually state it, so the panel
   // grows on its own as OpenStreetMap fills in and never offers an empty filter.
@@ -387,9 +390,10 @@
   const OUTKIND = { garden: "Beer garden", benches: "Benches", riverside: "Riverside terrace", terrace: "Terrace", pavement: "Pavement tables", none: "None" };
   const CUISINES = [...new Set(PUBS.flatMap(p => p.food.cuisine))].filter(c => c !== "Bar snacks").sort();
 
-  const MODE_HUE = { match: "#5FD186", eat: "#F2944D", party: "#EE6FA9", quiet: "#A99CF5", outside: "#46C8C0", explore: "#E0B354" };
+  const MODE_HUE = { match: "#5FD186", rugby: "#E5534B", eat: "#F2944D", party: "#EE6FA9", quiet: "#A99CF5", outside: "#46C8C0", explore: "#E0B354" };
   const MODES = [
     ["match", "Match day", '<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4 3 2.2-1.1 3.5H10.1L9 8.2 12 6Z"/>'],
+    ["rugby", "Rugby", '<path d="M4.6 19.4c-2-2-1-8.4 3.6-13s11-5.6 13-3.6 1 8.4-3.6 13-11 5.6-13 3.6ZM8.5 15.5l7-7M10 12.6l1.4 1.4M12.6 10l1.4 1.4"/>'],
     ["eat", "Eating out", '<path d="M7 2v8M4 2v4a3 3 0 0 0 6 0V2M7 10v12M17 2c-2 0-3 3-3 6v3h3v11h2V2h-2Z"/>'],
     ["party", "Big night", '<path d="M4 20 8 6l10 10-14 4Zm12-15 1-3m2 6 3-1M14 3l1 2"/>'],
     ["quiet", "Quiet pint", '<path d="M6 3h9v6a4.5 4.5 0 0 1-9 0V3Zm9 2h2a2 2 0 0 1 0 4h-2M8 21h5M10.5 13.5V21"/>'],
@@ -405,6 +409,7 @@
   };
   const DEFAULTS = {
     match: { team: store.get("team", ""), minScreens: 0, minBig: 0, pos: new Set(), sound: "", sky: false, tnt: false, all: false, book: false, atmos: "" },
+    rugby: { level: 0, fans: new Set(), twick: false, big: false, garden: false, book: false },
     eat: { foodMin: 2, cuisine: new Set(), sit: "", eat: "", roast: false, price: 0, diet: new Set() },
     party: { group: 0, lateMin: 0, vibe: new Set(), outdoor: false, fbReq: "" },
     quiet: { noScreens: true, beer: "", fire: false, heritage: false, dogs: false, foodMin: 0 },
@@ -462,6 +467,7 @@
     // support it, so that tab stays written-up only.
     if (isBase(p) && S.mode === "quiet") return false;
     const m = S.m, f = p.fb, fd = p.food;
+    if (S.mode === "rugby") return rugbyPasses(p, m);
     if (isBase(p) && S.mode !== "explore") return mapPasses(p, m, f, fd);
     switch (S.mode) {
       case "match":
@@ -537,6 +543,10 @@
         s += Math.min(f.screens, 20) * 1.2 + (f.sound === "always" ? 15 : f.sound === "big" ? 8 : 0) + (f.all ? 8 : 0) + (f.proj ? 4 : 0);
         if (m.pos.size) s += [...m.pos].filter(k => f.pos.includes(k)).length * 5;
         break;
+      case "rugby":
+        if (p.rg) s += 100 + p.rg.level * 25 + (m.fans.size && [...m.fans].some(k => p.rg.fans.includes(k)) ? 40 : 0) + (p.rg.big ? 6 : 0) + (p.rg.garden ? 4 : 0);
+        else if (f && !f.stub) s += Math.min(f.screens, 20) + (f.tnt ? 10 : 0);
+        break;
       case "eat":
         s += fd.rating * 20 + (fd.roast && m.roast ? 10 : 0) + (m.cuisine.size ? [...m.cuisine].filter(c => fd.cuisine.includes(c)).length * 8 : 0) + (fd.where === "both" ? 3 : 0);
         break;
@@ -561,6 +571,20 @@
   // A map listing carries a handful of OpenStreetMap tags and no write-up, so it
   // answers only the coarse question each tab opens with. Set any filter that
   // needs detail we do not hold and the listing drops out rather than guessing.
+  // A pub is a rugby pub here only if a source says it shows the rugby. Pubs that
+  // show live sport but have never been vouched for come in as a second band and
+  // drop out as soon as you ask for anything rugby-specific.
+  function rugbyPasses(p, m) {
+    const r = p.rg;
+    if (!r) return !!p.fb && !(m.level || m.fans.size || m.twick || m.big || m.garden || m.book);
+    if (m.level && r.level < m.level) return false;
+    if (m.fans.size && ![...m.fans].some(k => r.fans.includes(k))) return false;
+    if (m.twick && !r.twick) return false;
+    if (m.big && !r.big) return false;
+    if (m.garden && !r.garden) return false;
+    if (m.book && !r.book) return false;
+    return true;
+  }
   function mapPasses(p, m, f, fd) {
     switch (S.mode) {
       case "match":
@@ -638,6 +662,16 @@
           toggle("Sky Sports", () => m.sky, setToggle("sky", m)), toggle("TNT Sports", () => m.tnt, setToggle("tnt", m)),
           toggle("Shows every televised game", () => m.all, setToggle("all", m)), toggle("Takes table bookings", () => m.book, setToggle("book", m))),
         group("Crowd", seg([["", "Any"], ["home", "Home fans"], ["neutral", "Neutral"], ["away", "Away OK"]], k => m.atmos === k, k => m.atmos = k)));
+    } else if (S.mode === "rugby") {
+      const fans = [...new Set(PUBS.flatMap(p => p.rg ? p.rg.fans : []))].map(k => [k, TEAM_NAME[k]]);
+      F.append(intro("Pubs a source vouches for on rugby days, from Twickenham locals to London's Irish and Welsh pubs."), area,
+        group("Kind of pub", seg([[0, "Any"], [2, "Big games"], [3, "Rugby pub"]], k => m.level === k, k => m.level = k)),
+        fans.length ? group("Supporting", chips(fans, k => m.fans.has(k), k => toggleSet(m.fans, k)), "any of") : null,
+        el("div", { class: "fgroup" },
+          toggle("Twickenham match day", () => m.twick, setToggle("twick", m)),
+          toggle("Big screen or projector", () => m.big, setToggle("big", m)),
+          toggle("Screens outside", () => m.garden, setToggle("garden", m)),
+          toggle("Takes bookings", () => m.book, setToggle("book", m))));
     } else if (S.mode === "eat") {
       F.append(intro("Pubs worth going to for the food."), area,
         group("How good", seg(FOODSEG.slice(1), k => m.foodMin === k, k => m.foodMin = k)),
@@ -725,6 +759,11 @@
 
   function strip(p) {
     const f = p.fb, fd = p.food;
+    if (S.mode === "rugby") return p.rg ? el("div", { class: "strip" },
+      cell(RG_LEVEL[p.rg.level], "kind", p.rg.level === 3 ? "on" : ""),
+      cell(p.rg.big ? "Big screen" : "Screens", p.rg.garden ? "and outside" : "inside", p.rg.big ? "on" : ""),
+      cell(p.rg.fans.length ? p.rg.fans.map(k => TEAM_NAME[k]).join(", ") : p.rg.twick ? "Twickenham" : "Neutral", p.rg.fans.length ? "fans" : p.rg.twick ? "match day" : "crowd", p.rg.fans.length || p.rg.twick ? "on" : ""))
+      : el("div", { class: "no-fb" }, f && !f.stub ? `Shows live sport${f.tnt ? " with TNT Sports" : ""}. Not confirmed for rugby.` : "Says it shows live sport. Not confirmed for rugby.");
     if (S.mode === "match" && f && f.stub) return el("div", { class: "no-fb" }, "Says it shows live sport. No screen count, screen size or sound on record.");
     if (S.mode === "match") return f ? el("div", { class: "strip" },
       cell([String(f.screens), el("small", {}, "screens")], f.pos.map(k => POS[k]).join(", "), "num"),
@@ -752,6 +791,7 @@
   function tags(p) {
     const f = p.fb, out = [];
     if (S.mode === "match" && f) { f.teams.forEach(t => out.push(teamTag(t))); if (!f.teams.length && f.all) out.push(el("span", { class: "tag" }, "Every game")); }
+    if (S.mode === "rugby" && p.rg) { p.rg.fans.forEach(t => out.push(teamTag(t))); if (p.rg.twick) out.push(el("span", { class: "tag" }, "Twickenham")); if (p.rg.book) out.push(el("span", { class: "tag feat" }, "Bookable")); if (p.rg.hire) out.push(el("span", { class: "tag feat" }, "Private room")); }
     if (S.mode === "eat") { if (p.food.roast) out.push(el("span", { class: "tag" }, "Sunday roast")); if (p.price === 3) out.push(el("span", { class: "tag feat" }, "\u00A3\u00A3\u00A3")); }
     if (S.mode === "party") ["hire", "dj", "karaoke"].filter(k => has(p, k)).forEach(k => out.push(el("span", { class: "tag" }, FEAT[k])));
     if (S.mode === "quiet") ["ale", "craft", "fire", "heritage"].filter(k => has(p, k)).forEach(k => out.push(el("span", { class: "tag feat" }, FEAT[k])));
@@ -762,7 +802,8 @@
   }
   function whyLine(p) {
     const bits = [], f = p.fb, m = S.m;
-    if (S.mode === "match" && f && f.stub) { bits.push("<b>from the map</b>"); if (p.beer && p.beer.tie) bits.push(p.beer.tie); if (p.late) bits.push(`till ${p.late}`); }
+    if (S.mode === "rugby") { if (p.rg) bits.push(p.rg.note.split(/(?<=\.)\s/)[0]); else if (isBase(p)) bits.push("<b>from the map</b>"); }
+    else if (S.mode === "match" && f && f.stub) { bits.push("<b>from the map</b>"); if (p.beer && p.beer.tie) bits.push(p.beer.tie); if (p.late) bits.push(`till ${p.late}`); }
     else if (S.mode === "match" && f) {
       if (isTeamPub(p)) bits.push(`<b>${TEAM_NAME[m.team]} pub</b>`); else if (m.team && f.all) bits.push(`<b>Shows every game</b>, ${ATMOS[f.atmos].toLowerCase()}`); else if (m.team) bits.push(`<b>${ATMOS[f.atmos]}</b>`);
       if (f.pos.includes("garden")) bits.push("screen in the garden"); if (f.sound === "always") bits.push("sound always on"); if (f.book) bits.push("bookable");
@@ -797,6 +838,7 @@
     const h = document.getElementById("headline"), m = S.m;
     const where = S.region ? ` in <em>${REGIONS[S.region]} London</em>` : "";
     if (S.mode === "match") h.innerHTML = m.team ? `Pubs for <em>${TEAM_NAME[m.team]}</em>${where}` : `Pubs showing <em>the football</em>${where}`;
+    else if (S.mode === "rugby") h.innerHTML = m.fans.size === 1 ? `Pubs for <em>${TEAM_NAME[[...m.fans][0]]}</em> fans${where}` : m.twick ? `Pubs for <em>Twickenham</em> match days` : `Pubs showing <em>the rugby</em>${where}`;
     else if (S.mode === "eat") h.innerHTML = m.cuisine.size === 1 ? `Pubs for <em>${[...m.cuisine][0]}</em>${where}` : `Pubs for <em>eating out</em>${where}`;
     else if (S.mode === "party") h.innerHTML = `Pubs for a <em>big night</em>${where}`;
     else if (S.mode === "quiet") h.innerHTML = `Pubs for a <em>quiet pint</em>${where}`;
@@ -817,7 +859,8 @@
     } else {
       // Written-up pubs first, then map listings in their own band, so the
       // detail the guide actually holds is never diluted by the bulk.
-      const written = list.filter(p => !isBase(p)), mapped = list.filter(isBase);
+      const first = S.mode === "rugby" ? (p => !!p.rg) : (p => !isBase(p));
+      const written = list.filter(first), mapped = list.filter(p => !first(p));
       if (S.mode !== "explore" && written.length && mapped.length) {
         results.append(groupTitle(BAND[S.mode][0], written.length), el("div", { class: "grid" }, written.slice(0, shown).map(card)), more(written),
           groupTitle(BAND[S.mode][1], mapped.length), el("p", { class: "fintro", style: "margin:-2px 0 2px" }, BAND[S.mode][2]),
@@ -834,6 +877,7 @@
     party:   ["Written up", "Also open late", "Open to midnight or later by their posted hours. Capacity and what the night is like are unknown."],
     outside: ["Written up", "Also has outside space", "OpenStreetMap records a terrace or garden. How big, and whether there are benches, is unknown."],
     quiet:   ["Written up", "", ""],
+    rugby:   ["Rugby pubs", "Also shows live sport", "Nobody has confirmed these put the rugby on. The Six Nations is on free-to-air TV, so most will; club rugby needs TNT Sports. Ask for anything rugby-specific above and they drop out."],
   };
   const groupTitle = (t, n) => el("div", { class: "group-title" }, el("h3", {}, t), el("span", { class: "count num" }, `${n}`), el("span", { class: "rule" }));
 
@@ -843,6 +887,8 @@
   const pxPerLng = 440 / (BBOX.e - BBOX.w), pxPerLat = 420 / (BBOX.n - BBOX.s);
   const LABELS = [["Richmond", -0.305, 51.452], ["Ealing", -0.3, 51.513], ["Hammersmith", -0.23, 51.497], ["Wandsworth", -0.19, 51.452], ["Westminster", -0.13, 51.503], ["Camden", -0.145, 51.545], ["Islington", -0.1, 51.535], ["Hackney", -0.055, 51.55], ["Tottenham", -0.07, 51.614], ["Walthamstow", -0.02, 51.588], ["Shoreditch", -0.08, 51.524], ["Stratford", -0.005, 51.548], ["Greenwich", 0.0, 51.468], ["Peckham", -0.075, 51.47], ["Brixton", -0.12, 51.45], ["Croydon", -0.095, 51.385], ["Wembley", -0.283, 51.568]];
   const STADIUMS = [["ARS", "Emirates Stadium", -0.108, 51.555], ["TOT", "Tottenham Hotspur Stadium", -0.066, 51.604], ["CHE", "Stamford Bridge", -0.191, 51.4817], ["WHU", "London Stadium", -0.0166, 51.5387], ["CRY", "Selhurst Park", -0.0856, 51.398], ["FUL", "Craven Cottage", -0.2217, 51.475], ["BRE", "Gtech Community Stadium", -0.2886, 51.4907], ["QPR", "Loftus Road", -0.2321, 51.5093], ["MIL", "The Den", -0.0508, 51.4859], ["CHA", "The Valley", 0.0365, 51.4865], ["LEY", "Brisbane Road", -0.0125, 51.5603], ["WIM", "Plough Lane", -0.188, 51.4315], ["ENG", "Wembley Stadium", -0.2795, 51.556]];
+  // From OpenStreetMap. Twickenham is officially Allianz Stadium these days.
+  const RUGBY_GROUNDS = [["TWK", "Allianz Stadium, Twickenham \u00B7 England", -0.3415, 51.4561], ["HQ", "Twickenham Stoop \u00B7 Harlequins", -0.3443, 51.4503], ["SAR", "StoneX Stadium \u00B7 Saracens", -0.2242, 51.6034], ["EAL", "Trailfinders Sports Ground \u00B7 Ealing Trailfinders", -0.3297, 51.5255], ["RIC", "Richmond Athletic Ground \u00B7 Richmond and London Scottish", -0.3034, 51.4668], ["RP", "Rosslyn Park", -0.2456, 51.4647]];
   const map = document.getElementById("map"), stage = map.parentElement, tip = document.getElementById("map-tip");
   const svgEl = (t, a = {}) => { const n = document.createElementNS("http://www.w3.org/2000/svg", t); for (const [k, v] of Object.entries(a)) n.setAttribute(k, v); return n; };
   const view = { ...BASE }; let lastHits = [], dragged = false;
@@ -871,7 +917,14 @@
     const rl = svgEl("text", { class: "rlabel", x: fx(proj(-0.165, 51.468)[0]), y: fx(proj(-0.165, 51.468)[1] + 12 * k), "font-size": fx(8.5 * k), "text-anchor": "middle" }); rl.textContent = "RIVER THAMES"; map.append(rl);
     for (const [t, lng, lat] of LABELS) { const [x, y] = proj(lng, lat); const tx = svgEl("text", { class: "mlabel", x: fx(x), y: fx(y), "text-anchor": "middle", "font-size": fx(9 * k) }); tx.textContent = t; map.append(tx); }
     const team = S.mode === "match" ? S.m.team : "";
-    for (const [code, name, lng, lat] of STADIUMS) {
+    if (S.mode === "rugby") for (const [code, name, lng, lat] of RUGBY_GROUNDS) {
+      const [x, y] = proj(lng, lat);
+      const g = svgEl("g", { class: "stadium", transform: `translate(${fx(x)} ${fx(y)}) scale(${fx(k)})` });
+      g.append(svgEl("path", { d: "M0,-6.5 L6,-2.2 L3.8,5 L-3.8,5 L-6,-2.2 Z" })); const t = svgEl("text", { y: "13.5", "font-size": "7" }); t.textContent = code; g.append(t);
+      g.addEventListener("pointerenter", () => showTip(g, `<b>${name}</b>`)); g.addEventListener("pointerleave", hideTip);
+      map.append(g);
+    }
+    if (S.mode !== "rugby") for (const [code, name, lng, lat] of STADIUMS) {
       const [x, y] = proj(lng, lat), active = team === code;
       const g = svgEl("g", { class: "stadium" + (active ? " active" : ""), transform: `translate(${fx(x)} ${fx(y)}) scale(${fx(k)})`, tabindex: "0", role: "button", "data-club": code, style: `--team-c:${teamMarker(code)}` });
       g.append(svgEl("path", { d: "M0,-6.5 L6,-2.2 L3.8,5 L-3.8,5 L-6,-2.2 Z" })); const t = svgEl("text", { y: "13.5", "font-size": "7" }); t.textContent = code; g.append(t);
@@ -883,16 +936,20 @@
     const CAP = 1500;
     const drawn = PUBS.filter(p => hitIds.has(p.id)).slice(0, CAP);
     const dims = PUBS.filter(p => !hitIds.has(p.id) && !isBase(p));
-    const order = [...dims, ...drawn].sort((a, b) => (hitIds.has(a.id) - hitIds.has(b.id)) || (isTeamPub(a) - isTeamPub(b)));
+    // Second-band pubs (map listings, or in the rugby tab anything not vouched
+    // for on rugby) draw small and faint underneath, so the pubs the guide can
+    // actually speak for stay readable on the map.
+    const weak = p => S.mode === "rugby" ? !p.rg : isBase(p);
+    const order = [...dims, ...drawn].sort((a, b) => (hitIds.has(a.id) - hitIds.has(b.id)) || (weak(b) - weak(a)) || (isTeamPub(a) - isTeamPub(b)));
     for (const p of order) {
       const [x, y] = proj(p.lng, p.lat), hit = hitIds.has(p.id), mine = hit && isTeamPub(p);
       const g = svgEl("g", { class: "pin " + (hit ? (mine ? "team" : "hit") : "dim") + (S.fav.has(p.id) ? " fav" : ""), tabindex: hit ? "0" : "-1", role: "button", "aria-label": p.name, "data-pub": p.id });
-      const c = svgEl("circle", { cx: fx(x), cy: fx(y), r: fx((hit ? (isBase(p) ? 3.2 : 5) : 3) * k), "stroke-width": fx((S.fav.has(p.id) ? 2 : 1.2) * k) });
-      if (hit && isBase(p)) c.setAttribute("opacity", "0.75");
+      const c = svgEl("circle", { cx: fx(x), cy: fx(y), r: fx((hit ? (weak(p) ? 3 : 5) : 3) * k), "stroke-width": fx((S.fav.has(p.id) ? 2 : 1.2) * k) });
+      if (hit && weak(p)) c.setAttribute("opacity", "0.45");
       if (mine) c.setAttribute("fill", teamMarker(S.m.team));
       g.append(c);
       g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPop(p); } });
-      g.addEventListener("pointerenter", () => showTip(g, `<b>${p.name}</b>${p.area}${isBase(p) ? " \u00B7 map listing" : p.fb ? ` \u00B7 ${p.fb.screens} screens \u00B7 sound ${SOUND[p.fb.sound].toLowerCase()}` : " \u00B7 no screens"}`)); g.addEventListener("pointerleave", hideTip);
+      g.addEventListener("pointerenter", () => showTip(g, `<b>${p.name}</b>${p.area}${S.mode === "rugby" && p.rg ? ` \u00B7 ${RG_LEVEL[p.rg.level].toLowerCase()}` : isBase(p) ? " \u00B7 map listing" : p.fb ? ` \u00B7 ${p.fb.screens} screens \u00B7 sound ${SOUND[p.fb.sound].toLowerCase()}` : " \u00B7 no screens"}`)); g.addEventListener("pointerleave", hideTip);
       map.append(g);
     }
     if (S.origin) {
@@ -909,6 +966,8 @@
     map.classList.toggle("picking", S.picking); document.getElementById("pick-hint").hidden = !S.picking;
     document.getElementById("legend-team").style.background = team ? teamMarker(team) : "var(--brass)";
     document.getElementById("legend-team-row").hidden = S.mode !== "match";
+    document.getElementById("legend-weak").hidden = S.mode === "quiet" || S.mode === "explore";
+    document.getElementById("legend-ground").textContent = S.mode === "rugby" ? "Rugby ground." : "Football ground. Tap to pick that club.";
     if (popPub) openPop(popPub);
   }
 
@@ -1036,6 +1095,13 @@
             el("div", { class: "fact" }, el("div", { class: "k" }, "Crowd"), el("div", { class: "v" }, ATMOS[f.atmos], el("small", {}, ` \u00B7 ${f.crowd}`))),
             el("div", { class: "fact " + (f.book ? "on" : "off") }, el("div", { class: "k" }, "Tables"), el("div", { class: "v" }, f.book ? "Bookable" : "First come")))
           : el("p", { class: "fine" }, "No screens and no plans for any. This is where you go to avoid the match.")),
+        p.rg ? el("div", { class: "d-sec" }, el("h3", {}, "The rugby"),
+          el("div", { class: "facts" },
+            el("div", { class: "fact " + (p.rg.level === 3 ? "on" : "") }, el("div", { class: "k" }, "Kind of pub"), el("div", { class: "v", style: "font-size:15px" }, RG_LEVEL[p.rg.level])),
+            el("div", { class: "fact " + (p.rg.big ? "on" : "") }, el("div", { class: "k" }, "Screens"), el("div", { class: "v", style: "font-size:15px" }, p.rg.big ? "Big screen" : "Screens", p.rg.garden ? el("small", {}, " \u00B7 and outside") : null)),
+            el("div", { class: "fact" + (p.rg.fans.length || p.rg.twick ? " on" : "") }, el("div", { class: "k" }, "Crowd"), el("div", { class: "v", style: "font-size:15px" }, p.rg.fans.length ? p.rg.fans.map(k => TEAM_NAME[k]).join(", ") + " fans" : p.rg.twick ? "Twickenham match day" : "Neutral")),
+            el("div", { class: "fact " + (p.rg.book ? "on" : "off") }, el("div", { class: "k" }, "Tables"), el("div", { class: "v", style: "font-size:15px" }, p.rg.book ? "Bookable" : "Ask ahead"))),
+          el("p", { class: "fine", style: "margin:8px 0 0" }, p.rg.note, " ", p.rg.src.startsWith("http") ? el("a", { href: p.rg.src, target: "_blank", rel: "noopener" }, "Source") : null)) : null,
         f && !f.stub ? el("div", { class: "d-sec" }, el("h3", {}, "Where the screens are"), el("div", { class: "screens-map" }, Object.entries(POS).map(([k, lbl]) => el("span", { class: "pos " + (f.pos.includes(k) ? "yes" : "no") }, f.pos.includes(k) ? "\u2713 " : "\u2014 ", lbl)))) : null,
         f && f.teams.length ? el("div", { class: "d-sec" }, el("h3", {}, "Home to"), el("div", { class: "tags" }, f.teams.map(t => teamTag(t)))) : null,
         el("div", { class: "d-sec" }, el("h3", {}, "The rest of the time"),
